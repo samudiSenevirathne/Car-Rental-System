@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -57,5 +58,8 @@ public class Car {
 
     @OneToMany(mappedBy = "car")
     ArrayList<Damage_Service_Detail>damageServiceDetailList;
+
+    @OneToMany(mappedBy = "car")
+    private List<Book> bookList=new ArrayList<>();
 
 }

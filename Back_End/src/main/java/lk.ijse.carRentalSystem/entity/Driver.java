@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 @Entity
 @NoArgsConstructor
@@ -27,5 +29,8 @@ public class Driver {
     private String contact;
     @Column(nullable = false,unique=true)
     private String nic;
+
+    @OneToMany(mappedBy = "drive")
+    ArrayList<Book> bookList;
 
 }

@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -35,5 +34,11 @@ public class Customer {
     private String email;
     @Column(nullable = false)
     private String address;
+
+    @OneToOne(mappedBy = "cus")
+    private Register register;
+
+    @OneToMany(mappedBy = "cus")
+    private List<Book> bookList=new ArrayList<>();
 
 }

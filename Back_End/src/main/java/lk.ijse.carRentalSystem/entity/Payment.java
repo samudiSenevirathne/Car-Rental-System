@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -31,6 +28,8 @@ public class Payment {
     private BigDecimal additional_charge_Cost;
     private LocalDate additional_charge_Date;
 
-    /*relationship*/
-//    book_Id
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "book_Id",referencedColumnName = "book_Id",nullable = false)
+    private Book book;
+
 }

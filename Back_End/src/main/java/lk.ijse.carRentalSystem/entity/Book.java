@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -36,10 +34,22 @@ public class Book {
     private String to;
     private BigDecimal total_KM;
     private String maintain_Status;
+    @EmbeddedId
+    private CarCustomerPK carCustomerPK;
 
-    /*relationship*/
-    //    driver_Id
-    //    car_Id
-    //    username
+    @OneToOne(mappedBy = "book")
+    private Payment payment;
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "driver_Id",referencedColumnName = "driver_Id",nullable = false)
+    private Driver drive;
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "car_Id",referencedColumnName = "car_Id",nullable = false)
+    private Car car;
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "username",referencedColumnName = "username",nullable = false)
+    private Customer cus;
 
 }
