@@ -33,7 +33,7 @@
         header {
             height: 10vh;
             /*position: relative;*/
-            background: transparent;
+            background: rgba(255, 255, 255, 0.16);
             font-size: 20px;
             font-family: 'Dancing Script', cursive;
             /*fixed set*/
@@ -41,7 +41,6 @@
             top:0;/*n*/
             z-index: 3;/*n*/
             width:100%;/*n*/
-            /*opacity: 0.99;!*n*!*/
         }
 
         header > h2 {
@@ -50,7 +49,7 @@
             margin-top: 0;
             margin-bottom: 0;
             left: 30px;
-            top: 35px;
+            top: 11px;
             color: white;
         }
 
@@ -59,7 +58,7 @@
             margin-left: 20px;
             margin-right: 40px;
             right: 30px;
-            top: 2px;
+            top: -19px;
             font-size: 30px;
             /*font-weight: bold;!**!*/
             list-style: none;
@@ -156,7 +155,7 @@
             position: absolute;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.56);
+            background: rgba(0, 0, 0, 0.81);
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -164,12 +163,47 @@
 
 
         main>section:nth-child(2)>section>div{
+            position: relative;
             width: 30%;
             height: 50%;
+            /*top:88px;*/
             border:solid 1px white;
+            border-radius: 25px;
         }
 
+        main>section:nth-child(2)>section>div:nth-child(1)>div{
+            position: relative;
+            top: 43px;
+            left: 10px;
+            width: 94%;
+            height: 68%;
+            /*border:solid 1px green;*/
+            background: url("../assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
 
+        main>section:nth-child(2)>section>div:nth-child(2)>div{
+            position: relative;
+            top: 43px;
+            width: 96%;
+            height: 75%;
+            /*border:solid 1px green;*/
+            background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(2)>section>div:nth-child(3)>div{
+            position: relative;
+            top: 43px;
+            width: 104%;
+            height: 75%;
+            /*border:solid 1px green;*/
+            background: url("../assets/images/BMW i8/BMW i8(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
 
         main>section:nth-child(3){
             position: relative;
@@ -218,6 +252,7 @@
 </header>
 <!--  close header -->
 <main>
+    <!--  start Section one-->
 <section>
   <section>
       <div id="div1"></div>
@@ -227,6 +262,9 @@
       <div id="btn"></div>
   </section>
 </section>
+    <!--  end Section one-->
+
+    <!--  start Section Two-->
 <section>
     <section>
         <div>
@@ -236,13 +274,28 @@
             <h2></h2>
             <h2></h2>
         </div>
-        <div></div>
-        <div></div>
+        <div>
+            <div></div>
+            <h1></h1>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+        </div>
+        <div>
+            <div></div>
+            <h1></h1>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+        </div>
     </section>
 </section>
+    <!--  end Section Two-->
+
 <section>
 
 </section>
+
 </main>
 <footer>
 <div></div>
