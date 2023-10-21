@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GuestCustomer</title>
+    <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/normalize.css">
+    <link rel="stylesheet" href="../assets/font-awsome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body{
+            position: relative;
+            width: 100vw;
+            height: calc((100vh * 3) + 20vh);
+        }
+
+        main{
+            position: relative;
+            width: 100%;
+            height: calc(100vh * 3);
+            z-index: 2;
+        }
+
+        header {
+            height: 10vh;
+            /*position: relative;*/
+            background: transparent;
+            font-size: 20px;
+            font-family: 'Dancing Script', cursive;
+            /*fixed set*/
+            position: fixed;/*n*/
+            top:0;/*n*/
+            z-index: 3;/*n*/
+            width:100%;/*n*/
+            /*opacity: 0.99;!*n*!*/
+        }
+
+        header > h2 {
+            /*font-weight: bold;!**!*/
+            position: absolute;
+            margin-top: 0;
+            margin-bottom: 0;
+            left: 30px;
+            top: 35px;
+            color: white;
+        }
+
+        header > nav > menu {
+            position: absolute;
+            margin-left: 20px;
+            margin-right: 40px;
+            right: 30px;
+            top: 2px;
+            font-size: 30px;
+            /*font-weight: bold;!**!*/
+            list-style: none;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        header > nav > menu > li {
+            display: inline-block;
+            padding: 0 10px 0 10px;
+        }
+
+        header > nav > menu > li > a {
+            text-decoration: none;
+            color: white;
+        }
+
+        main>section:nth-child(1){
+            position: relative;
+            width: 100%;
+            height:calc((100vh * 3) / 3);
+            background: url("../assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(1)>section{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #div1{
+            width:30%;
+            height: 1px;
+            background: white;
+            position: relative;
+            left: 30%;
+            bottom: 7%;
+        }
+
+        #title{
+            color: white;
+            font-size: 50px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 0;
+            margin-top: 0;
+            position: relative;
+            left: 7%;
+        }
+
+        #div2{
+            width:30%;
+            height: 1px;
+            background: white;
+            position: relative;
+            right: 15%;
+            top: 7%;
+        }
+
+        #subTitle{
+            color: white;
+            font-size: 20px;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+            right: 37%;
+            top: 12%;
+        }
+
+        #btn{
+            height: 55px;
+            width: 55px;
+            background: url("../assets/images/button.png");
+            background-size:cover;
+            background-position: center;
+            position: relative;
+            right: 46%;
+            top: 20%;
+        }
+
+        main>section:nth-child(2){
+            position: relative;
+            width: 100%;
+            height:calc((100vh * 3) / 3);
+            background: url("../assets/images/CarTwoSide.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(2)>section {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.56);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+
+        main>section:nth-child(2)>section>div{
+            width: 30%;
+            height: 50%;
+            border:solid 1px white;
+        }
+
+
+
+        main>section:nth-child(3){
+            position: relative;
+            width: 100%;
+            height:calc((100vh * 3) / 3);
+            background: url("../assets/images/CarThree.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        footer {
+            /*height: 10vh;*/
+            height: 20vh; /*for fixed */
+            background: red;
+            position: relative;
+
+        }
+
+        footer>div{
+            height: 50%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            /*background: url("../assets/images/footer.png");*/
+            /*background-size:cover;*/
+            /*background-position: center;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<!--  open header -->
+<header>
+<h2>
+    Car Rentals
+</h2>
+<nav>
+    <menu>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Guest</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">F&Q</a></li>
+    </menu>
+</nav>
+</header>
+<!--  close header -->
+<main>
+<section>
+  <section>
+      <div id="div1"></div>
+      <h1 id="title">Car Rentals</h1>
+      <div id="div2"></div>
+      <h2 id="subTitle">Online Car Rental Service</h2>
+      <div id="btn"></div>
+  </section>
+</section>
+<section>
+    <section>
+        <div>
+            <div></div>
+            <h1></h1>
+            <h2></h2>
+            <h2></h2>
+            <h2></h2>
+        </div>
+        <div></div>
+        <div></div>
+    </section>
+</section>
+<section>
+
+</section>
+</main>
+<footer>
+<div></div>
+</footer>
+</body>
+</html>
