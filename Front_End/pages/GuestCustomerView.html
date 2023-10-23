@@ -23,7 +23,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc((100vh * 3) + 20vh);
+            height: calc((100vh * 4) + 20vh);
             background: url("../assets/images/Carbody.png");
             background-size:cover;
             background-position: center;
@@ -32,7 +32,7 @@
         main{
             position: relative;
             width: 100%;
-            height: calc(100vh * 3);
+            height: calc(100vh * 4);
             z-index: 2;
         }
 
@@ -81,20 +81,27 @@
             color: white;
         }
 
-        main>section:nth-child(1){
+        main>section{
             position: relative;
             width: 100%;
-            height:calc((100vh * 3) / 3);
+            height:calc((100vh * 4) / 4);
+            /*border: solid 1px yellow;*/
+        }
+
+        main>section:nth-child(1){
             background: url("../assets/images/CarTwo.png");
             background-size:cover;
             background-position: center;
         }
 
-        main>section:nth-child(1)>section{
+        main>section>section{
             position: absolute;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background:rgba(0, 0, 0, 0.56);
+        }
+
+        main>section:nth-child(1)>section{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -148,28 +155,13 @@
             top: 20%;
         }
 
-        main>section:nth-child(2){
-            position: relative;
-            width: 100%;
-            height:calc((100vh * 3) / 3);
-            /*background: url("../assets/images/carSound1.png");*/
-            /*background-size:cover;*/
-            /*background-position: center;*/
-        }
-
         main>section:nth-child(2)>section {
-            position: absolute;
-            width: 100%;
-            height:100%;
             /*border:solid 1px green;*/
             overflow:scroll;
-            background:rgba(0, 0, 0, 0.56);
         }
 
-        main>section:nth-child(2)>section>section {
+        main>section>section>section {
             position: absolute;
-            /*width: 100vw;*/
-            width:calc(100% * 1.65);
             height: 100%;
             /*background:rgba(0, 0, 0, 0.56);*/
             display: flex;
@@ -178,10 +170,13 @@
             /*border:solid 1px yellow;*/
         }
 
+        main>section:nth-child(2)>section>section {
+            /*width: 100vw;*/
+            width:calc(100% * 1.65);
+        }
 
-        main>section:nth-child(2)>section>section>div{
+        main>section>section>section>div{
             position: relative;/***/
-            width: 18%;
             height: 50%;
             /*top:88px;*/
             border:solid 1px white;
@@ -194,20 +189,124 @@
             justify-content: center;
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(1){
+        main>section:nth-child(2)>section>section>div {
+            width: 18%;
+        }
+
+        main>section>section>section>div>div{
             width: 94%;
             height: 68%;
             /*border:solid 1px green;*/
-            background: url("../assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
             background-size:cover;
             background-position: center;
-            animation-name:carDisplay1 ;
             animation-delay: 1s;
             animation-duration: 20s;
             animation-iteration-count:infinite;
         }
 
+        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(1){
+            background: url("../assets/images/Suzuki Alto/Suzuki Alto(Front View).png");
+            animation-name:carDisplay1 ;
+        }
+
         @keyframes carDisplay1 {
+            0%,15%{
+                background: url("../assets/images/Suzuki Alto/Suzuki Alto(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            20%,35%{
+                background: url("../assets/images/Suzuki Alto/Suzuki Alto(Side View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 36%;
+            }
+            40%,55%{
+                background: url("../assets/images/Suzuki Alto/Suzuki Alto(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            60%,75%{
+                background: url("../assets/images/Suzuki Alto/Suzuki Alto(Back View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 77%;
+
+            }
+            80%,100%{
+                background: url("../assets/images/Suzuki Alto/Suzuki Alto(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+
+        }
+
+        main>section>section>section>div>h1{
+            position: absolute;
+            bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        main>section>section>section>div>div:nth-child(3){
+            position: absolute;
+            bottom: -112px;
+            width: 94%;
+            height: 35%;
+            background: white;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: black;
+            font-size: 10px;
+            visibility: hidden;
+        }
+
+        main>section>section>section>div>div:nth-child(3)>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: 'Almendra', serif;
+            font-weight: bold;
+        }
+
+        main>section>section>section>div>div:nth-child(4){
+            position: absolute;
+            bottom: -39px;
+            width: 51%;
+            height: 12%;
+            font-size: 15px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black ;
+        }
+
+        main>section>section>div>div:nth-child(4)>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: 'Almendra', serif;
+            font-weight: bold;
+        }
+
+        main>section:nth-child(2)>section>section>div:nth-child(2)>div:nth-child(1){
+            background: url("../assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
+            animation-name:carDisplay2 ;
+        }
+
+        @keyframes carDisplay2 {
             0%,15%{
                 background: url("../assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
                 background-size:cover;
@@ -244,180 +343,142 @@
                 width: 94%;
                 height: 68%;
             }
-
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(1)>h1{
-            position: absolute;
-            bottom: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(3){
-            position: absolute;
-            bottom: -112px;
-            width: 94%;
-            height: 35%;
-            background: white;
-            border-bottom-right-radius: 25px;
-            border-bottom-left-radius: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: black;
-            font-size: 10px;
-            visibility: hidden;
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(3)>h1{
-            align-self: center;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: 'Almendra', serif;
-            font-weight: bold;
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(4){
-            position: absolute;
-            bottom: -39px;
-            width: 51%;
-            height: 12%;
-            font-size: 15px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black ;
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(4)>h1{
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: 'Almendra', serif;
-            font-weight: bold;
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(2)>div:nth-child(1){
-            width: 96%;
-            height: 75%;
-            /*border:solid 1px green;*/
-            background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
-            background-size:cover;
-            background-position: center;
-            animation-name:carDisplay2 ;
-            animation-delay: 1s;
-            animation-duration: 20s;
-            animation-iteration-count:infinite;
-        }
-
-        @keyframes carDisplay2 {
-            0%, 15% {
-                background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
-                background-size:cover;
-                background-position: center;
-                width: 96%;
-                height: 75%;
-            }
-            20%,35%{
-                background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Side View).png");
-                background-size:cover;
-                background-position: center;
-                width: 94%;
-                height: 40%;
-            }
-            40%,55%{
-                background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
-                background-size:cover;
-                background-position: center;
-                width: 96%;
-                height: 75%;
-            }
-            60%,75%{
-                background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Back View).png");
-                background-size:cover;
-                background-position: center;
-                width: 96%;
-                height: 75%;
-            }
-            80%,100%{
-                background: url("../assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
-                background-size:cover;
-                background-position: center;
-                width: 96%;
-                height: 75%;
-            }
-        }
-
-        main>section:nth-child(2)>section>section>div:nth-child(2)>h1{
-            position: absolute;
-            bottom: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: 'Dancing Script', cursive;
         }
 
         main>section:nth-child(2)>section>section>div:nth-child(3)>div:nth-child(1){
-            width: 104%;
-            height: 75%;
-            /*border:solid 1px green;*/
-            background: url("../assets/images/BMW i8/BMW i8(Front View).png");
-            background-size:cover;
-            background-position: center;
+            background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
             animation-name:carDisplay3 ;
-            animation-delay: 1s;
-            animation-duration: 20s;
-            animation-iteration-count:infinite;
         }
 
         @keyframes carDisplay3 {
-            0%, 15% {
-                background: url("../assets/images/BMW i8/BMW i8(Front View).png");
-                background-size:cover;
-                background-position: center;
-                width: 104%;
-                height: 75%;
-            }
-            20%,35%{
-                background: url("../assets/images/BMW i8/BMW i8(Side View).png");
+            0%,15%{
+                background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
                 background-size:cover;
                 background-position: center;
                 width: 94%;
-                height: 58%;
+                height: 68%;
+            }
+            20%,35%{
+                background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Side View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 36%;
             }
             40%,55%{
-                background: url("../assets/images/BMW i8/BMW i8(Front View).png");
+                background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
                 background-size:cover;
                 background-position: center;
-                width: 104%;
-                height: 75%;
+                width: 94%;
+                height: 68%;
             }
             60%,75%{
-                background: url("../assets/images/BMW i8/BMW i8(Back View).png");
+                background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Back View).png");
                 background-size:cover;
                 background-position: center;
-                width: 106%;
-                height: 66%;
+                width: 94%;
+                height: 77%;
+
             }
             80%,100%{
-                background: url("../assets/images/BMW i8/BMW i8(Front View).png");
+                background: url("../assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
                 background-size:cover;
                 background-position: center;
-                width: 104%;
-                height: 75%;
+                width: 94%;
+                height: 68%;
             }
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(3)>h1{
-            position: absolute;
-            bottom: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-family: 'Dancing Script', cursive;
+        main>section:nth-child(2)>section>section>div:nth-child(4)>div:nth-child(1){
+            background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
+            animation-name:carDisplay4 ;
         }
 
-        main>section:nth-child(2)>aside{
+        @keyframes carDisplay4 {
+            0%,15%{
+                background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            20%,35%{
+                background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Side View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 36%;
+            }
+            40%,55%{
+                background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            60%,75%{
+                background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Back View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 77%;
+
+            }
+            80%,100%{
+                background: url("../assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+        }
+
+        main>section:nth-child(2)>section>section>div:nth-child(5)>div:nth-child(1){
+            background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
+            animation-name:carDisplay5 ;
+        }
+
+        @keyframes carDisplay5 {
+            0%,15%{
+                background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            20%,35%{
+                background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Side view).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 36%;
+            }
+            40%,55%{
+                background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+            60%,75%{
+                background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Back view).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 77%;
+
+            }
+            80%,100%{
+                background: url("../assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
+                background-size:cover;
+                background-position: center;
+                width: 94%;
+                height: 68%;
+            }
+        }
+
+
+        main>section>aside{
             position: absolute;
             font-size: 20px;
             width: 100%;
@@ -427,46 +488,49 @@
             justify-content: space-around;
         }
 
-        main>section:nth-child(2)>aside>div:nth-child(1){
+        main>section>aside>div:nth-child(1){
             width:30%;
             height: 1px;
             background: white;
         }
 
-        main>section:nth-child(2)>aside>h1{
+        main>section>aside>h1{
             margin-top: 0;
             margin-bottom: 0;
             color: white;
             font-family: 'Dancing Script', cursive;
         }
 
-        main>section:nth-child(2)>aside>div:nth-child(3){
+        main>section>aside>div:nth-child(3){
             width:30%;
             height: 1px;
             background: white;
         }
 
-        main>section:nth-child(2)>aside:nth-child(3){
+        main>section>aside:nth-child(3){
              top:77px;
             font-size: 15px;
         }
 
 
-        main>section:nth-child(3){
-            position: relative;
-            width: 100%;
-            height:calc((100vh * 3) / 3);
-            /*background: url("../assets/images/CarTwo.png");*/
-            /*background-size:cover;*/
-            /*background-position: center;*/
+        main>section:nth-child(3)>section {
+            overflow:scroll;
         }
 
-        main>section:nth-child(3)>section{
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            /*background: rgba(0, 0, 0, 0.81);*/
-            background:rgba(0, 0, 0, 0.56);
+        main>section:nth-child(3)>section>section {
+            width:calc(100% * 1.35);
+        }
+
+        main>section:nth-child(3)>section>section>div {
+            width: 21%;
+        }
+
+        main>section:nth-child(4)>section>section {
+            width:100%;
+        }
+
+        main>section:nth-child(4)>section>section>div {
+            width: 29%;
         }
 
         footer {
@@ -526,26 +590,64 @@
         <section>
          <div>
             <div></div>
-            <h1>Suzuki Alto K10</h1>
-            <div id="detail">
-               <h1>Daily Rate (Rs):3000</h1>
-               <h1>Monthly Rate (Rs):71,390</h1>
-               <h1>Price per Extra Km (Rs):35</h1>
+            <h1>Suzuki Alto</h1>
+            <div id="detail1">
+               <h1>Daily Rate (Rs):2500</h1>
+               <h1>Monthly Rate (Rs):64,350</h1>
+               <h1>Price per Extra Km (Rs):30</h1>
             </div>
-             <div id="bookbtn">
+             <div id="bookbtn1">
                  <h1>Book</h1>
              </div>
          </div>
-        <div>  <!--  have to complete-->
+         <div>  <!--  have to complete-->
             <div></div>
-            <h1>Toyota Corolla Axio</h1>
+            <h1>Suzuki Alto K10</h1>
+            <div id="detail2">
+                <h1>Daily Rate (Rs):3000</h1>
+                <h1>Monthly Rate (Rs):71,390</h1>
+                <h1>Price per Extra Km (Rs):35</h1>
+            </div>
+            <div id="bookbtn2">
+                <h1>Book</h1>
+            </div>
         </div>
-        <div> <!--  have to complete-->
+         <div>
             <div></div>
-            <h1>BMW i8</h1>
+            <h1>Suzuki Celerio </h1>
+            <div id="detail3">
+                <h1>Daily Rate (Rs):3300</h1>
+                <h1>Monthly Rate (Rs):77,220</h1>
+                <h1>Price per Extra Km (Rs):35</h1>
+            </div>
+            <div id="bookbtn3">
+                <h1>Book</h1>
+            </div>
         </div>
-        <div></div><!--  have to complete-->
-        <div></div><!--  have to complete-->
+         <div>
+            <div></div>
+            <h1>Perodua (Daihatsu) Axia</h1>
+            <div id="detail4">
+                <h1>Daily Rate (Rs):3800</h1>
+                <h1>Monthly Rate (Rs):90,200</h1>
+                <h1>Price per Extra Km (Rs):35</h1>
+            </div>
+            <div id="bookbtn4">
+                <h1>Book</h1>
+            </div>
+        </div>
+         <div>
+            <div></div>
+            <h1>Toyota Prius C Aqua</h1>
+            <div id="detail5">
+                <h1>Daily Rate (Rs):5000</h1>
+                <h1>Monthly Rate (Rs):110,330</h1>
+                <h1>Price per Extra Km (Rs):49.50</h1>
+            </div>
+            <div id="bookbtn5">
+                <h1>Book</h1>
+            </div>
+        </div>
         </section>
     </section>
     <aside>
@@ -559,11 +661,113 @@
 </section>
     <!--  end Section Two-->
 
+    <!--  start Section Three-->
 <section>
-  <section>
-
+    <section>
+       <section>
+          <div>
+              <div></div>
+              <h1>Toyota Corolla Axio</h1>
+              <div id="detailpart1">
+                  <h1>Daily Rate (Rs):5500</h1>
+                  <h1>Monthly Rate (Rs):120,330</h1>
+                  <h1>Price per Extra Km (Rs):49.50</h1>
+              </div>
+              <div id="bookbtnpart1">
+                  <h1>Book</h1>
+              </div>
+          </div>
+          <div>
+              <div></div>
+              <h1>Perodua Bezza Prime Sedan</h1>
+              <div id="detailpart2">
+                  <h1>Daily Rate (Rs):5500</h1>
+                  <h1>Monthly Rate (Rs):120,330</h1>
+                  <h1>Price per Extra Km (Rs):49.50</h1>
+              </div>
+              <div id="bookbtnpart2">
+                  <h1>Book</h1>
+              </div>
+          </div>
+          <div>
+              <div></div>
+              <h1>Toyota Allion NZT 260</h1>
+              <div id="detailpart3">
+                  <h1>Daily Rate (Rs):5800</h1>
+                  <h1>Monthly Rate (Rs):155,760</h1>
+                  <h1>Price per Extra Km (Rs):60</h1>
+              </div>
+              <div id="bookbtnpart3">
+                  <h1>Book</h1>
+              </div>
+          </div>
+          <div>
+              <div></div>
+              <h1>Toyota Axio NKR 165</h1>
+              <div id="detailpart4">
+                  <h1>Daily Rate (Rs):6000</h1>
+                  <h1>Monthly Rate (Rs):175,230</h1>
+                  <h1>Price per Extra Km (Rs):65</h1>
+              </div>
+              <div id="bookbtnpart4">
+                  <h1>Book</h1>
+              </div>
+          </div>
+      </section>
   </section>
+  <aside>
+       <h1>Premium Cars</h1>
+  </aside>
 </section>
+    <!--  end Section Three-->
+
+    <!--  start Section Four-->
+    <section>
+        <section>
+            <section>
+                <div>
+                    <div></div>
+                    <h1>Toyota Premio</h1>
+                    <div id="detailpartpart1">
+                        <h1>Daily Rate (Rs):10,000</h1>
+                        <h1>Monthly Rate (Rs):227,150</h1>
+                        <h1>Price per Extra Km (Rs):85</h1>
+                    </div>
+                    <div id="bookbtnpartpart1">
+                        <h1>Book</h1>
+                    </div>
+                </div>
+                <div>
+                    <div></div>
+                    <h1>Mercedes</h1>
+                    <div id="detailpartpart2">
+                        <h1>Daily Rate (Rs):18,000</h1>
+                        <h1>Monthly Rate (Rs):300,000</h1>
+                        <h1>Price per Extra Km (Rs):100</h1>
+                    </div>
+                    <div id="bookbtnpartpart2">
+                        <h1>Book</h1>
+                    </div>
+                </div>
+                <div>
+                    <div></div>
+                    <h1>BMW i8 </h1>
+                    <div id="detailpartpart3">
+                        <h1>Daily Rate (Rs):18,000</h1>
+                        <h1>Monthly Rate (Rs):300,000</h1>
+                        <h1>Price per Extra Km (Rs):100</h1>
+                    </div>
+                    <div id="bookbtnpartpart3">
+                        <h1>Book</h1>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <aside>
+            <h1>Luxury Cars</h1>
+        </aside>
+    </section>
+    <!--  end Section Four-->
 
 </main>
 <footer>
@@ -571,18 +775,73 @@
 </footer>
 <script src="../assets/js/jquery/jquery-3.7.0.min.js"></script>
 <script>
-    var count=0;
-    $("#bookbtn").click(function() {
-        count++;
-        if(count==1) {
-            $("#detail").css("visibility", "visible");
-            $("#bookbtn").css("bottom", "-160px");
-        }else if(count==2){
-            $("#detail").css("visibility", "hidden");
-            $("#bookbtn").css("bottom", "-39px");
-            count=0;
+    var count1=0;
+    $("#bookbtn1").click(function() {
+        count1++;
+        if(count1==1) {
+            $("#detail1").css("visibility", "visible");
+            $("#bookbtn1").css("bottom", "-160px");
+        }else if(count1==2){
+            $("#detail1").css("visibility", "hidden");
+            $("#bookbtn1").css("bottom", "-39px");
+            count1=0;
         }
     });
+
+    var count2=0;
+    $("#bookbtn2").click(function() {
+        count2++;
+        if(count2==1) {
+            $("#detail2").css("visibility", "visible");
+            $("#bookbtn2").css("bottom", "-160px");
+        }else if(count2==2){
+            $("#detail2").css("visibility", "hidden");
+            $("#bookbtn2").css("bottom", "-39px");
+            count2=0;
+        }
+    });
+
+    var count3=0;
+    $("#bookbtn3").click(function() {
+        count3++;
+        if(count3==1) {
+            $("#detail3").css("visibility", "visible");
+            $("#bookbtn3").css("bottom", "-160px");
+        }else if(count3==2){
+            $("#detail3").css("visibility", "hidden");
+            $("#bookbtn3").css("bottom", "-39px");
+            count3=0;
+        }
+    });
+
+    var count4=0;
+    $("#bookbtn4").click(function() {
+        count4++;
+        if(count4==1) {
+            $("#detail4").css("visibility", "visible");
+            $("#bookbtn4").css("bottom", "-160px");
+        }else if(count4==2){
+            $("#detail4").css("visibility", "hidden");
+            $("#bookbtn4").css("bottom", "-39px");
+            count4=0;
+        }
+    });
+
+    var count5=0;
+    $("#bookbtn5").click(function() {
+        count5++;
+        if(count5==1) {
+            $("#detail5").css("visibility", "visible");
+            $("#bookbtn5").css("bottom", "-160px");
+        }else if(count5==2){
+            $("#detail5").css("visibility", "hidden");
+            $("#bookbtn5").css("bottom", "-39px");
+            count5=0;
+        }
+    });
+
+
+
 </script>
 </body>
 </html>
