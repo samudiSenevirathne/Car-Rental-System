@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
 
 
     <style>
@@ -102,57 +105,69 @@
         }
 
         main>section:nth-child(1)>section{
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
         }
 
         #div1{
+            align-self: center;
             width:30%;
             height: 1px;
             background: white;
-            position: relative;
-            left: 30%;
-            bottom: 7%;
+            /*position: relative;*/
+            /*left: 30%;*/
+            /*bottom: 7%;*/
         }
 
         #title{
+            align-self: center;
             color: white;
             font-size: 50px;
             font-family: 'Dancing Script', cursive;
             margin-bottom: 0;
             margin-top: 0;
             position: relative;
-            left: 7%;
+            /*left: 7%;*/
+            top:3%;
         }
 
         #div2{
+            align-self: center;
             width:30%;
             height: 1px;
             background: white;
             position: relative;
-            right: 15%;
-            top: 7%;
+            /*right: 15%;*/
+            /*top: 7%;*/
+            top:5%;
         }
 
         #subTitle{
+            align-self: center;
             color: white;
             font-size: 20px;
             font-family: 'Dancing Script', cursive;
             position: relative;
-            right: 37%;
-            top: 12%;
+            /*right: 37%;*/
+            /*top: 12%;*/
+            top:7%;
         }
 
         #btn{
+            align-self: center;
             height: 55px;
             width: 55px;
             background: url("../assets/images/button.png");
             background-size:cover;
             background-position: center;
             position: relative;
-            right: 46%;
-            top: 20%;
+            /*right: 46%;*/
+            /*top: 20%;*/
+            top:9%;
         }
 
         main>section:nth-child(2)>section {
@@ -534,22 +549,28 @@
         }
 
         footer {
+            width:100%;/*n*/
             /*height: 10vh;*/
             height: 20vh; /*for fixed */
             /*background: black;*/
             position: relative;
             background:rgba(0, 0, 0, 0.56);
-
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            font-size: 19px;
         }
 
-        footer>div{
-            height: 50%;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            /*background: url("../assets/images/footer.png");*/
-            /*background-size:cover;*/
-            /*background-position: center;*/
+        footer > small {
+            margin-bottom: 0;
+            margin-top: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+
+        #span {
+            color: #b4a4d9;
         }
 
 
@@ -573,7 +594,7 @@
 <!--  close header -->
 <main>
     <!--  start Section one-->
-<section>
+    <section>
   <section>
       <div id="div1"></div>
       <h1 id="title">Car Rentals</h1>
@@ -585,7 +606,7 @@
     <!--  end Section one-->
 
     <!--  start Section Two-->
-<section>
+    <section>
     <section>
         <section>
          <div>
@@ -662,7 +683,7 @@
     <!--  end Section Two-->
 
     <!--  start Section Three-->
-<section>
+    <section>
     <section>
        <section>
           <div>
@@ -768,10 +789,9 @@
         </aside>
     </section>
     <!--  end Section Four-->
-
 </main>
 <footer>
-<div></div>
+    <small>Developed by <span id="span">Samudi</span> | &copy; 2023 All Right Reserved</small>
 </footer>
 <script src="../assets/js/jquery/jquery-3.7.0.min.js"></script>
 <script>
@@ -802,40 +822,40 @@
     });
 
     var count3=0;
-    $("#bookbtn3").click(function() {
+    $("#bookbtnpart1").click(function() {
         count3++;
         if(count3==1) {
-            $("#detail3").css("visibility", "visible");
-            $("#bookbtn3").css("bottom", "-160px");
+            $("#detailpart1").css("visibility", "visible");
+            $("#bookbtnpart1").css("bottom", "-160px");
         }else if(count3==2){
-            $("#detail3").css("visibility", "hidden");
-            $("#bookbtn3").css("bottom", "-39px");
+            $("#detailpart1").css("visibility", "hidden");
+            $("#bookbtnpart1").css("bottom", "-39px");
             count3=0;
         }
     });
 
     var count4=0;
-    $("#bookbtn4").click(function() {
+    $("#bookbtnpart4").click(function() {
         count4++;
         if(count4==1) {
-            $("#detail4").css("visibility", "visible");
-            $("#bookbtn4").css("bottom", "-160px");
+            $("#detailpart4").css("visibility", "visible");
+            $("#bookbtnpart4").css("bottom", "-160px");
         }else if(count4==2){
-            $("#detail4").css("visibility", "hidden");
-            $("#bookbtn4").css("bottom", "-39px");
+            $("#detailpart4").css("visibility", "hidden");
+            $("#bookbtnpart4").css("bottom", "-39px");
             count4=0;
         }
     });
 
     var count5=0;
-    $("#bookbtn5").click(function() {
+    $("#bookbtnpartpart2").click(function() {
         count5++;
         if(count5==1) {
-            $("#detail5").css("visibility", "visible");
-            $("#bookbtn5").css("bottom", "-160px");
+            $("#detailpartpart2").css("visibility", "visible");
+            $("#bookbtnpartpart2").css("bottom", "-160px");
         }else if(count5==2){
-            $("#detail5").css("visibility", "hidden");
-            $("#bookbtn5").css("bottom", "-39px");
+            $("#detailpartpart2").css("visibility", "hidden");
+            $("#bookbtnpartpart2").css("bottom", "-39px");
             count5=0;
         }
     });
