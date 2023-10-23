@@ -17,8 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
 
-
     <style>
+
         ::-webkit-scrollbar {
             width: 0;
         }
@@ -26,18 +26,15 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc((100vh * 4) + 20vh);
-            background: url("assets/images/carBody.png");
-            background-size:cover;
-            background-position: center;
+            height: calc(100vh * 5);
         }
 
         main{
             position: relative;
             width: 100%;
-            height: calc(100vh * 4);
-            z-index: 2;
+            height:100%;
         }
+                  /*header*/
 
         header {
             height: 10vh;
@@ -48,7 +45,7 @@
             /*fixed set*/
             position: fixed;/*n*/
             top:0;/*n*/
-            z-index: 3;/*n*/
+            z-index: 1;/*n*/
             width:100%;/*n*/
         }
 
@@ -84,30 +81,36 @@
             color: white;
         }
 
-        main>section{
+               /*home*/
+
+        main>main {
+            position: relative;
+            width: 100%;
+            height: calc(100vh * 4);
+            /*z-index: 3;*/
+        }
+
+        main>main>section{
             position: relative;
             width: 100%;
             height:calc((100vh * 4) / 4);
             /*border: solid 1px yellow;*/
         }
 
-        main>section:nth-child(1){
+        main>main>section:nth-child(1){
             background: url("assets/images/CarTwo.png");
             background-size:cover;
             background-position: center;
         }
 
-        main>section>section{
+        main>main>section>section{
             position: absolute;
             width: 100%;
             height: 100%;
             background:rgba(0, 0, 0, 0.56);
         }
 
-        main>section:nth-child(1)>section{
-            /*display: flex;*/
-            /*align-items: center;*/
-            /*justify-content: center;*/
+        main>main>section:nth-child(1)>section{
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -118,9 +121,6 @@
             width:30%;
             height: 1px;
             background: white;
-            /*position: relative;*/
-            /*left: 30%;*/
-            /*bottom: 7%;*/
         }
 
         #title{
@@ -131,7 +131,6 @@
             margin-bottom: 0;
             margin-top: 0;
             position: relative;
-            /*left: 7%;*/
             top:3%;
         }
 
@@ -141,8 +140,6 @@
             height: 1px;
             background: white;
             position: relative;
-            /*right: 15%;*/
-            /*top: 7%;*/
             top:5%;
         }
 
@@ -152,8 +149,6 @@
             font-size: 20px;
             font-family: 'Dancing Script', cursive;
             position: relative;
-            /*right: 37%;*/
-            /*top: 12%;*/
             top:7%;
         }
 
@@ -165,17 +160,21 @@
             background-size:cover;
             background-position: center;
             position: relative;
-            /*right: 46%;*/
-            /*top: 20%;*/
             top:9%;
         }
 
-        main>section:nth-child(2)>section {
+        main>main>section:nth-child(2){
+            background: url("assets/images/carBody.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>main>section:nth-child(2)>section {
             /*border:solid 1px green;*/
             overflow:scroll;
         }
 
-        main>section>section>section {
+        main>main>section>section>section {
             position: absolute;
             height: 100%;
             /*background:rgba(0, 0, 0, 0.56);*/
@@ -185,12 +184,12 @@
             /*border:solid 1px yellow;*/
         }
 
-        main>section:nth-child(2)>section>section {
+        main>main>section:nth-child(2)>section>section {
             /*width: 100vw;*/
             width:calc(100% * 1.65);
         }
 
-        main>section>section>section>div{
+        main>main>section>section>section>div{
             position: relative;/***/
             height: 50%;
             /*top:88px;*/
@@ -204,11 +203,11 @@
             justify-content: center;
         }
 
-        main>section:nth-child(2)>section>section>div {
+        main>main>section:nth-child(2)>section>section>div {
             width: 18%;
         }
 
-        main>section>section>section>div>div{
+        main>main>section>section>section>div>div{
             width: 94%;
             height: 68%;
             /*border:solid 1px green;*/
@@ -219,7 +218,7 @@
             animation-iteration-count:infinite;
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(1){
+        main>main>section:nth-child(2)>section>section>div:nth-child(1)>div:nth-child(1){
             background: url("assets/images/Suzuki Alto/Suzuki Alto(Front View).png");
             animation-name:carDisplay1 ;
         }
@@ -264,7 +263,7 @@
 
         }
 
-        main>section>section>section>div>h1{
+        main>main>section>section>section>div>h1{
             position: absolute;
             bottom: 0;
             margin-top: 0;
@@ -272,7 +271,7 @@
             font-family: 'Dancing Script', cursive;
         }
 
-        main>section>section>section>div>div:nth-child(3){
+        main>main>section>section>section>div>div:nth-child(3){
             position: absolute;
             bottom: -112px;
             width: 94%;
@@ -288,7 +287,7 @@
             visibility: hidden;
         }
 
-        main>section>section>section>div>div:nth-child(3)>h1{
+        main>main>section>section>section>div>div:nth-child(3)>h1{
             align-self: center;
             margin-top: 0;
             margin-bottom: 0;
@@ -296,7 +295,7 @@
             font-weight: bold;
         }
 
-        main>section>section>section>div>div:nth-child(4){
+        main>main>section>section>section>div>div:nth-child(4){
             position: absolute;
             bottom: -39px;
             width: 51%;
@@ -309,14 +308,14 @@
             color: black ;
         }
 
-        main>section>section>div>div:nth-child(4)>h1{
+        main>main>section>section>div>div:nth-child(4)>h1{
             margin-top: 0;
             margin-bottom: 0;
             font-family: 'Almendra', serif;
             font-weight: bold;
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(2)>div:nth-child(1){
+        main>main>section:nth-child(2)>section>section>div:nth-child(2)>div:nth-child(1){
             background: url("assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
             animation-name:carDisplay2 ;
         }
@@ -360,7 +359,7 @@
             }
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(3)>div:nth-child(1){
+        main>main>section:nth-child(2)>section>section>div:nth-child(3)>div:nth-child(1){
             background: url("assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
             animation-name:carDisplay3 ;
         }
@@ -404,7 +403,7 @@
             }
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(4)>div:nth-child(1){
+        main>main>section:nth-child(2)>section>section>div:nth-child(4)>div:nth-child(1){
             background: url("assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
             animation-name:carDisplay4 ;
         }
@@ -448,7 +447,7 @@
             }
         }
 
-        main>section:nth-child(2)>section>section>div:nth-child(5)>div:nth-child(1){
+        main>main>section:nth-child(2)>section>section>div:nth-child(5)>div:nth-child(1){
             background: url("assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
             animation-name:carDisplay5 ;
         }
@@ -493,7 +492,7 @@
         }
 
 
-        main>section>aside{
+        main>main>section>aside{
             position: absolute;
             font-size: 20px;
             width: 100%;
@@ -503,66 +502,88 @@
             justify-content: space-around;
         }
 
-        main>section>aside>div:nth-child(1){
+        main>main>section>aside>div:nth-child(1){
             width:30%;
             height: 1px;
             background: white;
         }
 
-        main>section>aside>h1{
+        main>main>section>aside>h1{
             margin-top: 0;
             margin-bottom: 0;
             color: white;
             font-family: 'Dancing Script', cursive;
         }
 
-        main>section>aside>div:nth-child(3){
+        main>main>section>aside>div:nth-child(3){
             width:30%;
             height: 1px;
             background: white;
         }
 
-        main>section>aside:nth-child(3){
+        main>main>section>aside:nth-child(3){
              top:77px;
             font-size: 15px;
         }
 
+        main>main>section:nth-child(3){
+            background: url("assets/images/carBody.png");
+            background-size:cover;
+            background-position: center;
+        }
 
-        main>section:nth-child(3)>section {
+        main>main>section:nth-child(3)>section {
             overflow:scroll;
         }
 
-        main>section:nth-child(3)>section>section {
+        main>main>section:nth-child(3)>section>section {
             width:calc(100% * 1.35);
         }
 
-        main>section:nth-child(3)>section>section>div {
+        main>main>section:nth-child(3)>section>section>div {
             width: 21%;
         }
 
-        main>section:nth-child(4)>section>section {
+        main>main>section:nth-child(4){
+            background: url("assets/images/carBody.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>main>section:nth-child(4)>section>section {
             width:100%;
         }
 
-        main>section:nth-child(4)>section>section>div {
+        main>main>section:nth-child(4)>section>section>div {
             width: 29%;
         }
 
+                   /*footer*/
+
         footer {
             width:100%;/*n*/
-            /*height: 10vh;*/
-            height: 20vh; /*for fixed */
+            /*height: 20vh;*/
+            height: 10vh; /*for fixed */
             /*background: black;*/
             position: relative;
+            color: white;
+            font-size: 19px;
+            background: url("assets/images/carBody.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        footer>div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
             background:rgba(0, 0, 0, 0.56);
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            color: white;
-            font-size: 19px;
         }
 
-        footer > small {
+        footer>div>small {
             margin-bottom: 0;
             margin-top: 0;
             font-family: 'Inter', sans-serif;
@@ -571,6 +592,129 @@
 
         #span {
             color: #b4a4d9;
+        }
+
+                    /*Guest Customer Login part*/
+
+        #login{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #login>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #panal{
+            align-self: center;
+            position: relative;
+            width:76%;
+            height: 20%;
+            top:5%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #panal>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #panal>h1:nth-child(1){
+            font-size: 40px;
+        }
+
+        #panal>h1:nth-child(2){
+            font-size: 15px;
+        }
+
+        #loginForm{
+            align-self: center;
+            border: 1px solid white;
+            width:30%;
+            height: 57%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        #loginForm>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #loginForm>h1:nth-child(1){
+            align-self: center;
+            position: relative;
+            bottom: 4%;
+        }
+
+        #exampleInputUsername1,#exampleInputPassword1{
+            position: relative;
+            width:80%;
+            background: transparent;
+            border: 1px solid white;
+            left:10%;
+            color: white;
+        }
+
+        #exampleInputUsername1Id,#exampleInputPassword1Id{
+            position: relative;
+            left:10%;
+            top:1%;
+        }
+
+        #btnLogin{
+            position: relative;
+            top:7%;
+            left:33%;
+            width:31%;
+            font-weight: bold;
+        }
+
+        #loginForm>h1:nth-child(7){
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 8%;
+            right:1%;
+        }
+
+        #loginForm>h1:nth-child(8){
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 10%;
+            right:1%;
+            cursor: pointer;
+        }
+
+        #loginForm>div:nth-child(9){
+            align-self: center;
+            width: 35%;
+            height: 1px;
+            background: white;
+            position: relative;
+            top: 9%;
+            right: 1%;
+            cursor: pointer;
+            visibility: hidden;
         }
 
 
@@ -585,14 +729,16 @@
 <nav>
     <menu>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Guest</a></li>
-        <li><a href="#">Booking</a></li>
-        <li><a href="#">F&Q</a></li>
+        <li><a href="#">Customer</a></li>
+        <li><a href="#">Employee</a></li>
+        <li><a href="#">Driver</a></li>
     </menu>
 </nav>
 </header>
 <!--  close header -->
 <main>
+     <!--  Start  Home Content   -->
+  <main id="homeContent">
     <!--  start Section one-->
     <section>
   <section>
@@ -789,10 +935,46 @@
         </aside>
     </section>
     <!--  end Section Four-->
+  </main>
+     <!--  End  Home Content   -->
+
+    <!--  Start  Guest Customer Login part  -->
+    <section id="login">
+        <section>
+
+            <aside id="panal">
+                <h1>Car Rentals - Customer Panel </h1>
+                <h1>please LOGIN to continue</h1>
+            </aside>
+
+           <form id="loginForm">
+
+               <h1>Login</h1>
+
+               <label for="exampleInputUsername1" class="form-label" id="exampleInputUsername1Id">Username</label>
+               <input type="text" class="form-control" id="exampleInputUsername1">
+
+               <label for="exampleInputPassword1" class="form-label" id="exampleInputPassword1Id">Password</label>
+               <input type="password" class="form-control" id="exampleInputPassword1">
+
+              <button type="button" class="btn btn-light" id="btnLogin">Login</button>
+
+               <h1>or</h1>
+               <h1>create a new account</h1>
+               <div></div>
+
+           </form>
+        </section>
+    </section>
+    <!--  End  Guest Customer Login part  -->
 </main>
+
 <footer>
-    <small>Developed by <span id="span">Samudi</span> | &copy; 2023 All Right Reserved</small>
+    <div>
+       <small>Developed by <span id="span">Samudi</span> | &copy; 2023 All Right Reserved</small>
+    </div>
 </footer>
+
 <script src="assets/js/jquery/jquery-3.7.0.min.js"></script>
 <script>
     var count1=0;
@@ -860,8 +1042,12 @@
         }
     });
 
-
-
+</script>
+<script>
+    $("#loginForm>h1:nth-child(8)").click(function() {
+        $("#loginForm>div:nth-child(9)").css("visibility", "visible");
+        /* next part to go */
+    });
 </script>
 </body>
 </html>
