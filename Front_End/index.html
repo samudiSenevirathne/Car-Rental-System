@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 5);
+            height: calc(100vh * 7);
         }
 
         main{
@@ -619,8 +619,8 @@
             align-self: center;
             position: relative;
             width:76%;
-            height: 20%;
-            top:5%;
+            height: 25%;
+            top:6%;
             border-radius: 25px;
             background: rgba(227, 221, 221, 0.56);
             display: flex;
@@ -648,6 +648,8 @@
             border: 1px solid white;
             width:30%;
             height: 57%;
+            position: relative;
+            top:3%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -665,7 +667,7 @@
             bottom: 4%;
         }
 
-        #exampleInputUsername1,#exampleInputPassword1{
+        #exampleInputPassword1,#exampleInputUsername1{
             position: relative;
             width:80%;
             background: transparent;
@@ -674,7 +676,7 @@
             color: white;
         }
 
-        #exampleInputUsername1Id,#exampleInputPassword1Id{
+        #exampleInputPassword1Id,#exampleInputUsername1Id{
             position: relative;
             left:10%;
             top:1%;
@@ -711,12 +713,170 @@
             height: 1px;
             background: white;
             position: relative;
-            top: 9%;
+            top: 9.5%;
             right: 1%;
             cursor: pointer;
             visibility: hidden;
         }
 
+        /*Guest Customer Detail Add part*/
+
+        #addCus{
+            position: relative;
+            width: 100vw;
+            height: calc(100vh * 2);
+            background: url("assets/images/carBodyShortOne.png");
+            background-size:cover;
+        }
+
+        #addCus>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #panalAddCus{
+            align-self: center;
+            position: relative;
+            width:76%;
+            height: 12.5%;
+            top:3%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #panalAddCus>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #panalAddCus>h1:nth-child(1){
+            font-size: 40px;
+        }
+
+        #panalAddCus>h1:nth-child(2){
+            font-size: 15px;
+        }
+
+        #addCusForm{
+            align-self: center;
+            border: 1px solid white;
+            width:80%;
+            height: 78%;
+            position: relative;
+            top:2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        #addCusForm>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #addCusForm>h1:first-child{
+            align-self: center;
+            position: relative;
+            bottom: 3%;
+        }
+
+        #sectionGrid {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+
+        #exampleInputPassword2,#exampleInputUsername2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerNicImage,#customerLicense,#customerLicenseImage{
+            position: relative;
+            width:80%;
+            background: transparent;
+            border: 1px solid white;
+            left:10%;
+            color: white;
+        }
+
+        #exampleInputUsername2::placeholder, #exampleInputPassword2::placeholder,#customerName::placeholder,#customerContact::placeholder,#customerAddress::placeholder,#customerEmail::placeholder,#customerNic::placeholder,#customerLicense::placeholder {
+            color: rgba(231, 221, 221, 0.56);
+        }
+
+        #exampleInputPassword2Id,#exampleInputUsername2Id,#customerNameId,#customerContactId,#customerAddressId,#customerEmailId,#customerNicId,#customerNicImageId,#customerLicenseId,#customerLicenseImageId{
+            position: relative;
+            left:10%;
+            top:1%;
+        }
+
+        #customerLicenseImageShow,#customerNicImageShow{
+            position: relative;
+            left:12%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+            border-radius: 25px;
+            background: transparent;
+            width: 400px;
+            height: 200px;
+        }
+
+        #customerLicenseImageShow>img,#customerNicImageShow>img{
+            width: 50%;
+            height: 100%;
+            border: 1px solid white;
+            border-radius: 25px;
+            background: transparent;
+            color: white;
+        }
+
+
+        #btnAddCus{
+            align-self: center;
+            position: relative;
+            top:4%;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
+
+        #textOr{
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 6%;
+            right:1%;
+        }
+
+        #textOrNext{
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 7%;
+            right:1%;
+            cursor: pointer;
+        }
+
+        #addCusForm>div:last-child{
+            align-self: center;
+            width: 15%;
+            height: 1px;
+            background: white;
+            position: relative;
+            top: 9.8%;
+            right: 1%;
+            cursor: pointer;
+            visibility: hidden;
+        }
 
     </style>
 </head>
@@ -967,6 +1127,98 @@
         </section>
     </section>
     <!--  End  Guest Customer Login part  -->
+
+    <!--  Start  Guest Customer Add part  -->
+    <section id="addCus">
+        <section>
+
+            <aside id="panalAddCus">
+                <h1>Car Rentals - Registration </h1>
+                <h1>Get Started by creating customer account</h1>
+            </aside>
+
+            <form id="addCusForm">
+
+                <h1>Create Account</h1>
+
+                <section id="sectionGrid">
+                    <div>
+                        <label for="exampleInputUsername2" class="form-label" id="exampleInputUsername2Id">Username</label>
+                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Ex:- JohnDoe123">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="exampleInputPassword2" class="form-label" id="exampleInputPassword2Id">Password</label>
+                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Ex:- MySecurePass123">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="customerName" class="form-label" id="customerNameId">Name</label>
+                        <input type="text" class="form-control" id="customerName" placeholder="Ex:- John Doe">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="customerContact" class="form-label" id="customerContactId">Contact</label>
+                        <input type="tel" class="form-control" id="customerContact" placeholder="Ex:- +94703333456">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="customerAddress" class="form-label" id="customerAddressId">Address</label>
+                        <input type="text" class="form-control" id="customerAddress" placeholder="Ex:- Galle">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="customerEmail" class="form-label" id="customerEmailId">Email</label>
+                        <input type="email" class="form-control" id="customerEmail" placeholder="Ex:- JoinDe@gmail.com">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="customerNic" class="form-label" id="customerNicId">NIC No</label>
+                        <input type="text" class="form-control" id="customerNic" placeholder="Ex:- 196667239990">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="customerLicense" class="form-label" id="customerLicenseId">License No</label>
+                        <input type="text" class="form-control" id="customerLicense" placeholder="Ex:- AB123CD">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="customerNicImage" class="form-label" id="customerNicImageId">NIC Image</label>
+                        <input type="file" class="form-control" id="customerNicImage">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="customerLicenseImage" class="form-label" id="customerLicenseImageId">License Image</label>
+                        <input type="file" class="form-control" id="customerLicenseImage">
+                        <br>
+                    </div>
+
+                    <div id="customerNicImageShow">
+                            <img src="" class="form-control" id="customerNicImageShowFront" alt="Selected Image">
+                            <img src="" class="form-control" id="customerNicImageShowBack" alt="Selected Image">
+                    </div>
+
+                    <div id="customerLicenseImageShow">
+                        <img src="" class="form-control" id="customerLicenseImageShowFront" alt="Selected Image">
+                        <img src="" class="form-control" id="customerLicenseImageShowBack" alt="Selected Image">
+                    </div>
+
+                </section>
+
+                <button type="button" class="btn btn-light" id="btnAddCus">SUBMIT</button>
+
+                <h1 id="textOr">or</h1>
+                <h1 id="textOrNext">Have an account? Login.</h1>
+                <div></div>
+
+            </form>
+        </section>
+    </section>
+    <!--  End  Guest Customer Add part  -->
+
 </main>
 
 <footer>
@@ -1048,6 +1300,16 @@
         $("#loginForm>div:nth-child(9)").css("visibility", "visible");
         /* next part to go */
     });
+</script>
+<script>
+    $("#textOrNext").click(function() {
+        $("#addCusForm>div:last-child").css("visibility", "visible");
+        /* next part to go */
+    });
+
+
+
+
 </script>
 </body>
 </html>
