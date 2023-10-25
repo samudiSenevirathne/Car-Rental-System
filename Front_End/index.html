@@ -1311,7 +1311,6 @@
             count5=0;
         }
     });
-
 </script>
 <script>
     $("#loginForm>h1:nth-child(8)").click(function() {
@@ -1331,10 +1330,6 @@
     let imageArray = [];
     let input = document.getElementById("customerNicImage");
     let count=0;
-
-    displayImageNICs();
-
-    function displayImageNICs() {
 
 
         input.addEventListener("change", function () {
@@ -1380,20 +1375,60 @@
             imageArray.splice(index, 1);
             count--;
             displayImage();
-        }
     }
 
-    // added Image of License's part
+
+    // // added Image of License's part
 
     let imageArray2 = [];
     let input2 = document.getElementById("customerLicenseImage");
-    let count2=0;
-
-    displayImageLicenses();
+    let countTwo=0;
 
 
-    /* precess have to complete on function displayImageLicenses(){} */
+        input2.addEventListener("change", function () {
+            const files = input2.files;
+            L2 : for (var i = 0; i < files.length; i++) {
+                if (countTwo == 2) {
+                    break L2;
+                }
+                imageArray2.push(files[i]);
+                console.log(imageArray2);//for checking
+                console.log(files.length);//for checking
+                console.log(countTwo);//for checking
+                countTwo++;
+                console.log(countTwo);//for checking
+            }
+            displayImage2();
+        });
 
+        function displayImage2() {
+            var imageTwo1 = document.getElementById("customerLicenseImageShowFront");
+            var imagespanTwo1 = document.getElementById("customerLicenseImageShowFrontSpan");
+            var imageTwo2 = document.getElementById("customerLicenseImageShowBack");
+            var imagespantwo2 = document.getElementById("customerLicenseImageShowBackSpan");
+
+            if (imageArray2.length > 0) {
+                imageTwo1.src = URL.createObjectURL(imageArray2[0]);
+                imagespanTwo1.innerHTML = `<button onclick="deleteImageTwo(0)">&times;</button>`;
+            } else {
+                imageTwo1.src = ""; // Clear the image source if no image is present.
+                imagespanTwo1.innerHTML = "";
+            }
+
+            if (imageArray2.length > 1) {
+                imageTwo2.src = URL.createObjectURL(imageArray2[1]);
+                imagespantwo2.innerHTML = `<button onclick="deleteImageTwo(1)">&times;</button>`;
+            } else {
+                imageTwo2.src = ""; // Clear the image source if no image is present.
+                imagespantwo2.innerHTML = "";
+            }
+        }
+
+        function deleteImageTwo(index) {
+            imageArray2.splice(index, 1);
+            countTwo--;
+            displayImage2();
+        }
 
 </script>
 </body>
