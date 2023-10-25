@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 7);
+            height: calc(100vh * 8);
         }
 
         main{
@@ -892,6 +892,159 @@
             visibility: hidden;
         }
 
+        /*After logging book part*/
+
+        #afterLoggingBook{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #afterLoggingBook>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            /*border: 1px solid red;*/
+        }
+
+        #panelAfterBook{
+            align-self: center;
+            position: relative;
+            width:76%;
+            height: 25%;
+            top:7%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #panelAfterBook>aside {
+            height: 50%;
+        }
+
+        #panelAfterBook>aside:nth-child(1){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width:100%;
+            /*border: 1px solid red;*/
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+        }
+
+        #panelAfterBook>aside:nth-child(2){
+            overflow: scroll;
+            /*border: 1px solid greenyellow;*/
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        #panelAfterBook>aside:nth-child(1)>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 35px;
+        }
+
+        #panelAfterBook>aside:nth-child(2)>aside{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width:calc(100% * 1.5);
+            height: 100%;
+            /*border: 1px solid greenyellow;*/
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        #panelAfterBook>aside:nth-child(2)>aside>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        #AfterBookDetail{
+            align-self: center;
+            /*border: 1px solid white;*/
+            width:80%;
+            height: 60%;
+            position: relative;
+            top:4%;
+            /*color: white;*/
+            overflow: scroll;
+        }
+
+        #AfterBookDetail>section{
+            height: calc(100% * 1); /*1 car represent = height:50% */
+            width: 100%;
+            /*border: 1px solid deeppink;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #AfterBookDetail>section>div{
+            align-self: center;
+            border: 1px solid white;
+            /*background: mediumpurple;*/
+            border-radius: 5px;
+            width: 98%;
+            height: calc(100vh / 4) ;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #AfterBookDetail>section>div>div{
+            align-self: center;
+            border: 1px solid white;
+        }
+
+        #AfterBookDetail>section>div>div:nth-child(1){
+            width: 25%;
+            height: 100%;
+        }
+
+        #AfterBookDetail>section>div>div:nth-child(2){
+            width: 75%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #AfterBookDetail>section>div>div:nth-child(2)>div{
+            align-self: center;
+            border: 1px solid red;
+            width: 100%;
+        }
+
+        #AfterBookDetail>section>div>div>div:nth-child(1){
+            height: 60%;
+        }
+
+        #AfterBookDetail>section>div>div>div:nth-child(2){
+            height: 40%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        #AfterBookDetail>section>div>div>div:nth-child(2)>div{
+            border: 1px solid white;
+            width: 20%;
+            height: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -1236,6 +1389,61 @@
         </section>
     </section>
     <!--  End  Guest Customer Add part  -->
+
+    <!-- Start After logging book part  -->
+    <section id="afterLoggingBook">
+        <section>
+
+            <aside id="panelAfterBook">
+                <aside>
+                <h1>General Cars</h1>
+                <h1>Premium Cars</h1>
+                <h1>Luxury Cars </h1>
+                </aside>
+                <aside>
+                    <aside>
+                        <h1>Suzuki Alto - Premium - Manual </h1>
+                        <h1>Suzuki Alto K10 - Auto </h1>
+                        <h1>Suzuki Celerio - Auto </h1>
+                        <h1>Perodua (Daihatsu) Axia - Auto </h1>
+                        <h1>Toyota Prius C/ Aqua - Auto </h1>
+                    </aside>
+                </aside>
+            </aside>
+
+            <section id="AfterBookDetail">
+                <section>
+                    <div>
+                       <div></div>
+                        <div>
+                            <div></div>
+                            <div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div>
+                            <div></div>
+                            <div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </section>
+    </section>
+    <!-- Start After logging book part  -->
+
 
 </main>
 
