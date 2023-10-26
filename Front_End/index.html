@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 9);
+            height: calc(100vh * 9.5);
         }
 
         main{
@@ -899,10 +899,9 @@
         #afterLoggingBook{
             position: relative;
             width: 100vw;
-            height:100vh;
-            background: url("assets/images/CarTwo.png");
+            height:calc(100vh * 1.3);
+            background: url("assets/images/carBodyShortOne.png");
             background-size:cover;
-            background-position: center;
         }
 
         #afterLoggingBook>section{
@@ -920,7 +919,7 @@
             align-self: center;
             position: relative;
             width:76%;
-            height: 25%;
+            height: 20%;
             top:7%;
             border-radius: 25px;
             background: rgba(227, 221, 221, 0.56);
@@ -980,7 +979,7 @@
             align-self: center;
             /*border: 1px solid white;*/
             width:80%;
-            height: 60%;
+            height: 58%;
             position: relative;
             top:4%;
             /*color: white;*/
@@ -1080,15 +1079,22 @@
             height: 100%;
         }
 
+        #btnBooking{
+            align-self: center;
+            position: relative;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
+
           /*Add book part*/
 
         #addBook{
             position: relative;
             width: 100vw;
-            height:100vh;
-            background: url("assets/images/CarTwo.png");
+            height:calc(100vh * 1.2);
+            background: url("assets/images/carBodyShortOne.png");
             background-size:cover;
-            background-position: center;
         }
 
         #addBook>section{
@@ -1096,16 +1102,19 @@
             width: 100%;
             height: 100%;
             background:rgba(0, 0, 0, 0.56);
+            /*display: flex;*/
+            /*justify-items: center;*/
+            /*justify-content: center;*/
             display: flex;
-            justify-items: center;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-evenly;
         }
 
         #addBook>section>div{
             align-self: center;
             /*border: 1px solid white;*/
             width: 85%;
-            height: 85%;
+            height: 78%;
             position: relative;
             top:5%;
             overflow: scroll;
@@ -1203,19 +1212,26 @@
             left: 13px;
         }
 
-        #addBook>section>div>div>div>form>aside>h1{
-            margin-bottom: 0;
-            margin-top: 0;
-            font-size: 20px;
-            position: relative;
-            left: 100px;
-            width: 55%;
-        }
+        /*#addBook>section>div>div>div>form>aside>h1{*/
+        /*    margin-bottom: 0;*/
+        /*    margin-top: 0;*/
+        /*    font-size: 20px;*/
+        /*    position: relative;*/
+        /*    left: 100px;*/
+        /*    width: 55%;*/
+        /*}*/
 
         #addBook>section>div>div>div>aside>h1{
             font-size: 11px;
         }
 
+        #btnConfirm{
+            align-self: center;
+            position: relative;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
 
 
     </style>
@@ -1646,6 +1662,8 @@
                 </section>
             </section>
 
+            <button type="button" class="btn btn-light" id="btnBooking">Booking</button>
+
         </section>
     </section>
     <!-- End After logging book part  -->
@@ -1688,7 +1706,7 @@
                             <aside>
                                         <label class="form-check-label">Driver</label>
                                         <input class="form-check-input" type="checkbox">
-                                        <h1>(Driver charge Rs 1000 for each day )</h1>
+<!--                                        <h1>(Driver charge Rs 1000 for each day )</h1>-->
                             </aside>
                         </form>
                         <aside>
@@ -1702,6 +1720,7 @@
                     </div>
                 </div>
              </div>
+             <button type="button" class="btn btn-light" id="btnConfirm">Confirm</button>
          </section>
      </section>
     <!-- End Add book part  -->
