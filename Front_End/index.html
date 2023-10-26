@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 8);
+            height: calc(100vh * 9);
         }
 
         main{
@@ -1067,8 +1067,6 @@
              width: 10%
         }
 
-
-
         #AfterBookDetail>section>div>div>div:nth-child(2){
             height: 40%;
             display: flex;
@@ -1081,6 +1079,144 @@
             width: 20%;
             height: 100%;
         }
+
+          /*Add book part*/
+
+        #addBook{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #addBook>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        #addBook>section>div{
+            align-self: center;
+            /*border: 1px solid white;*/
+            width: 85%;
+            height: 85%;
+            position: relative;
+            top:5%;
+            overflow: scroll;
+        }
+
+        #addBook>section>div>div{
+            align-self: center;
+            /*border: 1px solid red;*/
+            width: calc(100% * 2); /*when add more this should increase*/
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #addBook>section>div>div>div{ /*when create automatically div should have these behaviours*/
+            align-self: center;
+            /*border: 1px solid yellow;*/
+            border: 1px solid white;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.32);
+            width: 85vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #addBook>section>div>div>div>form{
+            align-self: center;
+            width: 80%;
+            height: 70%;
+            /*border: 1px solid purple;*/
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+
+        #addBook>section>div>div>div>aside{
+             align-self: center;
+             width: 80%;
+             height: 10%;
+             /*border: 1px solid green;*/
+             display: flex;
+             flex-direction: column;
+             justify-content: space-around;
+             color: white;
+         }
+
+        #addBook>section>div>div>div>form>div{
+            align-self: center;
+            width: 100%;
+            height: 20%;
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3px;
+            /*border: 1px solid white;*/
+        }
+
+        #addBook>section>div>div>div>form>div>h1{
+            width: 80%;
+            height: 20%;
+            position: relative;
+            top: 27px;
+            left: 13px;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        #addBook>section>div>div>div>form>div>div>label{
+            position: relative;
+            left: 13px;
+        }
+
+        #addBook>section>div>div>div>form>div>div>input{
+            position: relative;
+            left: 13px;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            width:75%;
+        }
+
+        #addBook>section>div>div>div>form>aside>label{
+            position: relative;
+            top: 27px;
+            left: 13px;
+        }
+
+        #addBook>section>div>div>div>form>aside>input{
+            position: relative;
+            top: 27px;
+            left: 13px;
+        }
+
+        #addBook>section>div>div>div>form>aside>h1{
+            margin-bottom: 0;
+            margin-top: 0;
+            font-size: 20px;
+            position: relative;
+            left: 100px;
+            width: 55%;
+        }
+
+        #addBook>section>div>div>div>aside>h1{
+            font-size: 11px;
+        }
+
+
 
     </style>
 </head>
@@ -1513,6 +1649,62 @@
         </section>
     </section>
     <!-- End After logging book part  -->
+
+    <!-- Start Add book part  -->
+     <section id="addBook">
+         <section>
+             <div>
+                <div>
+                    <div>        <!--should create automatically like this-->
+                        <form>
+                            <div>
+                                <h1>Selected Car : Suzuki Alto </h1>
+                                <h1>Number Plate : SA-2000 </h1>
+                            </div>
+                            <div>
+                                <div>
+                                    <label>Start Date :</label>
+                                    <input class="form-control" id="txtDate1" type="date">
+                                </div>
+                                <div>
+                                    <label>End Date :</label>
+                                    <input class="form-control" id="txtDate2" type="date">
+                                </div>
+                            </div>
+                            <div>
+                                <h1>Fare & Fee : Daily Rate (Rs):2500</h1>
+                                <h1> Monthly Rate (Rs):64,350 </h1>
+                            </div>
+                            <div>
+                                <div>
+                                    <label>month Count :</label>
+                                    <input class="form-control" id="monthCount" min="1" type="number">
+                                </div>
+                                <div>
+                                    <label>day Count :</label>
+                                    <input class="form-control" id="dayCount" min="1" type="number">
+                                </div>
+                            </div>
+                            <aside>
+                                        <label class="form-check-label">Driver</label>
+                                        <input class="form-check-input" type="checkbox">
+                                        <h1>(Driver charge Rs 1000 for each day )</h1>
+                            </aside>
+                        </form>
+                        <aside>
+                         <h1>Note: you will be charge with extra Rs 30 for each day the end of the day.</h1>
+                         <h1>Note: you will be charge as loss Damage Waiver Rs 10000 according car type and If the vehicle is unharmed the Loss Damage Waiver will be returned you at the end of the day.</h1>
+                       </aside>
+                    </div>
+                    <div>      <!--as experiment-->
+                         <form></form>
+                         <aside></aside>
+                    </div>
+                </div>
+             </div>
+         </section>
+     </section>
+    <!-- End Add book part  -->
 
 
 </main>

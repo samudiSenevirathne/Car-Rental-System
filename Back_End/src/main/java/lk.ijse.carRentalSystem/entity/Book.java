@@ -22,15 +22,15 @@ public class Book {
     private LocalTime booking_Time;
     @Column(nullable = false)
     private LocalDate start_Date;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private LocalTime start_Time;
     @Column(nullable = false)
     private LocalDate end_Date;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private LocalTime end_Time;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String from;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String to;
     private BigDecimal total_KM;
     private String maintain_Status;
