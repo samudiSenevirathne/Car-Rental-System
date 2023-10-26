@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 9.5);
+            height: calc(100vh * 10.5);
         }
 
         main{
@@ -1175,6 +1175,10 @@
             /*border: 1px solid white;*/
         }
 
+        #addBook>section>div>div>div>form>div:nth-child(6){
+            visibility: hidden;
+        }
+
         #addBook>section>div>div>div>form>div>h1{
             width: 80%;
             height: 20%;
@@ -1198,6 +1202,16 @@
             border: 1px solid white;
             color: white;
             width:75%;
+        }
+
+        #addBook>section>div>div>div>form>div>div>input::placeholder{
+            color: rgba(231, 221, 221, 0.56);
+        }
+
+        #addBook>section>div>div>div>form>aside{
+            align-self: center;
+            width: 100%;
+            height: 20%;
         }
 
         #addBook>section>div>div>div>form>aside>label{
@@ -1232,6 +1246,28 @@
             width:20%;
             font-weight: bold;
         }
+
+        /* add Payment */
+
+        #addPayment{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #addPayment>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
 
 
     </style>
@@ -1708,6 +1744,16 @@
                                         <input class="form-check-input" type="checkbox">
 <!--                                        <h1>(Driver charge Rs 1000 for each day )</h1>-->
                             </aside>
+                            <div>
+                                <div>
+                                    <label for="startVenue" class="form-label" id="startVenueId">Start Venue :</label>
+                                    <input type="text" class="form-control" id="startVenue" placeholder="Ex:- Galle">
+                                </div>
+                                <div>
+                                    <label for="endVenue" class="form-label" id="endVenueId">End Venue :</label>
+                                    <input type="text" class="form-control" id="endVenue" placeholder="Ex:- NuwaraEliya">
+                                </div>
+                            </div>
                         </form>
                         <aside>
                          <h1>Note: you will be charge with extra Rs 30 for each day the end of the day.</h1>
@@ -1724,6 +1770,20 @@
          </section>
      </section>
     <!-- End Add book part  -->
+
+    <!-- Start payment  -->
+    <section id="addPayment">
+        <section>
+            <form id="addPaymentForm">
+                <h1>Payment</h1>
+
+
+
+                <button type="button" class="btn btn-light" id="btnPayment">Login</button>
+            </form>
+        </section>
+    </section>
+    <!-- End payment  -->
 
 
 </main>
@@ -1918,6 +1978,18 @@
             countTwo--;
             displayImage2();
         }
+
+</script>
+<script>
+
+    $("#addBook>section>div>div>div>form>aside>input").click(function(e) {
+        var x=$(this).is(':checked');
+        if(x==true)
+            $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "visible");
+        else{
+            $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "hidden");
+        }
+    });
 
 </script>
 </body>
