@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 12.5);
+            height: calc(100vh * 13.5);
         }
 
         main{
@@ -1624,6 +1624,62 @@
             overflow-y: scroll;
         }
 
+        /* View work Schedule Driver */
+
+        #workScheduleDriver{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #workScheduleDriver>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #workScheduleDriverPanel{
+            align-self: center;
+            width:53%;
+            height: 12.5%;
+            position: relative;
+            top:5%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #workScheduleDriverPanel>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 35px;
+        }
+
+        #workScheduleDriverForm{
+            align-self: center;
+            border: 1px solid white;
+            width:95%;
+            height: 67%;
+            position: relative;
+            top:4%;
+        }
+
+        #workScheduleDriverForm>div{
+            height:180px; /**for future test**/
+            overflow-y: scroll;
+        }
+
 
     </style>
 </head>
@@ -1875,7 +1931,7 @@
     </section>
     <!--  End  Guest Customer Login part  -->
 
-    <!--  Start  Guest Customer Add part  -->
+    <!--  Start  Guest Customer Add part (this use for Registered Customer (with some modifications) and update part also) -->
     <section id="addCus">
         <section>
 
@@ -2222,9 +2278,10 @@
                             <th>Booking Start Date </th>
                             <th>Booking End Date </th>
                             <th>Amount</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
-                        <tbody class="bg-light text-dark" id="orderTable">
+                        <tbody class="bg-light text-dark" id="AfterBookingCusTable">
 
                         </tbody>
                     </table>
@@ -2233,6 +2290,39 @@
         </section>
     </section>
     <!-- End Show BookingTableCustomer  -->
+
+
+    <!-- Start View the work schedule Driver  -->
+    <section id="workScheduleDriver">
+        <section>
+            <aside id="workScheduleDriverPanel">
+                <h1>Work Schedule</h1>
+            </aside>
+            <form id="workScheduleDriverForm">
+                <div>
+                    <table class="table table-bordered text-black">
+                        <thead class="bg-white">
+                        <tr>
+                            <th>Car</th>
+                            <th>CarNumber</th>
+                            <th>BookingStartDate</th>
+                            <th>BookingEndDate</th>
+                            <th>StartVenue</th>
+                            <th>EndVenue</th>
+                            <th>CustomerName</th>
+                            <th>CustomerContact</th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-light text-dark" id="driverScheduleTableDriverView">
+
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </section>
+    </section>
+    <!-- End View the work schedule Driver  -->
+
 
 
 
