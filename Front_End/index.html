@@ -1888,7 +1888,8 @@
 
         #carImageView>div>img{
             width:  100%;
-            height: 83%;
+            /*height: 83%;*/
+            height: 16vh;
             position: relative;
             bottom:4%;
             border: 1px solid white;
@@ -2734,7 +2735,7 @@
                             <th>RentPriceMonth</th>
                             <th>PriceExtraKM</th>
                             <th>Availability</th>
-                            <th>Action</th>
+                            <th>Action</th> <!--this is for delete and update button-->
                         </tr>
                         </thead>
                         <tbody class="bg-light text-dark" id="carTable">
@@ -2963,6 +2964,79 @@
             }
         });
     });
+
+</script>
+<script>
+
+    let imageArrayCar = [];
+    let inputCar = document.getElementById("carImage");
+    let countCar=0;
+
+
+    inputCar.addEventListener("change", function () {
+        const files = inputCar.files;
+        L3 : for (var i = 0; i < files.length; i++) {
+            if (countCar == 4) {
+                break L3;
+            }
+            imageArrayCar.push(files[i]);
+            console.log(imageArrayCar);//for checking
+            console.log(files.length);//for checking
+            console.log(countCar);//for checking
+            countCar++;
+            console.log(countCar);//for checking
+        }
+        displayImageCar();
+    });
+
+    function displayImageCar() {
+        var imageFront = document.getElementById("frontView");
+        var imageFrontSpan = document.getElementById("frontViewSpan");
+        var imageBack = document.getElementById("backView");
+        var imageBackSpan = document.getElementById("backViewSpan");
+        var imageSide = document.getElementById("sideView");
+        var imageSideSpan = document.getElementById("sideViewSpan");
+        var imageInterior = document.getElementById("interior");
+        var imageInteriorSpan = document.getElementById("interiorSpan");
+
+        if (imageArrayCar.length > 0) {
+            imageFront.src = URL.createObjectURL(imageArrayCar[0]);
+            imageFrontSpan.innerHTML = `<button onclick="deleteImageCar(0)">&times;</button>`;
+        } else {
+            imageFront.src = ""; // Clear the image source if no image is present.
+            imageFrontSpan.innerHTML = "";
+        }
+
+        if (imageArrayCar.length > 1) {
+            imageBack.src = URL.createObjectURL(imageArrayCar[1]);
+            imageBackSpan.innerHTML = `<button onclick="deleteImageCar(1)">&times;</button>`;
+        } else {
+            imageBack.src = ""; // Clear the image source if no image is present.
+            imageBackSpan.innerHTML = "";
+        }
+
+        if (imageArrayCar.length > 2) {
+            imageSide.src = URL.createObjectURL(imageArrayCar[2]);
+            imageSideSpan.innerHTML = `<button onclick="deleteImageCar(2)">&times;</button>`;
+        } else {
+            imageSide.src = ""; // Clear the image source if no image is present.
+            imageSideSpan.innerHTML = "";
+        }
+
+        if (imageArrayCar.length > 3) {
+            imageInterior.src = URL.createObjectURL(imageArrayCar[3]);
+            imageInteriorSpan.innerHTML = `<button onclick="deleteImageCar(3)">&times;</button>`;
+        } else {
+            imageInterior.src = ""; // Clear the image source if no image is present.
+            imageInteriorSpan.innerHTML = "";
+        }
+    }
+
+    function deleteImageCar(index) {
+        imageArrayCar.splice(index, 1);
+        countCar--;
+        displayImageCar();
+    }
 
 </script>
 </body>
