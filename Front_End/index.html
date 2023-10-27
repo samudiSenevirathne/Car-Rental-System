@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 13.5);
+            height: calc(100vh * 14.5);
         }
 
         main{
@@ -1680,6 +1680,93 @@
             overflow-y: scroll;
         }
 
+        /*View Manager DashBoard*/
+
+        #managerDashBoard{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #managerDashBoard>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #managerDashBoardPanel{
+            align-self: center;
+            width:53%;
+            height: 12.5%;
+            position: relative;
+            top:6%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #managerDashBoardPanel>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 35px;
+        }
+
+        #managerDashBoardSection{
+            align-self: center;
+            /*border: 1px solid white;*/
+            width: 95%;
+            height: 70%;
+            position: relative;
+            top: 4%;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2px;
+        }
+
+        #managerDashBoardSection>div{
+            border: 1px solid white;
+            border-radius: 10px;
+            background:rgba(0, 0, 0, 0.31);
+            width: 75%;
+            height: 91%;
+            position: relative;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #managerDashBoardSection>div>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        #managerDashBoardSection>div>h1:nth-child(1){
+            font-size: 20px;
+        }
+
+        #managerDashBoardSection>div>h1:nth-child(2){
+            font-size: 35px;
+        }
+
 
     </style>
 </head>
@@ -2322,6 +2409,54 @@
         </section>
     </section>
     <!-- End View the work schedule Driver  -->
+
+    <!-- Start View Manager DashBoard  -->
+    <section id="managerDashBoard">
+        <section>
+            <aside id="managerDashBoardPanel">
+                <h1>Daily Summary</h1>
+            </aside>
+             <section id="managerDashBoardSection">
+                 <div>
+                     <h1>Registered users</h1>
+                     <h1 id="RegisteredUsersCountId">10</h1>
+                 </div>
+                 <div>
+                     <h1>Total bookings</h1>
+                     <h1 id="totalBookingsCountId">10</h1>
+                 </div>
+                 <div>
+                     <h1>Available Cars</h1>
+                     <h1 id="AvailableCarsCountId">45</h1>
+                 </div>
+                 <div>
+                     <h1>Reserved Cars</h1>
+                     <h1 id="reservedCarsCountId">5</h1>
+                 </div>
+                 <div>
+                     <h1>Active Bookings</h1>
+                     <h1 id="activeBookingsCountId">5</h1>
+                 </div>
+                 <div>
+                     <h1>Available Drivers</h1>
+                     <h1 id="availableDriversCountId">5</h1>
+                 </div>
+                 <div>
+                     <h1>Occupied Drivers</h1>
+                     <h1 id="occupiedDriversCountId">5</h1>
+                 </div>
+                 <div>
+                     <h1>Need Maintenance Cars</h1>
+                     <h1 id="needMaintenanceCarsCountId">2</h1>
+                 </div>
+                 <div>
+                     <h1>Under Maintenance Cars</h1>
+                     <h1 id="underMaintenanceCarsCountId">3</h1>
+                 </div>
+             </section>
+        </section>
+    </section>
+    <!-- End View Manager DashBoard  -->
 
 
 
