@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 10.5);
+            height: calc(100vh * 11.5);
         }
 
         main{
@@ -1428,6 +1428,148 @@
             font-weight: bold;
         }
 
+        /*Invoice*/
+
+        #invoice{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #invoice>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #panelInvoice{
+            align-self: center;
+            position: relative;
+            width:53%;
+            height: 12.5%;
+            top:5%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #panelInvoice>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #panelInvoice>h1:nth-child(1){
+            font-size: 35px;
+        }
+
+        #panelInvoice>h1:nth-child(2){
+            font-size: 15px;
+        }
+
+        #panelInvoiceForm{
+            align-self: center;
+            /*border: 1px solid white;*/
+            width:65%;
+            height: 67%;
+            position: relative;
+            top:4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: scroll;
+        }
+
+        #panelInvoiceForm>section{
+            width:calc(100% * 2);
+            height: 100%;
+            /*border: 1px solid red;*/
+            background: rgba(0, 0, 0, 0.32);
+            display: flex;
+            flex-direction: row;
+        }
+
+        #panelInvoiceForm>section>div{
+            width:100vw;
+            height: 100%;
+            border: 1px solid white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(1){
+            width:100%;
+            height: 10%;
+            /*border: 1px solid pink;*/
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(1)>h1{
+           margin-bottom: 0;
+            margin-top: 0;
+            color: white;
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(2){
+            width:100%;
+            height: 90%;
+            /*border: 1px solid indigo;*/
+            display: flex;
+            flex-direction: row;
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(2)>div:nth-child(1){
+            width:60%;
+            height: 100%;
+            /*border: 1px solid limegreen;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(2)>div:nth-child(2){
+            width:40%;
+            height: 100%;
+            /*border: 1px solid orangered;*/
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+        }
+
+         #panelInvoiceForm>section>div>div:nth-child(2)>div:nth-child(1)>h1 {
+            margin-bottom: 0;
+            margin-top: 0;
+            color: white;
+            font-size: 25px;
+            position: relative;
+            left: 10%;
+        }
+
+        #panelInvoiceForm>section>div>div:nth-child(2)>div:nth-child(2)>div{
+            align-self: center;
+            width:70%;
+            height: 50%;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+
+
 
     </style>
 </head>
@@ -1975,6 +2117,41 @@
         </section>
     </section>
     <!-- End payment  -->
+
+    <!-- Start Invoice  -->
+    <section id="invoice">
+        <section>
+            <aside id="panelInvoice">
+                <h1>Booking Successful</h1>
+                <h1>Thank you for using us!</h1>
+            </aside>
+            <form id="panelInvoiceForm">
+                <section>
+                    <div>
+                    <div>
+                        <h1>Invoice</h1>
+                    </div>
+                    <div>
+                        <div>
+                        <h1>Your Booking Number :  1234567</h1>
+                        <h1>vehicle Name  :  suki-alto</h1>
+                        <h1>vehicle Number : 124215</h1>
+                        <h1>Booking Date : 2023/10/27</h1>
+                        <h1>Booking Start Date : 2023/10/28</h1>
+                        <h1>Booking End Date : 2023/10/31</h1>
+                        </div>
+                        <div>
+                        <div></div>
+                        </div>
+                    </div>
+                    </div> <!--should create like that automatically-->
+                    <div></div>  <!--as practice-->
+                </section>
+            </form>
+        </section>
+    </section>
+    <!-- End Invoice  -->
+
 
 
 </main>
