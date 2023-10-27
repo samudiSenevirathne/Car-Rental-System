@@ -1268,6 +1268,165 @@
             justify-content: space-evenly;
         }
 
+        #addPayment>section>div{
+            /*border: 1px solid white;*/
+            align-self: center;
+            width: 80%;
+            height: 5%;
+            position: relative;
+            top:4%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #addPayment>section>div>h1{
+            width: 41%;
+            height: 50%;
+            position: relative;
+            left: 59%;
+            font-size: 11px;
+            color: white;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        #addPaymentForm{
+            align-self: center;
+            border: 1px solid white;
+            border-radius: 5px;
+            width:80%;
+            height: 78%;
+            position: relative;
+            top:8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        #addPaymentForm>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #addPaymentForm>div:nth-child(2){
+            align-self: center;
+            width: 95%;
+            height: 40%;
+            /*border: 1px solid white;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #addPaymentForm>div:nth-child(2)>div{
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2px;
+        }
+
+        #addPaymentForm>div:nth-child(2)>div>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 25px;
+        }
+
+        #addPaymentForm>div:nth-child(2)>div>h1:nth-child(1),#addPaymentForm>div:nth-child(2)>div>h1:nth-child(3) {
+            position: relative;
+            left: 18%;
+        }
+
+        #addPaymentForm>div:nth-child(2)>div>h1:nth-child(2),#addPaymentForm>div:nth-child(2)>div>h1:nth-child(4){
+            position: relative;
+            left: 58%;
+            width: 50%;
+            height: 50%;
+        }
+
+        #addPaymentForm>div:nth-child(2)>aside{
+            align-self: flex-end;
+            width:30%;
+            height: 1px;
+            background: white;
+        }
+
+        #addPaymentForm>div:nth-child(3){
+            align-self: center;
+            width: 95%;
+            height: 40%;
+            /*border: 1px solid white;*/
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2px;
+        }
+
+        #addPaymentForm>div:nth-child(3)>div>label{
+            position: relative;
+            top: 27px;
+            left: 54px;
+        }
+
+        #addPaymentForm>div:nth-child(3)>div>input{
+            position: relative;
+            top: 27px;
+            left: 54px;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            width:75%;
+        }
+
+        #addPaymentForm>div:nth-child(3)>div>img{
+            position: relative;
+            top: 27px;
+            left: 89px;
+            background: transparent;
+            border: 1px solid white;
+            width:50%;
+            height: 15vh;
+            color: white;
+        }
+
+        #addPaymentForm>div:nth-child(5){
+            align-self: center;
+            width: 95%;
+            height: 20%;
+            position: relative;
+            left: 0;
+            top:0;
+            /*border: 1px solid white;*/
+        }
+
+        #addPaymentForm>div:nth-child(5)>div{
+            position: relative;
+            bottom:8%;
+            width: 25%;
+            height: 100%;
+            border-radius: 5px;
+            border: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #addPaymentForm>div:nth-child(5)>div>h1{
+            position: relative;
+            left: 4%;
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #btnPayment{
+            align-self: center;
+            position: relative;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
 
 
     </style>
@@ -1756,7 +1915,7 @@
                             </div>
                         </form>
                         <aside>
-                         <h1>Note: you will be charge with extra Rs 30 for each day the end of the day.</h1>
+                         <h1>Note: you will be charge with extra Rs 30 for each km the end of the day.</h1>
                          <h1>Note: you will be charge as loss Damage Waiver Rs 10000 according car type and If the vehicle is unharmed the Loss Damage Waiver will be returned you at the end of the day.</h1>
                        </aside>
                     </div>
@@ -1775,12 +1934,44 @@
     <section id="addPayment">
         <section>
             <form id="addPaymentForm">
-                <h1>Payment</h1>
-
-
-
-                <button type="button" class="btn btn-light" id="btnPayment">Login</button>
+                  <h1>Payment</h1>
+                  <div>
+                      <div>
+                          <h1>Loss Damage Waiver : </h1>
+                          <h1>10000</h1>
+                          <h1>Renal Fee : </h1>         <!--According day count get calculate in js and show-->
+                          <h1>3500</h1>
+                      </div>
+                      <aside></aside>
+                      <div>
+                          <h1>Amount : </h1>
+                          <h1>13500</h1>
+                      </div>
+                      <aside></aside>
+                      <aside></aside>
+                 </div>
+                  <div>
+                      <div>
+                      <label for="bankSlipImage" class="form-label" id="bankSlipImageId">Bank Slip</label>
+                      <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg" id="bankSlipImage">
+                      </div>
+                      <div>
+                      <img src="" class="form-control" id="bankSlipImageShow" alt="Selected Image">
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-light" id="btnPayment">Payment</button>
+                  <div>
+                      <div>
+                         <h1>bank:sampath bank-panadura</h1>
+                         <h1>Account Name:Easy car rental (pvt) Ltd</h1>
+                         <h1>Account Number:1247654456776</h1>
+                      </div>
+                  </div>
             </form>
+            <div>
+            <h1>Note:After payment below Account attach your slip above part</h1>
+            <h1>Note:you will book driver, fee has added Renal fee(driver Rs 1000 for each day)</h1>
+            </div>
         </section>
     </section>
     <!-- End payment  -->
@@ -1982,13 +2173,25 @@
 </script>
 <script>
 
-    $("#addBook>section>div>div>div>form>aside>input").click(function(e) {
+    $("#addBook>section>div>div>div>form>aside>input").click(function() {
         var x=$(this).is(':checked');
         if(x==true)
             $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "visible");
         else{
             $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "hidden");
         }
+    });
+
+</script>
+<script>
+
+    $(document).ready(function() {
+        $("#bankSlipImage").on("change", function() {
+            const files = this.files;
+            if (files.length > 0) {
+                $("#bankSlipImageShow").attr("src", URL.createObjectURL(files[0]));
+            }
+        });
     });
 
 </script>
