@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 14.5);
+            height: calc(100vh * 17);
         }
 
         main{
@@ -1620,7 +1620,7 @@
         }
 
         #bookingTableCustomerForm>div{
-            height:180px; /**for future test**/
+            height:445px; /**for future test**/
             overflow-y: scroll;
         }
 
@@ -1676,7 +1676,7 @@
         }
 
         #workScheduleDriverForm>div{
-            height:180px; /**for future test**/
+            height:445px; /**for future test**/
             overflow-y: scroll;
         }
 
@@ -1767,6 +1767,164 @@
             font-size: 35px;
         }
 
+        /*Add Car*/
+
+        #addCar{
+            position: relative;
+            width: 100vw;
+            height: calc(100vh * 2.5);
+            background: url("assets/images/carBodyShortOne.png");
+            background-size:cover;
+        }
+
+        #addCar>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #addCarForm{
+            align-self: center;
+            border: 1px solid white;
+            width:80%;
+            height: 67%;
+            position: relative;
+            top:3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        #addCarTableForm{
+            align-self: center;
+            border: 1px solid white;
+            width:95%;
+            height: 25%;
+            position: relative;
+            top:2%;
+        }
+
+        #addCarForm>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #addCarForm>h1:first-child{
+            align-self: center;
+            position: relative;
+            bottom: 1%;
+        }
+
+        #sectionGridCar{
+            position: relative;
+            align-self: center;
+            width:100%;
+            height: 90%;
+            /*border: 1px solid yellow;*/
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        #sectionGridCar>div,#sectionGridCar>aside{
+            width:100%;
+            height: 100%;
+            /*border: 1px solid white;*/
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sectionGridCar>div>input,#sectionGridCar>aside>input{
+            position: relative;
+            width:80%;
+            background: transparent;
+            border: 1px solid white;
+            left:10%;
+            color: white;
+        }
+
+        #sectionGridCar>div>input::placeholder{
+            color: rgba(231, 221, 221, 0.56);
+        }
+
+        #sectionGridCar>div>label,#sectionGridCar>aside>label{
+            position: relative;
+            left:10%;
+            top:1%;
+        }
+
+        #sectionGridCar>div>div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        #carImageView{
+            position: relative;
+            left:12%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /*border: 1px solid white;*/
+            border-radius: 25px;
+            background: transparent;
+            width: 75%;
+            height: 35vh;
+        }
+
+        #carImageView>div{
+            /*border: 1px solid white;*/
+            border-radius: 25px;
+        }
+
+        #carImageView>div>label{
+            position: relative;
+            left:27%;
+            margin-bottom: 0;
+        }
+
+        #carImageView>div>img{
+            width:  100%;
+            height: 83%;
+            position: relative;
+            bottom:4%;
+            border: 1px solid white;
+            border-radius: 25px;
+            background: transparent;
+            color: white;
+        }
+
+        #carImageView>div>span{
+            /*border: 1px solid white;*/
+            width: 6%;
+            height: 10%;
+            position: relative;
+            bottom:40%;
+        }
+
+        #carImageView>span>button{
+            border-top: 0 ;
+            border-bottom: 0 ;
+            border-left: 0 ;
+            border-right: 0 ;
+        }
+
+        #btnAddCar{
+            align-self: center;
+            position: relative;
+            bottom:1%;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
+
+        #addCarTableForm>div{
+            height:445px; /**for future test**/
+            overflow-y: scroll;
+        }
 
     </style>
 </head>
@@ -2365,7 +2523,7 @@
                             <th>Booking Start Date </th>
                             <th>Booking End Date </th>
                             <th>Amount</th>
-                            <th>Action</th>
+                            <th>Action</th> <!--this for return button-->
                         </tr>
                         </thead>
                         <tbody class="bg-light text-dark" id="AfterBookingCusTable">
@@ -2458,8 +2616,136 @@
     </section>
     <!-- End View Manager DashBoard  -->
 
+    <!-- Start Add Car  -->
+    <section id="addCar">
+        <section>
+            <form id="addCarForm">
+                <h1>Provide your car details</h1>
+                 <section id="sectionGridCar">
+                    <div>
+                        <label for="registrationNumber" class="form-label" id="registrationNumberId">Registration Number</label>
+                        <input type="text" class="form-control" id="registrationNumber" placeholder="Ex:- SA-2000">
+                    </div>
+                    <div>
+                        <label for="brand" class="form-label" id="brandId">Brand</label>
+                        <input type="text" class="form-control" id="brand" placeholder="Ex:- Suzuki">
+                    </div>
+                    <div>
+                        <label class="form-label" id="typeLabelId">Type</label>
+                        <br>
+                        <div>
+                            <div>
+                                <label class="form-check-label" for="type1">General</label>
+                                <input class="form-check-input" id="type1" name="one" type="radio" value="General">
+                            </div>
+                            <div>
+                                <label class="form-check-label" for="type2">Premium</label>
+                                <input class="form-check-input" id="type2" name="one" type="radio" value="Premium">
+                            </div>
+                             <div>
+                                <label class="form-check-label" for="type3">Luxury</label>
+                                <input class="form-check-input" id="type3" name="one" type="radio" value="Luxury">
+                             </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="color" class="form-label" id="colorId">Color</label>
+                        <input type="text" class="form-control" id="color" placeholder="Ex:- red">
+                    </div>
+                    <div>
+                        <label for="passengerCount" class="form-label" id="passengerCountId">Number of passengers</label>
+                        <input type="number" class="form-control" id="passengerCount" placeholder="Ex:- 4">
+                    </div>
+                    <div>
+                        <label class="form-label" id="transmissionTypeLabelId">Transmission type</label>
+                        <br>
+                        <div>
+                            <div>
+                                <label class="form-check-label" for="typeManual">Manual</label>
+                                <input class="form-check-input" id="typeManual" name="two" type="radio" value="Manual">
+                            </div>
+                            <div>
+                                <label class="form-check-label" for="typeAuto">Auto</label>
+                                <input class="form-check-input" id="typeAuto" name="two" type="radio" value="Auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="fuelType" class="form-label" id="fuelTypeId">Fuel Type</label>
+                        <input type="text" class="form-control" id="fuelType" placeholder="Ex:- Petrol">
+                    </div>
+                    <div>
+                        <label for="priceExtra" class="form-label" id="priceExtraId">Price Extra KM</label>
+                        <input type="number" class="form-control" id="priceExtra" placeholder="Ex:- 49.50">
+                    </div>
+                     <div>
+                         <label for="rentPriceDay" class="form-label" id="rentPriceDayId">Rent Price Day</label>
+                         <input type="number" class="form-control" id="rentPriceDay" placeholder="Ex:- 2500">
+                     </div>
+                     <div>
+                         <label for="freeKMDay" class="form-label" id="freeKMDayId">Free KM Day</label>
+                         <input type="number" class="form-control" id="freeKMDay" placeholder="Ex:- 100">
+                     </div>
+                     <div>
+                         <label for="rentPriceMonth" class="form-label" id="rentPriceMonthId">Rent Price Month</label>
+                         <input type="number" class="form-control" id="rentPriceMonth" placeholder="Ex:- 64,350.00">
+                     </div>
+                     <div>
+                         <label for="freeKMMonth" class="form-label" id="freeKMMonthId">Free KM Month</label>
+                         <input type="number" class="form-control" id="freeKMMonth" placeholder="Ex:- 2400">
+                     </div>
+                    <aside>
+                        <label for="carImage" class="form-label" id="carImageId">Car Image</label>
+                        <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg" id="carImage">
+                    </aside>
+                    <section id="carImageView">
+                        <div>
+                        <label class="form-label" >Front View</label>
+                        <img src="" class="form-control" id="frontView" alt="Selected Image">
+                        <span id="frontViewSpan"></span>
+                        </div>
+                        <div>
+                        <label class="form-label" >Back View</label>
+                        <img src="" class="form-control" id="backView" alt="Selected Image">
+                        <span id="backViewSpan"></span>
+                        </div>
+                        <div>
+                        <label class="form-label" >Side View</label>
+                        <img src="" class="form-control" id="sideView" alt="Selected Image">
+                        <span id="sideViewSpan"></span>
+                        </div>
+                        <div>
+                        <label class="form-label" >Interior</label>
+                        <img src="" class="form-control" id="interior" alt="Selected Image">
+                        <span id="interiorSpan"></span>
+                        </div>
+                    </section>
+                </section>
+                <button type="button" class="btn btn-light" id="btnAddCar">SUBMIT</button>
+            </form>
+            <form id="addCarTableForm">
+                <div>
+                    <table class="table table-bordered text-black">
+                        <thead class="bg-white">
+                        <tr>
+                            <th>CarNumber</th>
+                            <th>RegistrationNumber</th>
+                            <th>RentPriceDay</th>
+                            <th>RentPriceMonth</th>
+                            <th>PriceExtraKM</th>
+                            <th>Availability</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-light text-dark" id="carTable">
 
-
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </section>
+    </section>
+    <!-- End Add Car  -->
 
 </main>
 
