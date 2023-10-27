@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 11.5);
+            height: calc(100vh * 12.5);
         }
 
         main{
@@ -1568,7 +1568,61 @@
             border-radius: 5px;
         }
 
+     /* Show BookingTableCustomer */
 
+        #bookingTableCustomer{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            background: url("assets/images/CarTwo.png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        #bookingTableCustomer>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #bookingTableCustomerPanel{
+            align-self: center;
+            width:53%;
+            height: 12.5%;
+            position: relative;
+            top:5%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #bookingTableCustomerPanel>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 35px;
+        }
+
+        #bookingTableCustomerForm{
+            align-self: center;
+            border: 1px solid white;
+            width:95%;
+            height: 67%;
+            position: relative;
+            top:4%;
+        }
+
+        #bookingTableCustomerForm>div{
+            height:180px; /**for future test**/
+            overflow-y: scroll;
+        }
 
 
     </style>
@@ -2151,6 +2205,34 @@
         </section>
     </section>
     <!-- End Invoice  -->
+
+    <!-- Start Show BookingTableCustomer  -->
+    <section id="bookingTableCustomer">
+        <section>
+            <aside id="bookingTableCustomerPanel">
+                <h1>All Booking</h1>
+            </aside>
+            <form id="bookingTableCustomerForm">
+                <div>
+                    <table class="table table-bordered text-black">
+                        <thead class="bg-white">
+                        <tr>
+                            <th>CarName</th>
+                            <th>Booking Number</th>
+                            <th>Booking Start Date </th>
+                            <th>Booking End Date </th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-light text-dark" id="orderTable">
+
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </section>
+    </section>
+    <!-- End Show BookingTableCustomer  -->
 
 
 
