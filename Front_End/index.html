@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 18);
+            height: calc(100vh * 19);
         }
 
         main{
@@ -1927,9 +1927,9 @@
             overflow-y: scroll;
         }
 
-        /*add Maintenance*/
+        /*add Maintenance , Add Damage Service Detail */
 
-        #addMaintenance{
+        #addMaintenance,#addDamageService{
             position: relative;
             width: 100vw;
             height:100vh;
@@ -1938,7 +1938,7 @@
             background-position: center;
         }
 
-        #addMaintenance>section{
+        #addMaintenance>section,#addDamageService>section{
             position: absolute;
             width: 100%;
             height: 100%;
@@ -1948,7 +1948,7 @@
             justify-content: space-evenly;
         }
 
-        #addMaintenanceForm{
+        #addMaintenanceForm,#addDamageServiceForm{
             align-self: center;
             border: 1px solid white;
             width:80%;
@@ -1961,7 +1961,7 @@
             color: white;
         }
 
-        #addMaintenanceTableForm{
+        #addMaintenanceTableForm,#addDamageServiceTableForm{
             align-self: center;
             border: 1px solid white;
             width:95%;
@@ -1970,19 +1970,19 @@
             top:4%;
         }
 
-        #addMaintenanceForm>h1{
+        #addMaintenanceForm>h1,#addDamageServiceForm>h1{
             margin-top: 0;
             margin-bottom: 0;
         }
 
-        #addMaintenanceForm>h1:first-child{
+        #addMaintenanceForm>h1:first-child,#addDamageServiceForm>h1:first-child{
             align-self: center;
             position: relative;
             bottom: 2%;
             font-size: 30px;
         }
 
-        #sectionGridMaintenance{
+        #sectionGridMaintenance,#sectionGridDamageService{
             position: relative;
             align-self: center;
             width:100%;
@@ -1992,7 +1992,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
-        #sectionGridMaintenance>div{
+        #sectionGridMaintenance>div,#sectionGridDamageService>div{
             width:100%;
             height: 100%;
             /*border: 1px solid white;*/
@@ -2000,7 +2000,7 @@
             flex-direction: column;
         }
 
-        #sectionGridMaintenance>div>input{
+        #sectionGridMaintenance>div>input,#sectionGridDamageService>div>input{
             position: relative;
             width:80%;
             background: transparent;
@@ -2009,17 +2009,17 @@
             color: white;
         }
 
-        #sectionGridMaintenance>div>input::placeholder{
+        #sectionGridMaintenance>div>input::placeholder,#sectionGridDamageService>div>input::placeholder{
             color: rgba(231, 221, 221, 0.56);
         }
 
-        #sectionGridMaintenance>div>label{
+        #sectionGridMaintenance>div>label,#sectionGridDamageService>div>label{
             position: relative;
             left:10%;
             top:1%;
         }
 
-        #btnAddMaintenance{
+        #btnAddMaintenance,#btnAddDamageService{
             align-self: center;
             position: relative;
             /*bottom:1%;*/
@@ -2028,7 +2028,7 @@
             font-weight: bold;
         }
 
-        #addMaintenanceTableForm>div{
+        #addMaintenanceTableForm>div,#addDamageServiceTableForm>div{
             height:180px; /**for future test**/
             overflow-y: scroll;
         }
@@ -2910,7 +2910,60 @@
     </section>
     <!-- End Add Maintenance  -->
 
+    <!-- Start Add Damage Service Detail  -->
+    <section id="addDamageService">
+        <section>
+            <form id="addDamageServiceForm">
+                <h1>Provide your car's Damage Service Details</h1>
+                <section id="sectionGridDamageService">
+                    <div>
+                        <label for="damageServiceId" class="form-label">Damage Service Id</label>
+                        <input type="text" class="form-control" id="damageServiceId">
+                    </div>
+                    <div>
+                        <label for="registrationNumberCarDamage" class="form-label">Registration Number</label>
+                        <input type="text" class="form-control" id="registrationNumberCarDamage" placeholder="Ex:- SA-2000">
+                    </div>
+                    <div>
+                        <label for="damageServiceStartDate" class="form-label">Damage Service Start Date</label>
+                        <input type="date" class="form-control" id="damageServiceStartDate">
+                    </div>
+                    <div>
+                        <label for="damageServiceCost" class="form-label">Damage Service Cost</label>
+                        <input type="number" class="form-control" id="damageServiceCost" placeholder="Ex:- 55000">
+                    </div>
+                    <div>
+                        <label for="damageDescription" class="form-label">Damage Description</label>
+                        <input type="text" class="form-control" id="damageDescription" placeholder="Ex:- side Mirror Damage">
+                    </div>
+                    <div>
+                        <label for="damageServiceEndDate" class="form-label">Damage Service End Date</label>
+                        <input type="date" class="form-control" id="damageServiceEndDate">
+                    </div>
+                </section>
+                <button type="button" class="btn btn-light" id="btnAddDamageService">SUBMIT</button>
+            </form>
+            <form id="addDamageServiceTableForm">
+                <div>
+                    <table class="table table-bordered text-black">
+                        <thead class="bg-white">
+                        <tr>
+                            <th>DamageServiceId</th>
+                            <th>RegistrationNumber</th>
+                            <th>DamageServiceCost</th>
+                            <th>Availability</th>
+                            <th>Action</th> <!--this is for delete and update button-->
+                        </tr>
+                        </thead>
+                        <tbody class="bg-light text-dark" id="damageServiceTable">
 
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </section>
+    </section>
+    <!-- End Add Damage Service Detail  -->
 
 </main>
 
