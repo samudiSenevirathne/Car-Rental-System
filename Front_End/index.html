@@ -684,39 +684,55 @@
 
         #btnLogin{
             position: relative;
-            top:7%;
+            top:4%;
             left:33%;
             width:31%;
             font-weight: bold;
-        }
-
-        #loginForm>h1:nth-child(7){
-            align-self: center;
-            font-size: 15px;
-            position: relative;
-            top: 8%;
-            right:1%;
         }
 
         #loginForm>h1:nth-child(8){
             align-self: center;
             font-size: 15px;
             position: relative;
-            top: 10%;
+            top: 6%;
+            right:1%;
+        }
+
+        #loginForm>h1:nth-child(9){
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 8%;
             right:1%;
             cursor: pointer;
         }
 
-        #loginForm>div:nth-child(9){
+        #loginForm>div:nth-child(10){
             align-self: center;
             width: 35%;
             height: 1px;
             background: white;
             position: relative;
-            top: 9.5%;
+            top: 7.5%;
             right: 1%;
             cursor: pointer;
             visibility: hidden;
+        }
+
+        #togglePassword1{
+            width: 10%;
+            height: 10%;
+            position: relative;
+            top: -10%;
+            left: 80%;
+            border:1px solid white;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        #eyeIcon1{
+            align-self: center;
         }
 
         /*Guest Customer Detail Add part*/
@@ -859,7 +875,7 @@
         #btnAddCus{
             align-self: center;
             position: relative;
-            top:4%;
+            top:2%;
             right:1%;
             width:20%;
             font-weight: bold;
@@ -869,7 +885,7 @@
             align-self: center;
             font-size: 15px;
             position: relative;
-            top: 6%;
+            top: 3%;
             right:1%;
         }
 
@@ -877,7 +893,7 @@
             align-self: center;
             font-size: 15px;
             position: relative;
-            top: 7%;
+            top: 4%;
             right:1%;
             cursor: pointer;
         }
@@ -888,10 +904,26 @@
             height: 1px;
             background: white;
             position: relative;
-            top: 6.8%;
+            top: 3.8%;
             right: 1%;
             cursor: pointer;
             visibility: hidden;
+        }
+
+        #togglePassword2{
+            width: 8%;
+            height: 30%;
+            position: relative;
+            top: -30%;
+            left: 82%;
+            border:1px solid white;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        #eyeIcon2{
+            align-self: center;
         }
 
         /*After logging book part*/
@@ -2272,6 +2304,7 @@
 
                <label for="exampleInputPassword1" class="form-label" id="exampleInputPassword1Id">Password</label>
                <input type="password" class="form-control" id="exampleInputPassword1">
+               <button class="btn btn-outline-secondary" type="button" id="togglePassword1"><i id="eyeIcon1" class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
 
               <button type="button" class="btn btn-light" id="btnLogin">Login</button>
 
@@ -2306,6 +2339,7 @@
                     <div>
                         <label for="exampleInputPassword2" class="form-label" id="exampleInputPassword2Id">Password</label>
                          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Ex:- MySecurePass123">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword2"><i id="eyeIcon2" class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
                         <br>
                     </div>
                     <div>
@@ -2334,7 +2368,7 @@
                         <br>
                     </div>
 
-                    <div>
+                    <div id="customerLicenseNumber">
                         <label for="customerLicense" class="form-label" id="customerLicenseId">License No</label>
                         <input type="text" class="form-control" id="customerLicense" placeholder="Ex:- AB123CD">
                         <br>
@@ -2346,7 +2380,7 @@
                         <br>
                     </div>
 
-                    <div>
+                    <div id="customerLicenseFile">
                         <label for="customerLicenseImage" class="form-label" id="customerLicenseImageId">License Image</label>
                         <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg" id="customerLicenseImage">
                         <br>
@@ -2985,119 +3019,9 @@
 <script src="assets/js/jquery/jquery-3.7.0.min.js"></script>
 <script src="controller/HomeController.js"></script>
 <script src="controller/LoginController.js"></script>
-<script>
-
-    $("#textOrNext").click(function() {
-        $("#addCusForm>div:last-child").css("visibility", "visible");
-        /* next part to go */
-    });
-
-    // added Image of Nic's part
-
-    let imageArray = [];
-    let input = document.getElementById("customerNicImage");
-    let count=0;
-
-
-        input.addEventListener("change", function () {
-            const files = input.files;
-            L1 : for (var i = 0; i < files.length; i++) {
-                if (count == 2) {
-                    break L1;
-                }
-                imageArray.push(files[i]);
-                console.log(imageArray);//for checking
-                console.log(files.length);//for checking
-                console.log(count);//for checking
-                count++;
-                console.log(count);//for checking
-            }
-            displayImage();
-        });
-
-        function displayImage() {
-            var image1 = document.getElementById("customerNicImageShowFront");
-            var imagespan1 = document.getElementById("customerNicImageShowFrontSpan");
-            var image2 = document.getElementById("customerNicImageShowBack");
-            var imagespan2 = document.getElementById("customerNicImageShowBackSpan");
-
-            if (imageArray.length > 0) {
-                image1.src = URL.createObjectURL(imageArray[0]);
-                imagespan1.innerHTML = `<button onclick="deleteImage(0)">&times;</button>`;
-            } else {
-                image1.src = ""; // Clear the image source if no image is present.
-                imagespan1.innerHTML = "";
-            }
-
-            if (imageArray.length > 1) {
-                image2.src = URL.createObjectURL(imageArray[1]);
-                imagespan2.innerHTML = `<button onclick="deleteImage(1)">&times;</button>`;
-            } else {
-                image2.src = ""; // Clear the image source if no image is present.
-                imagespan2.innerHTML = "";
-            }
-        }
-
-        function deleteImage(index) {
-            imageArray.splice(index, 1);
-            count--;
-            displayImage();
-    }
-
-
-    // // added Image of License's part
-
-    let imageArray2 = [];
-    let input2 = document.getElementById("customerLicenseImage");
-    let countTwo=0;
-
-
-        input2.addEventListener("change", function () {
-            const files = input2.files;
-            L2 : for (var i = 0; i < files.length; i++) {
-                if (countTwo == 2) {
-                    break L2;
-                }
-                imageArray2.push(files[i]);
-                console.log(imageArray2);//for checking
-                console.log(files.length);//for checking
-                console.log(countTwo);//for checking
-                countTwo++;
-                console.log(countTwo);//for checking
-            }
-            displayImage2();
-        });
-
-        function displayImage2() {
-            var imageTwo1 = document.getElementById("customerLicenseImageShowFront");
-            var imagespanTwo1 = document.getElementById("customerLicenseImageShowFrontSpan");
-            var imageTwo2 = document.getElementById("customerLicenseImageShowBack");
-            var imagespantwo2 = document.getElementById("customerLicenseImageShowBackSpan");
-
-            if (imageArray2.length > 0) {
-                imageTwo1.src = URL.createObjectURL(imageArray2[0]);
-                imagespanTwo1.innerHTML = `<button onclick="deleteImageTwo(0)">&times;</button>`;
-            } else {
-                imageTwo1.src = ""; // Clear the image source if no image is present.
-                imagespanTwo1.innerHTML = "";
-            }
-
-            if (imageArray2.length > 1) {
-                imageTwo2.src = URL.createObjectURL(imageArray2[1]);
-                imagespantwo2.innerHTML = `<button onclick="deleteImageTwo(1)">&times;</button>`;
-            } else {
-                imageTwo2.src = ""; // Clear the image source if no image is present.
-                imagespantwo2.innerHTML = "";
-            }
-        }
-
-        function deleteImageTwo(index) {
-            imageArray2.splice(index, 1);
-            countTwo--;
-            displayImage2();
-        }
-
-</script>
+<script src="controller/PersonalDetailController.js"></script>
+<script src="controller/validation/LoginValidation.js"></script>
+<script src="controller/validation/personalDetailValidation.js"></script>
 <script>
 
     $("#addBook>section>div>div>div>form>aside>input").click(function() {

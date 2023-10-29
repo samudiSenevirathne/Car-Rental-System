@@ -1,10 +1,10 @@
-$("#loginForm > h1:nth-child(8)").hover(function() {
-    $("#loginForm > div:nth-child(9)").css("visibility", "visible");
+$("#loginForm > h1:nth-child(9)").hover(function() {
+    $("#loginForm > div:nth-child(10)").css("visibility", "visible");
 }, function() {
-    $("#loginForm > div:nth-child(9)").css("visibility", "hidden");
+    $("#loginForm > div:nth-child(10)").css("visibility", "hidden");
 });
 
-$("#loginForm>h1:nth-child(8)").click(function() {
+$("#loginForm>h1:nth-child(9)").click(function() {
     $("#header").css('display', 'block');
     $("#homeContent").css('display', 'none');
     $("#login").css('display', 'none');
@@ -23,3 +23,16 @@ $("#loginForm>h1:nth-child(8)").click(function() {
     $("#footer").css('display', 'block');
 });
 
+    const passwordField1 = $('#exampleInputPassword1');
+    const togglePassword1 = $('#togglePassword1');
+    const eyeIcon1 = $('#eyeIcon1');
+
+    togglePassword1.click(function() {
+        if (passwordField1.attr('type') === 'password') {
+            passwordField1.attr('type', 'text');
+            eyeIcon1.removeClass('fa-solid fa-eye').addClass('fa-solid fa-eye-slash');
+        } else {
+            passwordField1.attr('type', 'password');
+            eyeIcon1.removeClass('fa-solid fa-eye-slash').addClass('fa-solid fa-eye');
+        }
+    });

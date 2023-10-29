@@ -17,16 +17,22 @@ $("#footer").css('display', 'block');
 
 $("#customer").click(function () {
     $("#panal > h1:nth-child(1)").text('Car Rentals - Customer Panel');
+    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating customer account');
+    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
     same();
 });
 
 $("#employee").click(function () {
     $("#panal > h1:nth-child(1)").text('Car Rentals - Employee Panel');
+    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating employee account');
+    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "hidden");
     same();
 });
 
 $("#driver").click(function () {
     $("#panal > h1:nth-child(1)").text('Car Rentals - Driver Panel');
+    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating driver account');
+    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
     same();
 });
 
