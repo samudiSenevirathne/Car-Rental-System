@@ -77,3 +77,4 @@ $("section>section>section>div>div:nth-child(4)").click(function() {
         count1=0;
     }
 });
+
