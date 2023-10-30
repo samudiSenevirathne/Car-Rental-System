@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,43 +14,36 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Book {
+public class Book implements Serializable {
     @Id
     private String book_Id;
-    @Column(nullable = false)
-    private LocalDate booking_Date;
-    @Column(nullable = false)
-    private LocalTime booking_Time;
-    @Column(nullable = false)
-    private LocalDate start_Date;
-//    @Column(nullable = false)
-    private LocalTime start_Time;
-    @Column(nullable = false)
-    private LocalDate end_Date;
-//    @Column(nullable = false)
-    private LocalTime end_Time;
-//    @Column(nullable = false)
-    private String from;
-//    @Column(nullable = false)
-    private String to;
-    private BigDecimal total_KM;
-    private String maintain_Status;
     @EmbeddedId
     private CarCustomerPK carCustomerPK;
+    private LocalDate booking_Date;
+    private LocalTime booking_Time;
+    private LocalDate start_Date;
+    private LocalTime start_Time;
+    private LocalDate end_Date;
+    private LocalTime end_Time;
+    private String startVenue;
+    private String endVenue;
+    private BigDecimal total_KM;
+    private String maintain_Status;
 
-    @OneToOne(mappedBy = "book")
-    private Payment payment;
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "pay_Id",referencedColumnName = "pay_Id",nullable = false)
+    private Payment pay;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "driver_Id",referencedColumnName = "driver_Id",nullable = false)
+    @JoinColumn(name = "username_Driver",referencedColumnName = "username_Driver",nullable = false)
     private Driver drive;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "car_Id",referencedColumnName = "car_Id",nullable = false)
+    @JoinColumn(name = "registration_No",referencedColumnName = "registration_Number",nullable = false)
     private Car car;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username",referencedColumnName = "username",nullable = false)
+    @JoinColumn(name = "username_Cus",referencedColumnName = "username_Customer",nullable = false)
     private Customer cus;
 
 }

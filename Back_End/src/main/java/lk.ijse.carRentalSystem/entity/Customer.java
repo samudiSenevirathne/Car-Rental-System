@@ -5,26 +5,30 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Customer {
+public class Customer implements Serializable {
     @Id
-    private String username;
+    private String username_Customer;
     @Column(nullable = false,unique=true)
-    private String password;
+    private String password_Customer;
     @Column(nullable = false,unique=true)
     private String nic_No;
     @Lob
-    private byte[] nic_Image;
+    private byte[] nic_Image_One;
+    @Lob
+    private byte[] nic_Image_Two;
     @Column(nullable = false,unique=true)
     private String license_No;
     @Lob
-    private byte[] license_Image;
+    private byte[] license_Image_One;
+    @Lob
+    private byte[] license_Image_Two;
     private String verify_State;
     @Column(nullable = false)
     private String name;
@@ -39,6 +43,6 @@ public class Customer {
     private Register register;
 
     @OneToMany(mappedBy = "cus")
-    private List<Book> bookList=new ArrayList<>();
+    private List<Book> BookList;
 
 }

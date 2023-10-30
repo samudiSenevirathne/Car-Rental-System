@@ -16,6 +16,12 @@ pArray.push({field: $("#customerEmail"), regEx: EMAIL_REGEX});
 pArray.push({field: $("#customerNic"), regEx: NIC_NO_REGEX});
 pArray.push({field: $("#customerLicense"), regEx: LICENSE_NO_REGEX});
 
+// function clearPersonalDetailInputFields() {  //for future
+//     $("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerLicense").val("");
+//     $("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerLicense").css("border", "1px solid #ced4da");
+//     $("#exampleInputUsername2").focus();
+// }
+
 //disable tab
 $("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerLicense").on("keydown keyup", function (e) {
     //get the index number of data input fields indexNo
@@ -29,5 +35,26 @@ $("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,
     //check validations
     checkValidations(pArray[indexNo]);
 
+
+    //If the enter key pressed cheque and focus
+    if (e.key == "Enter") {
+
+        if (e.target.id != pArray[pArray.length - 1].field.attr("id")) {
+            //check validation is ok
+            if (checkValidations(pArray[indexNo])) {
+                pArray[indexNo + 1].field.focus();
+            }
+        } else {
+            if (checkValidations(pArray[indexNo])) {
+                // savePersonalDetails();
+            }
+        }
+    }
 });
 
+// function checkAllDetails() { //for future
+//     for (let i = 0; i < pArray.length; i++) {
+//         if (!checkValidations(pArray[i])) return false;
+//     }
+//     return true;
+// }

@@ -5,40 +5,43 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Manager {
+public class Manager implements Serializable {
     @Id
-    private String m_Id;
+    private String username_Manager;
+    @Column(nullable = false,unique=true)
+    private String password_Manager;
+    @Column(nullable = false,unique=true)
+    private String nic_No;
+    @Lob
+    private byte[] nic_Image_One;
+    @Lob
+    private byte[] nic_Image_Two;
+    private String verify_State;
     @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
+    private String contact;
     @Column(unique=true)
     private String email;
     @Column(nullable = false)
     private String address;
-    @Column(nullable = false)
-    private String contact;
-    private BigDecimal salary;
-    @Column(nullable = false,unique=true)
-    private String nic_No;
-    @Lob
-    private byte[] nic_Image;
-    @Column(nullable = false)
-    private LocalDate appointment_Start_Date;
-    private LocalDate appointment_End_Date;
 
     @OneToMany(mappedBy = "mng")
-    ArrayList<Car>carList;
+    List<Car> carList;
 
     @OneToMany(mappedBy = "mng")
-    ArrayList<Maintenance>maintenanceList;
+    List<Maintenance>maintenanceList;
 
     @OneToMany(mappedBy = "mng")
-    ArrayList<Damage_Service_Detail>damageServiceDetailList;
+    List<Damage_Service_Detail>damageServiceDetailList;
+
+    @OneToOne(mappedBy = "mng")
+    private Register register;
 }

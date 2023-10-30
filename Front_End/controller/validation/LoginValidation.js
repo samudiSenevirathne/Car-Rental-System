@@ -6,6 +6,12 @@ let array = new Array();
 array.push({field: $("#exampleInputUsername1"), regEx: USERNAME_REGEX});
 array.push({field: $("#exampleInputPassword1"), regEx: PASSWORD_REGEX});
 
+// function clearLoginInputFields() { //for future
+//     $("#exampleInputUsername1,#exampleInputPassword1").val("");
+//     $("#exampleInputUsername1,#exampleInputPassword1").css("border", "1px solid #ced4da");
+//     $("#exampleInputUsername1").focus();
+// }
+
 //disable tab
 $("#exampleInputUsername1,#exampleInputPassword1").on("keydown keyup", function (e) {
     //get the index number of data input fields indexNo
@@ -19,6 +25,21 @@ $("#exampleInputUsername1,#exampleInputPassword1").on("keydown keyup", function 
     //check validations
     checkValidations(array[indexNo]);
 
+
+    //If the enter key pressed cheque and focus
+    if (e.key == "Enter") {
+
+        if (e.target.id != array[array.length - 1].field.attr("id")) {
+            //check validation is ok
+            if (checkValidations(array[indexNo])) {
+                array[indexNo + 1].field.focus();
+            }
+        } else {
+            if (checkValidations(array[indexNo])) {
+                // Login();
+            }
+        }
+    }
 });
 
 function checkValidations(object) {

@@ -5,17 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Car {
+public class Car implements Serializable {
     @Id
-    private String car_Id;
+    private String registration_Number;
     @Column(nullable = false)
     private String brand;
     @Column(nullable = false)
@@ -30,8 +30,6 @@ public class Car {
     private BigDecimal Free_KM_Month;
     @Column(nullable = false)
     private BigDecimal price_Extra_KM;
-    @Column(nullable = false,unique=true)
-    private String registration_Number;
     @Column(nullable = false)
     private String color;
     @Lob
@@ -50,16 +48,16 @@ public class Car {
     private String fuel_Type;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "m_Id",referencedColumnName = "m_Id",nullable = false)
+    @JoinColumn(name = "username_Manager",referencedColumnName = "username_Manager",nullable = false)
     private Manager mng;
 
     @OneToMany(mappedBy = "car")
-    ArrayList<Maintenance> maintenanceList;
+    List<Maintenance> maintenanceList;
 
     @OneToMany(mappedBy = "car")
-    ArrayList<Damage_Service_Detail>damageServiceDetailList;
+    List<Damage_Service_Detail>damageServiceDetailList;
 
     @OneToMany(mappedBy = "car")
-    private List<Book> bookList=new ArrayList<>();
+    private List<Book> BookList;
 
 }

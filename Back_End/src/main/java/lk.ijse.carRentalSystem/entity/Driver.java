@@ -4,33 +4,45 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.math.BigDecimal;
-import java.util.ArrayList;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Driver {
+public class Driver implements Serializable {
     @Id
-    private String driver_Id;
-    @Column(nullable = false)
-    private String address;
-    private BigDecimal salary;
-    @Column(unique=true)
-    private String email;
+    private String username_Driver;
+    @Column(nullable = false,unique=true)
+    private String password_Driver;
+    @Column(nullable = false,unique=true)
+    private String nic_No;
+    @Lob
+    private byte[] nic_Image_One;
+    @Lob
+    private byte[] nic_Image_Two;
+    @Column(nullable = false,unique=true)
+    private String license_No;
+    @Lob
+    private byte[] license_Image_One;
+    @Lob
+    private byte[] license_Image_Two;
+    private String verify_State;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
     private String contact;
-    @Column(nullable = false,unique=true)
-    private String nic;
+    @Column(unique=true)
+    private String email;
+    @Column(nullable = false)
+    private String address;
 
     @OneToMany(mappedBy = "drive")
-    ArrayList<Book> bookList;
+    List<Book> BookList;
+
+    @OneToOne(mappedBy = "drive")
+    private Register register;
 
 }

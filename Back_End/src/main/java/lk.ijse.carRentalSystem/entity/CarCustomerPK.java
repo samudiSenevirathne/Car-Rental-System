@@ -12,6 +12,6 @@ import java.io.Serializable;
 @Data
 @Embeddable
 public class CarCustomerPK implements Serializable {
-   private String car_Id;
-   private String username;
+   private String registration_No;
+   private String username_Cus;
 }

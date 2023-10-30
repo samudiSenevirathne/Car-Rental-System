@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Payment {
+public class Payment implements Serializable {
     @Id
     private String pay_Id;
     @Lob
@@ -28,8 +29,7 @@ public class Payment {
     private BigDecimal additional_charge_Cost;
     private LocalDate additional_charge_Date;
 
-    @OneToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "book_Id",referencedColumnName = "book_Id",nullable = false)
-    private Book book;
+    @OneToOne(mappedBy = "pay")
+    private Book Book;
 
 }
