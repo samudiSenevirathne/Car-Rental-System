@@ -24,11 +24,15 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(CustomerDTO dto) {
-//        checkCustomerUserName(dto.getUsername_Customer());
-//        checkCustomerPassword(dto.getPassword_Customer());
         if (customerRepo.existsById(dto.getNic_No())) {
-            throw new RuntimeException(dto.getNic_No()+" is already available, please again check your NIC");
+            throw new RuntimeException(dto.getNic_No() + " is already available, please again check your NIC");
         }
+       if (customerRepo.existsCustomerByUsername(dto.getUsername())) {
+           throw new RuntimeException(dto.getUsername() + " is already available, please insert a new username");
+       }
+       if (customerRepo.existsCustomerByPassword(dto.getPassword())) {
+           throw new RuntimeException(dto.getPassword() + " is already available, please insert a new password");
+       }
         Customer map = mapper.map(dto, Customer.class);
         customerRepo.save(map);
     }
@@ -49,26 +53,10 @@ public class CustomerServiceImpl implements CustomerService {
         return mapper.map(customer,CustomerDTO.class);
     }
 
-//    @Override
-//    public boolean checkCustomerUserName(String username) {
-//        if (customerRepo.existsCustomerByUsername_Customer(username)) {
-//             throw new RuntimeException(username + " is already available, please insert a new username");
-//        }
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean checkCustomerPassword(String password) {
-//        if (customerRepo.existsCustomerByPassword_Customer(password)) {
-//            throw new RuntimeException(password + " is already available, please insert a new password");
-//        }
-//        return true;
-//    }
-
     @Override
     public void updateCustomer(CustomerDTO c) {
-        if (!customerRepo.existsById(c.getUsername_Customer())) {
-            throw new RuntimeException(c.getUsername_Customer()+ " Customer is not available, please check your NIC before update.!");
+        if (!customerRepo.existsById(c.getNic_No())) {
+            throw new RuntimeException(c.getNic_No()+ " Customer is not available, please check your NIC before update.!");
         }
         Customer map = mapper.map(c, Customer.class);
         customerRepo.save(map);

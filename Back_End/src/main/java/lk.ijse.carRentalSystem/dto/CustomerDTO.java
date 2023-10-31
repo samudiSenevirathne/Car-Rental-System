@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CustomerDTO {
-    private String username_Customer;
-    private String password_Customer;
+    private String username;
+    private String password;
     private String nic_No;
     private String nic_Image_One;
     private String nic_Image_Two;

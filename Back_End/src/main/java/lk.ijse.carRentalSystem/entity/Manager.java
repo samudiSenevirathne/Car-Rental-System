@@ -14,9 +14,9 @@ import java.util.List;
 @Data
 public class Manager implements Serializable {
     @Column(nullable = false,unique=true)
-    private String username_Manager;
+    private String username;
     @Column(nullable = false,unique=true)
-    private String password_Manager;
+    private String password;
     @Id
     private String nic_No;
     @Lob

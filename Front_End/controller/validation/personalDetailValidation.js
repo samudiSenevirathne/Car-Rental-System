@@ -101,11 +101,14 @@ function imageCheck() {
 
 
 function setBtn() {
-        $("#btnAddCus,#customerLicenseImage,#customerNicImage").prop("disabled", true);
+        $("#btnAddCus").prop("disabled", true);
+         $("#customerLicenseImage,#customerNicImage").prop("disabled", true);
     if (checkAll()) {
         $("#customerLicenseImage,#customerNicImage").prop("disabled", false);
     } else {
-        $("#btnAddCus,#customerLicenseImage,#customerNicImage").prop("disabled", true);
+        $("#btnAddCus").prop("disabled", true);
+        $("#customerLicenseImage,#customerNicImage").prop("disabled", true);
+
     }
 }
 

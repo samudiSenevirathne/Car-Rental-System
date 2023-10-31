@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class DriverDTO {
-    private String username_Driver;
-    private String password_Driver;
+    private String username;
+    private String password;
     private String nic_No;
     private String nic_Image_One;
     private String nic_Image_Two;

@@ -14,9 +14,9 @@ import java.util.List;
 @Data
 public class Driver implements Serializable {
     @Column(nullable = false,unique=true)
-    private String username_Driver;
+    private String username;
     @Column(nullable = false,unique=true)
-    private String password_Driver;
+    private String password;
     @Id
     private String nic_No;
     @Lob

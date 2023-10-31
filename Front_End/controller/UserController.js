@@ -16,8 +16,8 @@ function saveCustomer() {
     let address=$("#customerAddress").val();
     let email=$("#customerEmail").val();
     customerAll={
-        "username_Customer":username,
-        "password_Customer":password,
+        "username":username,
+        "password":password,
         "nic_No":nic,
         "nic_Image_One":nicImage1,
         "nic_Image_Two":nicImage2,
