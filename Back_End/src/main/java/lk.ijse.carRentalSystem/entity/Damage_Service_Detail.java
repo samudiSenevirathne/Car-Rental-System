@@ -24,7 +24,7 @@ public class Damage_Service_Detail implements Serializable {
     private BigDecimal damage_Cost;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Manager",referencedColumnName = "username_Manager",nullable = false)
+    @JoinColumn(name = "nic_No_Manager",referencedColumnName = "nic_No",nullable = false)
     private Manager mng;
 
     @ManyToOne(cascade = CascadeType.REFRESH)

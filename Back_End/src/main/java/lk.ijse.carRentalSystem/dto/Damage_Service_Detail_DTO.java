@@ -16,6 +16,6 @@ public class Damage_Service_Detail_DTO {
     private LocalDate service_Start_Date;
     private LocalDate service_End_Date;
     private BigDecimal damage_Cost;
-    private String username_Manager;
+    private String nic_No_Manager;
     private String registration_Number;
 }

@@ -24,7 +24,7 @@ public class Maintenance implements Serializable {
     private BigDecimal maintain_Cost;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Manager",referencedColumnName = "username_Manager",nullable = false)
+    @JoinColumn(name = "nic_No_Manager",referencedColumnName = "nic_No",nullable = false)
     private Manager mng;
 
     @ManyToOne(cascade = CascadeType.REFRESH)

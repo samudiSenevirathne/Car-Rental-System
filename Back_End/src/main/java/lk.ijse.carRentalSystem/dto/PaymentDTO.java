@@ -21,5 +21,4 @@ public class PaymentDTO {
     private String additional_charge_Description;
     private BigDecimal additional_charge_Cost;
     private LocalDate additional_charge_Date;
-//    private String book_Id;
 }

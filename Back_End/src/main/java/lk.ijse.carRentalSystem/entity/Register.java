@@ -22,17 +22,15 @@ public class Register implements Serializable {
     private String type;
 
     @OneToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Customer",referencedColumnName = "username_Customer",nullable = false)
+    @JoinColumn(name = "nic_No_Customer",referencedColumnName = "nic_No",nullable = false)
     private Customer cus;
 
     @OneToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Driver",referencedColumnName = "username_Driver",nullable = false)
+    @JoinColumn(name = "nic_No_Driver",referencedColumnName = "nic_No",nullable = false)
     private Driver drive;
 
     @OneToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Manager",referencedColumnName = "username_Manager",nullable = false)
+    @JoinColumn(name = "nic_No_Manager",referencedColumnName = "nic_No",nullable = false)
     private Manager mng;
-
-
 
 }

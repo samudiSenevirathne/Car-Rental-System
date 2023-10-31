@@ -15,7 +15,7 @@ public class RegisterDTO {
     private LocalDate date;
     private LocalTime time;
     private String type;
-    private String username_Customer;
-    private String username_Driver;
-    private String username_Manager;
+    private String nic_No_Customer;
+    private String nic_No_Driver;
+    private String nic_No_Manager;
 }

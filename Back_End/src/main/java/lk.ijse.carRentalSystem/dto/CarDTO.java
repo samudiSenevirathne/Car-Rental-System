@@ -19,12 +19,12 @@ public class CarDTO {
     private BigDecimal Free_KM_Month;
     private BigDecimal price_Extra_KM;
     private String color;
-    private byte[] front_View;
-    private byte[] back_View;
-    private byte[] side_View;
-    private byte[] interior;
+    private String front_View;
+    private String back_View;
+    private String side_View;
+    private String interior;
     private int passenger_Count;
     private String transmission_Type;
     private String fuel_Type;
-    private String username_Manager;
+    private String nic_No_Manager;
 }

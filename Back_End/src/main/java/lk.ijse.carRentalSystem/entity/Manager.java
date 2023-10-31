@@ -13,11 +13,11 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class Manager implements Serializable {
-    @Id
+    @Column(nullable = false,unique=true)
     private String username_Manager;
     @Column(nullable = false,unique=true)
     private String password_Manager;
-    @Column(nullable = false,unique=true)
+    @Id
     private String nic_No;
     @Lob
     private byte[] nic_Image_One;

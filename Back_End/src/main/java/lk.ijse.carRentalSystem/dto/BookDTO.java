@@ -24,8 +24,8 @@ public class BookDTO {
     private String endVenue;
     private BigDecimal total_KM;
     private String maintain_Status;
-    private String username_Driver;
-    private String registration_Number;
-    private String username_Customer;
+    private String nic_No_Driver;
+    private String registration_No;
+    private String nic_No_Cus;
     private String pay_Id;
 }

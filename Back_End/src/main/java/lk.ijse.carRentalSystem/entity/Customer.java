@@ -13,22 +13,22 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class Customer implements Serializable {
-    @Id
+    @Column(nullable = false,unique=true)
     private String username_Customer;
     @Column(nullable = false,unique=true)
     private String password_Customer;
-    @Column(nullable = false,unique=true)
+    @Id
     private String nic_No;
     @Lob
-    private byte[] nic_Image_One;
+    private String nic_Image_One;
     @Lob
-    private byte[] nic_Image_Two;
+    private String nic_Image_Two;
     @Column(nullable = false,unique=true)
     private String license_No;
     @Lob
-    private byte[] license_Image_One;
+    private String license_Image_One;
     @Lob
-    private byte[] license_Image_Two;
+    private String license_Image_Two;
     private String verify_State;
     @Column(nullable = false)
     private String name;

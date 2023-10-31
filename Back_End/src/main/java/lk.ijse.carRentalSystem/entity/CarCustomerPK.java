@@ -13,5 +13,5 @@ import java.io.Serializable;
 @Embeddable
 public class CarCustomerPK implements Serializable {
    private String registration_No;
-   private String username_Cus;
+   private String nic_No_Cus;
 }

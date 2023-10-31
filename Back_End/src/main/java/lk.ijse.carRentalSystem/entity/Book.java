@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Data
 public class Book implements Serializable {
-    @Id
+    @Column(unique=true)
     private String book_Id;
     @EmbeddedId
     private CarCustomerPK carCustomerPK;
@@ -35,15 +35,15 @@ public class Book implements Serializable {
     private Payment pay;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Driver",referencedColumnName = "username_Driver",nullable = false)
+    @JoinColumn(name = "nic_No_Driver",referencedColumnName = "nic_No",nullable = false)
     private Driver drive;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "registration_No",referencedColumnName = "registration_Number",nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "registration_No",referencedColumnName = "registration_Number",insertable = false,updatable = false)
     private Car car;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Cus",referencedColumnName = "username_Customer",nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "nic_No_Cus",referencedColumnName = "nic_No",insertable = false,updatable = false)
     private Customer cus;
 
 }

@@ -16,6 +16,6 @@ public class MaintenanceDTO {
     private LocalDate maintain_Start_Date;
     private LocalDate maintain_End_Date;
     private BigDecimal maintain_Cost;
-    private String username_Manager;
+    private String nic_No_Manager;
     private String registration_Number;
 }

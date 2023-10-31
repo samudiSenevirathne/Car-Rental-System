@@ -48,7 +48,7 @@ public class Car implements Serializable {
     private String fuel_Type;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "username_Manager",referencedColumnName = "username_Manager",nullable = false)
+    @JoinColumn(name = "nic_No_Manager",referencedColumnName = "nic_No",nullable = false)
     private Manager mng;
 
     @OneToMany(mappedBy = "car")
