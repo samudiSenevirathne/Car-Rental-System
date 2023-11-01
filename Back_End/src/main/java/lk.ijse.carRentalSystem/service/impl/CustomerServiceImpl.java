@@ -1,8 +1,11 @@
 package lk.ijse.carRentalSystem.service.impl;
 
 import lk.ijse.carRentalSystem.dto.CustomerDTO;
+import lk.ijse.carRentalSystem.dto.RegisterDTO;
 import lk.ijse.carRentalSystem.entity.Customer;
+import lk.ijse.carRentalSystem.entity.Register;
 import lk.ijse.carRentalSystem.repo.CustomerRepo;
+import lk.ijse.carRentalSystem.repo.RegisterRepo;
 import lk.ijse.carRentalSystem.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -10,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -18,6 +23,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerRepo customerRepo;
+
+    @Autowired
+    RegisterRepo registerRepo;
 
     @Autowired
     ModelMapper mapper;
@@ -33,8 +41,18 @@ public class CustomerServiceImpl implements CustomerService {
        if (customerRepo.existsCustomerByPassword(dto.getPassword())) {
            throw new RuntimeException(dto.getPassword() + " is already available, please insert a new password");
        }
-        Customer map = mapper.map(dto, Customer.class);
-        customerRepo.save(map);
+        if (customerRepo.existsCustomerByLicense(dto.getLicense())) {
+            throw new RuntimeException(dto.getLicense() + " is already available, please again check your License_No");
+        }
+        if (customerRepo.existsCustomerByEmail(dto.getEmail())) {
+            throw new RuntimeException(dto.getEmail() + " is already available, please again check your Email");
+        }
+          Customer map = mapper.map(dto, Customer.class);
+          customerRepo.save(map);
+          for(RegisterDTO dtoR:dto.getRegisterDetail()){
+             Register register = new Register(dtoR.getR_Id(), LocalDate.now(), LocalTime.now(),dtoR.getType(),customerRepo.getReferenceById(dtoR.getNic_No_Customer()));
+             registerRepo.save(register);
+          }
     }
 
     @Override

@@ -1,6 +1,27 @@
+generateRegisterId();
+
 $('#btnAddCus').click(function () {
     saveCustomer();
 });
+
+let registerId;
+
+function generateRegisterId(){
+    var rid="";
+    $.ajax({
+        url: "http://localhost:8080/Back_End_war/register",
+        success: function (resp) {
+            for (let r of resp.data) {
+                rid=r.r_Id;
+            }
+            let split =  rid.split('-');
+            let num =(+split[1])+1;
+            registerId=('RID-' + (String(num).padStart(3,'0')));
+        }
+    });
+}
+
+let registerDetail=[];
 
 function saveCustomer() {
     let username=$("#exampleInputUsername2").val();
@@ -15,35 +36,42 @@ function saveCustomer() {
     let contact=$("#customerContact").val();
     let address=$("#customerAddress").val();
     let email=$("#customerEmail").val();
+    registerDetail.push({
+        r_Id:registerId,
+        type:type,
+        nic_No_Customer:nic
+    });
     customerAll={
         "username":username,
         "password":password,
         "nic_No":nic,
         "nic_Image_One":nicImage1,
         "nic_Image_Two":nicImage2,
-        "license_No":license,
+        "license":license,
         "license_Image_One":licenseImage1,
         "license_Image_Two":licenseImage2,
-        "verify_State":null,
         "name":name,
         "contact":contact,
         "address":address,
-        "email":email
+        "email":email,
+        "registerDetail":registerDetail
     }
-    $.ajax({
-        url:"http://localhost:8080/Back_End_war/customer",
-        method: "post",
-        contentType:"application/json",
-        data:JSON.stringify(customerAll),
-        success: function (resp) {
-            alert(resp.message);
-            clearPersonalDetailInputFields();
-            console.log(resp);
-        }
-        ,
-        error: function (error) {
-            alert(error.responseJSON.message);
-            clearPersonalDetailInputFields();
-        }
-    });
+    if(type=="customer") {
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/customer",
+            method: "post",
+            contentType: "application/json",
+            data: JSON.stringify(customerAll),
+            success: function (resp) {
+                alert(resp.message);
+                clearPersonalDetailInputFields();
+                console.log(resp);
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearPersonalDetailInputFields();
+            }
+        });
+    }
 }

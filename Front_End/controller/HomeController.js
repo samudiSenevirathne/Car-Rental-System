@@ -15,7 +15,11 @@ $("#addMaintenance").css('display', 'none');
 $("#addDamageService").css('display', 'none');
 $("#footer").css('display', 'block');
 
+var type="";
+
+
 $("#customer").click(function () {
+    type="customer";
     $("#panal > h1:nth-child(1)").text('Car Rentals - Customer Panel');
     $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating customer account');
     $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
@@ -23,6 +27,7 @@ $("#customer").click(function () {
 });
 
 $("#employee").click(function () {
+    type="employee";
     $("#panal > h1:nth-child(1)").text('Car Rentals - Employee Panel');
     $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating employee account');
     $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "hidden");
@@ -30,6 +35,7 @@ $("#employee").click(function () {
 });
 
 $("#driver").click(function () {
+    type="driver";
     $("#panal > h1:nth-child(1)").text('Car Rentals - Driver Panel');
     $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating driver account');
     $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");

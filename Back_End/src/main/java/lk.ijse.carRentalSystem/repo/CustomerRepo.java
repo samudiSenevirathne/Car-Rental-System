@@ -7,6 +7,6 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
 
     Boolean existsCustomerByUsername(String username);
     Boolean existsCustomerByPassword(String password);
-
-
+    Boolean existsCustomerByLicense(String license);
+    Boolean existsCustomerByEmail(String email);
 }

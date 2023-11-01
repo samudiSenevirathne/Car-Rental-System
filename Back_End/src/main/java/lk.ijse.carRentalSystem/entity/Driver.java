@@ -24,7 +24,7 @@ public class Driver implements Serializable {
     @Lob
     private byte[] nic_Image_Two;
     @Column(nullable = false,unique=true)
-    private String license_No;
+    private String license;
     @Lob
     private byte[] license_Image_One;
     @Lob

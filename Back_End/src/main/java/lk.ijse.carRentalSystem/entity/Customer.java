@@ -24,7 +24,7 @@ public class Customer implements Serializable {
     @Lob
     private String nic_Image_Two;
     @Column(nullable = false,unique=true)
-    private String license_No;
+    private String license;
     @Lob
     private String license_Image_One;
     @Lob
