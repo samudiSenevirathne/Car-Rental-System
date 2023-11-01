@@ -20,15 +20,15 @@ public class Driver implements Serializable {
     @Id
     private String nic_No;
     @Lob
-    private byte[] nic_Image_One;
+    private String nic_Image_One;
     @Lob
-    private byte[] nic_Image_Two;
+    private String nic_Image_Two;
     @Column(nullable = false,unique=true)
     private String license;
     @Lob
-    private byte[] license_Image_One;
+    private String license_Image_One;
     @Lob
-    private byte[] license_Image_Two;
+    private String license_Image_Two;
     private String verify_State;
     @Column(nullable = false)
     private String name;

@@ -39,4 +39,12 @@ public class Register implements Serializable {
         this.type = type;
         this.cus = cus;
     }
+
+    public Register(String r_Id, LocalDate date, LocalTime time, String type, Driver drive) {
+        this.r_Id = r_Id;
+        this.date = date;
+        this.time = time;
+        this.type = type;
+        this.drive = drive;
+    }
 }

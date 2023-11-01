@@ -27,7 +27,7 @@ public class CustomerController {
 
     @GetMapping(params = {"nic"})
     public ResponseUtil findCustomer(String nic){
-        return new ResponseUtil("Ok","Successfull", service.findCustomer(nic));
+        return new ResponseUtil("Ok","Successful", service.findCustomer(nic));
     }
 
     @PutMapping
