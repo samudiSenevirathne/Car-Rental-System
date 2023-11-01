@@ -1,45 +1,73 @@
-$("#header").css('display', 'block');
-$("#homeContent").css('display', 'block');
-$("#login").css('display', 'none');
-$("body").css('height', 'calc(100vh * 4)');
-$("#addCus").css('display', 'none');
-$("#afterLoggingBook").css('display', 'none');
-$("#addBook").css('display', 'none');
-$("#addPayment").css('display', 'none');
-$("#invoice").css('display', 'none');
-$("#bookingTableCustomer").css('display', 'none');
-$("#workScheduleDriver").css('display', 'none');
-$("#managerDashBoard").css('display', 'none');
-$("#addCar").css('display', 'none');
-$("#addMaintenance").css('display', 'none');
-$("#addDamageService").css('display', 'none');
-$("#addMng").css('display', 'none');
-$("#footer").css('display', 'block');
+home();
+function home() {
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'block');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 4)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}
 
 var type="";
 
+$("#home").click(function () {
+    if ($("#home>a").text() == "Dashboard") {
+        managerAfterLoginBasic();
+    }else{
+        home();
+    }
+});
+
 $("#customer").click(function () {
-    type="customer";
-    $("#panal > h1:nth-child(1)").text('Car Rentals - Customer Panel');
-    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating customer account');
-    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
-    same();
+    if ($("#customer>a").text() == "Car") {
+            carPage();
+    }else {
+        type = "customer";
+        $("#panal > h1:nth-child(1)").text('Car Rentals - Customer Panel');
+        $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating customer account');
+        $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
+        same();
+    }
 });
 
 $("#employee").click(function () {
-    type="employee";
-    $("#panal > h1:nth-child(1)").text('Car Rentals - Employee Panel');
-    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating employee account');
-    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "hidden");
-    same();
+    if ($("#employee>a").text() == "Maintenance") {
+        viewManagerPath();
+    }else {
+        type = "employee";
+        $("#panal > h1:nth-child(1)").text('Car Rentals - Employee Panel');
+        $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating employee account');
+        $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "hidden");
+        same();
+    }
 });
 
 $("#driver").click(function () {
-    type="driver";
-    $("#panal > h1:nth-child(1)").text('Car Rentals - Driver Panel');
-    $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating driver account');
-    $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
-    same();
+    if ($("#driver>a").text() == "Logout") {
+        $("#home>a").text('Home');
+        $("#customer>a").text('Customer');
+        $("#employee>a").text('Employee');
+        $("#driver>a").text('Driver');
+        home();
+    }else {
+        type = "driver";
+        $("#panal > h1:nth-child(1)").text('Car Rentals - Driver Panel');
+        $("#panalAddCus > h1:nth-child(2)").text('Get Started by creating driver account');
+        $("#customerLicenseNumber,#customerLicenseFile,#customerLicenseImageShow").css("visibility", "visible");
+        same();
+    }
 });
 
 function same() {
@@ -59,6 +87,7 @@ function same() {
     $("#addMaintenance").css('display', 'none');
     $("#addDamageService").css('display', 'none');
     $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
     $("#footer").css('display', 'block');
 }
 
@@ -87,6 +116,7 @@ $("section>section>section>div>div:nth-child(4)").click(function() {
         $("#addMaintenance").css('display', 'none');
         $("#addDamageService").css('display', 'none');
         $("#addMng").css('display', 'none');
+        $("#managerPath").css('display', 'none');
         $("#footer").css('display', 'block');
         count1=0;
     }

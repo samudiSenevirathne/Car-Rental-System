@@ -22,6 +22,7 @@ $("#loginForm>h1:nth-child(9)").click(function() {
         $("#addMaintenance").css('display', 'none');
         $("#addDamageService").css('display', 'none');
         $("#addMng").css('display', 'none');
+        $("#managerPath").css('display', 'none');
         $("#footer").css('display', 'block');
     }
     if(type=="employee"){
@@ -41,6 +42,7 @@ $("#loginForm>h1:nth-child(9)").click(function() {
         $("#addMaintenance").css('display', 'none');
         $("#addDamageService").css('display', 'none');
         $("#addMng").css('display', 'block');
+        $("#managerPath").css('display', 'none');
         $("#footer").css('display', 'block');
     }
 
@@ -75,7 +77,7 @@ function checkLogin() {
                 alert(resp.message);
                 clearLoginInputFields();
                 console.log(resp);
-                customerAfterLogin();
+                // customerAfterLogin();
             }
             ,
             error: function (error) {
@@ -92,7 +94,7 @@ function checkLogin() {
                 alert(resp.message);
                 clearLoginInputFields();
                 console.log(resp);
-                 driverAfterLogin();
+                 // driverAfterLogin();
             }
             ,
             error: function (error) {
@@ -121,13 +123,84 @@ function checkLogin() {
 }
 
 function managerAfterLogin(){
-
+    managerAfterLoginBasic();
+    $("#home>a").text('Dashboard');
+    $("#customer>a").text('Car');
+    $("#employee>a").text('Maintenance');
+    $("#driver>a").text('Logout');
 }
 
-function customerAfterLogin(){
+// function customerAfterLogin(){
+//
+// }
+//
+// function driverAfterLogin(){
+//
+// }
 
+function managerAfterLoginBasic() {
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'block');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
 }
 
-function driverAfterLogin(){
-
+function carPage() {
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 2.5)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'block');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
 }
+
+function viewManagerPath() {
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'block');
+    $("#footer").css('display', 'block');
+}
+
+
+
+
