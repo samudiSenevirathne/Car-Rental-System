@@ -8,6 +8,16 @@ $("#textOrNext").click(function() {
    same();
 });
 
+$("#textOrNextmng").hover(function() {
+    $("#addMngForm>div:last-child").css("visibility", "visible");
+}, function() {
+    $("#addMngForm>div:last-child").css("visibility", "hidden");
+});
+
+$("#textOrNextmng").click(function() {
+    same();
+});
+
 // added Image of Nic's part
 
 let imageArray = [];
@@ -113,6 +123,7 @@ function deleteImageTwo(index) {
     displayImage2();
 }
 
+
     const passwordField = $('#exampleInputPassword2');
     const togglePassword = $('#togglePassword2');
     const eyeIcon = $('#eyeIcon2');
@@ -126,3 +137,72 @@ function deleteImageTwo(index) {
             eyeIcon.removeClass('fa-solid fa-eye-slash').addClass('fa-solid fa-eye');
         }
     });
+
+
+// added Image of Nic's part Mng
+
+let imageArrayMng = [];
+let inputMng = document.getElementById("mngNicImage");
+let countMng=0;
+
+
+inputMng.addEventListener("change", function () {
+    const files = inputMng.files;
+    L5 : for (var i = 0; i < files.length; i++) {
+        if (countMng == 2) {
+            break L5;
+        }
+        imageArrayMng.push(files[i]);
+        console.log(imageArrayMng);//for checking
+        console.log(files.length);//for checking
+        console.log(countMng);//for checking
+        countMng++;
+        console.log(countMng);//for checking
+    }
+    displayImageMng();
+});
+
+function displayImageMng() {
+    var imageMng = document.getElementById("mngNicImageShowFront");
+    var imagespanMng = document.getElementById("mngNicImageShowFrontSpan");
+    var image1Mng = document.getElementById("mngNicImageShowBack");
+    var imagespan1Mng = document.getElementById("mngNicImageShowBackSpan");
+
+    if (imageArrayMng.length > 0) {
+        imageMng.src = URL.createObjectURL(imageArrayMng[0]);
+        imagespanMng.innerHTML = `<button onclick="deleteImageMng(0)">&times;</button>`;
+    } else {
+        imageMng.src = ""; // Clear the image source if no image is present.
+        imagespanMng.innerHTML = "";
+    }
+
+    if (imageArrayMng.length > 1) {
+        image1Mng.src = URL.createObjectURL(imageArrayMng[1]);
+        imagespan1Mng.innerHTML = `<button onclick="deleteImageMng(1)">&times;</button>`;
+    } else {
+        image1Mng.src = ""; // Clear the image source if no image is present.
+        imagespan1Mng.innerHTML = "";
+    }
+}
+
+function deleteImageMng(index) {
+    imageArrayMng.splice(index, 1);
+    countMng--;
+    displayImageMng();
+}
+
+// mng's eye
+
+const passwordFieldMng = $('#exampleInputPassword3');
+const togglePasswordMng = $('#togglePassword3');
+const eyeIconMng = $('#eyeIcon3');
+
+togglePasswordMng.click(function() {
+    if (passwordFieldMng.attr('type') === 'password') {
+        passwordFieldMng.attr('type', 'text');
+        eyeIconMng.removeClass('fa-solid fa-eye').addClass('fa-solid fa-eye-slash');
+    } else {
+        passwordFieldMng.attr('type', 'password');
+        eyeIconMng.removeClass('fa-solid fa-eye-slash').addClass('fa-solid fa-eye');
+    }
+});

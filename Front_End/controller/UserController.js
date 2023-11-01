@@ -4,6 +4,10 @@ $('#btnAddCus').click(function () {
     saveCustomer();
 });
 
+$('#btnAddMng').click(function () {
+    saveMng();
+});
+
 let registerId;
 
 function generateRegisterId(){
@@ -23,6 +27,7 @@ function generateRegisterId(){
 
 let registerDetailCus=[];
 let registerDetailDri=[];
+
 let registerDetailMng=[];
 
 
@@ -79,24 +84,24 @@ function saveCustomer() {
     }
         if(type=="driver") {
             registerDetailDri.push({
-                r_Id:registerId,
-                type:type,
-                nic_No_Driver:nic
+                r_Id: registerId,
+                type: type,
+                nic_No_Driver: nic
             });
-            driverAll={
-                "username":username,
-                "password":password,
-                "nic_No":nic,
-                "nic_Image_One":nicImage1,
-                "nic_Image_Two":nicImage2,
-                "license":license,
-                "license_Image_One":licenseImage1,
-                "license_Image_Two":licenseImage2,
-                "name":name,
-                "contact":contact,
-                "address":address,
-                "email":email,
-                "registerDetail":registerDetailDri
+            driverAll = {
+                "username": username,
+                "password": password,
+                "nic_No": nic,
+                "nic_Image_One": nicImage1,
+                "nic_Image_Two": nicImage2,
+                "license": license,
+                "license_Image_One": licenseImage1,
+                "license_Image_Two": licenseImage2,
+                "name": name,
+                "contact": contact,
+                "address": address,
+                "email": email,
+                "registerDetail": registerDetailDri
             }
             $.ajax({
                 url: "http://localhost:8080/Back_End_war/driver",
@@ -115,4 +120,49 @@ function saveCustomer() {
                 }
             });
         }
+}
+
+function saveMng() {
+    let usernameMng=$("#exampleInputUsername3").val();
+    let passwordMng=$("#exampleInputPassword3").val();
+    let nicMng=$("#mngNic").val();
+    let nicImage1Mng=$("#mngNicImageShowFront").attr("src");
+    let nicImage2Mng=$("#mngNicImageShowBack").attr("src");
+    let nameMng=$("#mngName").val();
+    let contactMng=$("#mngContact").val();
+    let addressMng=$("#mngAddress").val();
+    let emailMng=$("#mngEmail").val();
+        registerDetailMng.push({
+            r_Id:registerId,
+            type:type,
+            nic_No_Manager:nicMng
+        });
+        managerAll={
+            "username":usernameMng,
+            "password":passwordMng,
+            "nic_No":nicMng,
+            "nic_Image_One":nicImage1Mng,
+            "nic_Image_Two":nicImage2Mng,
+            "name":nameMng,
+            "contact":contactMng,
+            "address":addressMng,
+            "email":emailMng,
+            "registerDetail":registerDetailMng
+        }
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/manager",
+            method: "post",
+            contentType: "application/json",
+            data: JSON.stringify(managerAll),
+            success: function (resp) {
+                alert(resp.message);
+                clearPersonalDetailInputFieldsMng();
+                console.log(resp);
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearPersonalDetailInputFieldsMng();
+            }
+        });
 }

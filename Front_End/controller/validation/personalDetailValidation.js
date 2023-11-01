@@ -34,7 +34,7 @@ function clearPersonalDetailInputFields() {
 setBtn();
 
 //disable tab
-$("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerLicense").on("keydown keyup click", function (e) {
+$("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,#customerAddress,#customerEmail,#customerNic,#customerLicense").on("keydown keyup", function (e) {
 
         //get the index number of data input fields indexNo
         let indexNo = pArray.indexOf(pArray.find((c) => c.field.attr("id") == e.target.id));
@@ -48,20 +48,6 @@ $("#exampleInputUsername2,#exampleInputPassword2,#customerName,#customerContact,
         checkValidations(pArray[indexNo]);
         setBtn();
 
-
-        // //If the enter key pressed cheque and focus
-        // if (e.key == "Enter") {
-        //
-        //     if (e.target.id != pArray[pArray - 1].field.attr("id")) {
-        //         //check validation is ok
-        //         if (checkValidations(pArray[indexNo])) {
-        //             pArray[indexNo + 1].field.focus();
-        //         }
-        //     } else {
-        //         if (checkValidations(pArray[indexNo])) {
-        //         }
-        //     }
-        // }
 });
 
 

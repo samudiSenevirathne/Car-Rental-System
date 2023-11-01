@@ -6,6 +6,7 @@ import lk.ijse.carRentalSystem.entity.Driver;
 import lk.ijse.carRentalSystem.entity.Register;
 import lk.ijse.carRentalSystem.repo.CustomerRepo;
 import lk.ijse.carRentalSystem.repo.DriverRepo;
+import lk.ijse.carRentalSystem.repo.ManagerRepo;
 import lk.ijse.carRentalSystem.repo.RegisterRepo;
 import lk.ijse.carRentalSystem.service.DriverService;
 import org.modelmapper.ModelMapper;
@@ -29,6 +30,9 @@ public class DriverServiceImpl implements DriverService {
     CustomerRepo customerRepo;
 
     @Autowired
+    ManagerRepo managerRepo;
+
+    @Autowired
     RegisterRepo registerRepo;
 
     @Autowired
@@ -39,10 +43,10 @@ public class DriverServiceImpl implements DriverService {
         if (driverRepo.existsById(dto.getNic_No())) {
             throw new RuntimeException(dto.getNic_No() + " is already available, please again check your NIC");
         }
-        if (driverRepo.existsDriverByUsername(dto.getUsername()) || customerRepo.existsCustomerByUsername(dto.getUsername())) {
+        if (driverRepo.existsDriverByUsername(dto.getUsername()) || customerRepo.existsCustomerByUsername(dto.getUsername()) || managerRepo.existsManagerByUsername(dto.getUsername())) {
             throw new RuntimeException(dto.getUsername() + " is already available, please insert a new username");
         }
-        if (driverRepo.existsDriverByPassword(dto.getPassword()) || customerRepo.existsCustomerByPassword(dto.getPassword())) {
+        if (driverRepo.existsDriverByPassword(dto.getPassword()) || customerRepo.existsCustomerByPassword(dto.getPassword()) || managerRepo.existsManagerByPassword(dto.getPassword())) {
             throw new RuntimeException(dto.getPassword() + " is already available, please insert a new password");
         }
         if (driverRepo.existsDriverByLicense(dto.getLicense())) {

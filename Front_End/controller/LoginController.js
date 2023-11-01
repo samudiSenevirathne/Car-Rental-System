@@ -5,22 +5,45 @@ $("#loginForm > h1:nth-child(9)").hover(function() {
 });
 
 $("#loginForm>h1:nth-child(9)").click(function() {
-    $("#header").css('display', 'block');
-    $("#homeContent").css('display', 'none');
-    $("#login").css('display', 'none');
-    $("body").css('height', 'calc(100vh * 2)');
-    $("#addCus").css('display', 'block');
-    $("#afterLoggingBook").css('display', 'none');
-    $("#addBook").css('display', 'none');
-    $("#addPayment").css('display', 'none');
-    $("#invoice").css('display', 'none');
-    $("#bookingTableCustomer").css('display', 'none');
-    $("#workScheduleDriver").css('display', 'none');
-    $("#managerDashBoard").css('display', 'none');
-    $("#addCar").css('display', 'none');
-    $("#addMaintenance").css('display', 'none');
-    $("#addDamageService").css('display', 'none');
-    $("#footer").css('display', 'block');
+    if(type=="customer" || type=="driver") {
+        $("#header").css('display', 'block');
+        $("#homeContent").css('display', 'none');
+        $("#login").css('display', 'none');
+        $("body").css('height', 'calc(100vh * 2)');
+        $("#addCus").css('display', 'block');
+        $("#afterLoggingBook").css('display', 'none');
+        $("#addBook").css('display', 'none');
+        $("#addPayment").css('display', 'none');
+        $("#invoice").css('display', 'none');
+        $("#bookingTableCustomer").css('display', 'none');
+        $("#workScheduleDriver").css('display', 'none');
+        $("#managerDashBoard").css('display', 'none');
+        $("#addCar").css('display', 'none');
+        $("#addMaintenance").css('display', 'none');
+        $("#addDamageService").css('display', 'none');
+        $("#addMng").css('display', 'none');
+        $("#footer").css('display', 'block');
+    }
+    if(type=="employee"){
+        $("#header").css('display', 'block');
+        $("#homeContent").css('display', 'none');
+        $("#login").css('display', 'none');
+        $("body").css('height', 'calc(100vh * 2)');
+        $("#addCus").css('display', 'none');
+        $("#afterLoggingBook").css('display', 'none');
+        $("#addBook").css('display', 'none');
+        $("#addPayment").css('display', 'none');
+        $("#invoice").css('display', 'none');
+        $("#bookingTableCustomer").css('display', 'none');
+        $("#workScheduleDriver").css('display', 'none');
+        $("#managerDashBoard").css('display', 'none');
+        $("#addCar").css('display', 'none');
+        $("#addMaintenance").css('display', 'none');
+        $("#addDamageService").css('display', 'none');
+        $("#addMng").css('display', 'block');
+        $("#footer").css('display', 'block');
+    }
+
 });
 
     const passwordField1 = $('#exampleInputPassword1');

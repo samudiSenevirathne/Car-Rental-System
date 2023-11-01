@@ -26,7 +26,7 @@
         body{
             position: relative;
             width: 100vw;
-            height: calc(100vh * 19);
+            height: calc(100vh * 21);
         }
 
         main{
@@ -2065,6 +2065,198 @@
             overflow-y: scroll;
         }
 
+        /*Add Mng*/
+
+        #addMng{
+            position: relative;
+            width: 100vw;
+            height: calc(100vh * 2);
+            background: url("assets/images/carBodyShortOne.png");
+            background-size:cover;
+        }
+
+        #addMng>section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #panalAddMng{
+            align-self: center;
+            position: relative;
+            width:76%;
+            height: 12.5%;
+            top:3%;
+            border-radius: 25px;
+            background: rgba(227, 221, 221, 0.56);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: black;
+        }
+
+        #panalAddMng>h1{
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #panalAddMng>h1:nth-child(1){
+            font-size: 40px;
+        }
+
+        #panalAddMng>h1:nth-child(2){
+            font-size: 15px;
+        }
+
+        #addMngForm{
+            align-self: center;
+            border: 1px solid white;
+            width:80%;
+            height: 78%;
+            position: relative;
+            top:2%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        #addMngForm>h1{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #addMngForm>h1:first-child{
+            align-self: center;
+            position: relative;
+            bottom: 3%;
+        }
+
+        #sectionGridMng {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+
+        #exampleInputPassword3,#exampleInputUsername3,#mngName,#mngContact,#mngAddress,#mngEmail,#mngNic,#mngNicImage{
+            position: relative;
+            width:80%;
+            background: transparent;
+            border: 1px solid white;
+            left:10%;
+            color: white;
+        }
+
+        #exampleInputUsername3::placeholder, #exampleInputPassword3::placeholder,#mngName::placeholder,#mngContact::placeholder,#mngAddress::placeholder,#mngEmail::placeholder,#mngNic::placeholder{
+            color: rgba(231, 221, 221, 0.56);
+        }
+
+        #exampleInputPassword3Id,#exampleInputUsername3Id,#mngNameId,#mngContactId,#mngAddressId,#mngEmailId,#mngNicId,#mngNicImageId{
+            position: relative;
+            left:10%;
+            top:1%;
+        }
+
+        #mngNicImageShow{
+            position: relative;
+            left:12%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+            border-radius: 25px;
+            background: transparent;
+            /*width: 400px;*/
+            /*height: 200px;*/
+            width: 78%;
+            height: 35vh;
+        }
+
+        #mngNicImageShow>img{
+            width: 45%;
+            height: 100%;
+            border: 1px solid white;
+            border-radius: 25px;
+            background: transparent;
+            color: white;
+        }
+
+        #mngNicImageShow>span{
+            /*border: 1px solid white;*/
+            width: 6%;
+            height: 10%;
+            position: relative;
+            bottom:40%;
+        }
+
+        #mngNicImageShow>span>button{
+            border-top: 0 ;
+            border-bottom: 0 ;
+            border-left: 0 ;
+            border-right: 0 ;
+        }
+
+        #btnAddMng{
+            align-self: center;
+            position: relative;
+            top:2%;
+            right:1%;
+            width:20%;
+            font-weight: bold;
+        }
+
+        #textOrmng{
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 3%;
+            right:1%;
+        }
+
+        #textOrNextmng{
+            align-self: center;
+            font-size: 15px;
+            position: relative;
+            top: 4%;
+            right:1%;
+            cursor: pointer;
+        }
+
+        #addMngForm>div:last-child{
+            align-self: center;
+            width: 15%;
+            height: 1px;
+            background: white;
+            position: relative;
+            top: 3.8%;
+            right: 1%;
+            cursor: pointer;
+            visibility: hidden;
+        }
+
+        #togglePassword3{
+            width: 8%;
+            height: 30%;
+            position: relative;
+            top: -30%;
+            left: 82%;
+            border:1px solid white;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        #eyeIcon3{
+            align-self: center;
+        }
+
+
 
     </style>
 </head>
@@ -2999,6 +3191,83 @@
     </section>
     <!-- End Add Damage Service Detail  -->
 
+    <!--  Start  Manger Add part ((with some modifications) and update part also) -->
+    <section id="addMng">
+        <section>
+
+            <aside id="panalAddMng">
+                <h1>Car Rentals - Registration </h1>
+                <h1>Get Started by creating manager account</h1>
+            </aside>
+
+            <form id="addMngForm">
+
+                <h1>Create Account</h1>
+
+                <section id="sectionGridMng">
+                    <div>
+                        <label for="exampleInputUsername3" class="form-label" id="exampleInputUsername3Id">Username</label>
+                        <input name="username_Customer" type="text" class="form-control" id="exampleInputUsername3" placeholder="Ex:- JohnDoe123" required>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="exampleInputPassword3" class="form-label" id="exampleInputPassword3Id">Password</label>
+                        <input name="password_Customer" type="password" class="form-control" id="exampleInputPassword3" placeholder="Ex:- MySecurePass123" required>
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword3"><i id="eyeIcon3" class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="mngName" class="form-label" id="mngNameId">Name</label>
+                        <input name="name" type="text" class="form-control" id="mngName" placeholder="Ex:- John Doe" required>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="mngContact" class="form-label" id="mngContactId">Contact</label>
+                        <input name="contact" type="tel" class="form-control" id="mngContact" placeholder="Ex:- +94703333456" required>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="mngAddress" class="form-label" id="mngAddressId">Address</label>
+                        <input name="address" type="text" class="form-control" id="mngAddress" placeholder="Ex:- Galle" required>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="mngEmail" class="form-label" id="mngEmailId">Email</label>
+                        <input name="email" type="email" class="form-control" id="mngEmail" placeholder="Ex:- JoinDe@gmail.com" required>
+                        <br>
+                    </div>
+                    <div>
+                        <label for="mngNic" class="form-label" id="mngNicId">NIC No</label>
+                        <input name="nic_No" type="text" class="form-control" id="mngNic" placeholder="Ex:- 196667239990" required>
+                        <br>
+                    </div>
+                    <div></div>
+                    <div>
+                        <label for="mngNicImage" class="form-label" id="mngNicImageId">NIC Image</label>
+                        <input type="file" class="form-control" accept="image/png, image/jpeg, image/jpg" id="mngNicImage">
+                        <br>
+                    </div>
+                   <div></div>
+                    <div id="mngNicImageShow">
+                        <img name="nic_Image_One" src="" class="form-control" id="mngNicImageShowFront" alt="Selected Image">
+                        <span id="mngNicImageShowFrontSpan"></span>
+                        <img name="nic_Image_Two" src="" class="form-control" id="mngNicImageShowBack" alt="Selected Image">
+                        <span id="mngNicImageShowBackSpan"></span>
+                    </div>
+                   <div></div>
+                </section>
+
+                <button type="button" class="btn btn-light" id="btnAddMng">SUBMIT</button>
+
+                <h1 id="textOrmng">or</h1>
+                <h1 id="textOrNextmng">Have an account? Login.</h1>
+                <div></div>
+
+            </form>
+        </section>
+    </section>
+    <!--  End  Manger Add part ((with some modifications) and update part also) -->
+
     <!--Start Add cus & dri verify State-->
          <!--have to complete!!!-->
     <!--End Add cus & dri verify State-->
@@ -3023,6 +3292,7 @@
 <script src="controller/validation/LoginValidation.js"></script>
 <script src="controller/validation/personalDetailValidation.js"></script>
 <script src="controller/UserController.js"></script>
+<script src="controller/validation/ManagerValidation.js"></script>
 <script>
 
     $("#addBook>section>div>div>div>form>aside>input").click(function() {

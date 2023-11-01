@@ -13,10 +13,10 @@ $("#managerDashBoard").css('display', 'none');
 $("#addCar").css('display', 'none');
 $("#addMaintenance").css('display', 'none');
 $("#addDamageService").css('display', 'none');
+$("#addMng").css('display', 'none');
 $("#footer").css('display', 'block');
 
 var type="";
-
 
 $("#customer").click(function () {
     type="customer";
@@ -58,6 +58,7 @@ function same() {
     $("#addCar").css('display', 'none');
     $("#addMaintenance").css('display', 'none');
     $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
     $("#footer").css('display', 'block');
 }
 
@@ -85,6 +86,7 @@ $("section>section>section>div>div:nth-child(4)").click(function() {
         $("#addCar").css('display', 'none');
         $("#addMaintenance").css('display', 'none');
         $("#addDamageService").css('display', 'none');
+        $("#addMng").css('display', 'none');
         $("#footer").css('display', 'block');
         count1=0;
     }
