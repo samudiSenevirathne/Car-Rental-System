@@ -12,4 +12,6 @@ public interface DriverService {
     DriverDTO findDriver(String nic);
 
     void updateDriver(DriverDTO c);
+
+    void  checkDriver(String username,String password);
 }

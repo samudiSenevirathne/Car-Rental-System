@@ -9,5 +9,6 @@ public interface DriverRepo extends JpaRepository<Driver,String> {
     Boolean existsDriverByPassword(String password);
     Boolean existsDriverByLicense(String license);
     Boolean existsDriverByEmail(String email);
+    Boolean existsDriverByUsernameAndPassword(String username,String password);
 
 }

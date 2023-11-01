@@ -66,4 +66,15 @@ public class ManagerServiceImpl implements ManagerService {
         Manager map = mapper.map(m, Manager.class);
         managerRepo.save(map);
     }
+
+    @Override
+    public void checkManager(String username, String password) {
+        if (!managerRepo.existsManagerByUsername(username)) {
+            throw new RuntimeException(username + " is not available");
+        }
+        if (!managerRepo.existsManagerByPassword(password)) {
+            throw new RuntimeException(password + " is not available");
+        }
+        managerRepo.existsManagerByUsernameAndPassword(username,password);
+    }
 }

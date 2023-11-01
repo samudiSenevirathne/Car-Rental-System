@@ -36,4 +36,10 @@ public class DriverController {
         return new ResponseUtil("Ok","Successfully Updated",d);
     }
 
+    @GetMapping(params = {"username", "password"})
+    public ResponseUtil checkDriver(String username,String password){
+        service.checkDriver(username,password);
+        return new ResponseUtil("Ok","Success Login","");
+    }
+
 }

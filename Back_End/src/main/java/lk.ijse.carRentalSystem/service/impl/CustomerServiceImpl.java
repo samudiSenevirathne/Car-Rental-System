@@ -87,4 +87,15 @@ public class CustomerServiceImpl implements CustomerService {
         Customer map = mapper.map(c, Customer.class);
         customerRepo.save(map);
     }
+
+    @Override
+    public void checkCustomer(String username, String password) {
+        if (!customerRepo.existsCustomerByUsername(username)) {
+            throw new RuntimeException(username + " is not available");
+        }
+        if (!customerRepo.existsCustomerByPassword(password)) {
+            throw new RuntimeException(password + " is not available");
+        }
+        customerRepo.existsCustomerByUsernameAndPassword(username,password);
+    }
 }

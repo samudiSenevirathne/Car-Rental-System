@@ -36,4 +36,10 @@ public class CustomerController {
         return new ResponseUtil("Ok","Successfully Updated",c);
     }
 
+    @GetMapping(params = {"username", "password"})
+    public ResponseUtil checkCustomer(String username,String password){
+         service.checkCustomer(username,password);
+         return new ResponseUtil("Ok","Success Login","");
+    }
+
 }

@@ -6,4 +6,6 @@ public interface ManagerService {
     void addManager(ManagerDTO dto);
 
     void updateManager(ManagerDTO m);
+
+    void  checkManager(String username,String password);
 }

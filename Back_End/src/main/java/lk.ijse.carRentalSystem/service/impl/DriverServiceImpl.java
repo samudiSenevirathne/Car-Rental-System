@@ -87,4 +87,15 @@ public class DriverServiceImpl implements DriverService {
         Driver map = mapper.map(c, Driver.class);
         driverRepo.save(map);
     }
+
+    @Override
+    public void checkDriver(String username, String password) {
+        if (!driverRepo.existsDriverByUsername(username)) {
+            throw new RuntimeException(username + " is not available");
+        }
+        if (!driverRepo.existsDriverByPassword(password)) {
+            throw new RuntimeException(password + " is not available");
+        }
+        driverRepo.existsDriverByUsernameAndPassword(username,password);
+    }
 }

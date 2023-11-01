@@ -26,4 +26,10 @@ public class ManagerController {
         return new ResponseUtil("Ok","Successfully Updated",m);
     }
 
+    @GetMapping(params = {"username", "password"})
+    public ResponseUtil checkManager(String username,String password){
+        service.checkManager(username,password);
+        return new ResponseUtil("Ok","Success Login","");
+    }
+
 }

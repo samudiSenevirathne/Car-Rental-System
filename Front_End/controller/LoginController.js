@@ -59,3 +59,75 @@ $("#loginForm>h1:nth-child(9)").click(function() {
             eyeIcon1.removeClass('fa-solid fa-eye-slash').addClass('fa-solid fa-eye');
         }
     });
+
+$('#btnLogin').click(function () {
+    checkLogin();
+});
+
+function checkLogin() {
+    let username=$("#exampleInputUsername1").val();
+    let password=$("#exampleInputPassword1").val();
+    if(type=="customer") {
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/customer?username=" + username + "&password=" + password,
+            method: "get",
+            success: function (resp) {
+                alert(resp.message);
+                clearLoginInputFields();
+                console.log(resp);
+                customerAfterLogin();
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearLoginInputFields();
+            }
+        });
+    }
+    if(type=="driver") {
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/driver?username=" + username + "&password=" + password,
+            method: "get",
+            success: function (resp) {
+                alert(resp.message);
+                clearLoginInputFields();
+                console.log(resp);
+                 driverAfterLogin();
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearLoginInputFields();
+            }
+        });
+    }
+    if(type=="employee") {
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/manager?username=" + username + "&password=" + password,
+            method: "get",
+            success: function (resp) {
+                alert(resp.message);
+                clearLoginInputFields();
+                console.log(resp);
+                managerAfterLogin();
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearLoginInputFields();
+            }
+        });
+    }
+}
+
+function managerAfterLogin(){
+
+}
+
+function customerAfterLogin(){
+
+}
+
+function driverAfterLogin(){
+
+}

@@ -12,4 +12,7 @@ public interface CustomerService {
     CustomerDTO findCustomer(String nic);
 
     void updateCustomer(CustomerDTO c);
+
+    void  checkCustomer(String username,String password);
+
 }

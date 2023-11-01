@@ -8,5 +8,6 @@ public interface ManagerRepo extends JpaRepository<Manager,String> {
     Boolean existsManagerByUsername(String username);
     Boolean existsManagerByPassword(String password);
     Boolean existsManagerByEmail(String email);
+    Boolean existsManagerByUsernameAndPassword(String username,String password);
 
 }
