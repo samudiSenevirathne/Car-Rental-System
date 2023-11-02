@@ -74,14 +74,18 @@ function imageCheck() {
                                       stopInterval();
                   }else{
                       $('#customerLicenseImageShowBack').css("border", "2px solid red");
+                      $("#btnAddCus").prop("disabled", true);
                   }
             }else{
                 $('#customerLicenseImageShowFront').css("border", "2px solid red");
+                $("#btnAddCus").prop("disabled", true);
             }
         }else{
             $('#customerNicImageShowBack').css("border", "2px solid red");
+            $("#btnAddCus").prop("disabled", true);
         }
     }else{
+        $("#btnAddCus").prop("disabled", true);
     }
 }
 

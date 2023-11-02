@@ -66,6 +66,8 @@ $('#btnLogin').click(function () {
     checkLogin();
 });
 
+var mngNicForCar;
+
 function checkLogin() {
     let username=$("#exampleInputUsername1").val();
     let password=$("#exampleInputPassword1").val();
@@ -112,6 +114,20 @@ function checkLogin() {
                 clearLoginInputFields();
                 console.log(resp);
                 managerAfterLogin();
+                //after login get user nic part
+                $.ajax({
+                    url: "http://localhost:8080/Back_End_war/manager?username=" + username,
+                    method: "get",
+                    success: function (resp) {
+                       alert(resp.message);//for test however this alert not want
+                        mngNicForCar=resp.data;
+                    }
+                ,
+                    error: function (error) {
+                    alert(error.responseJSON.message);
+                    clearLoginInputFields();
+                }
+            });
             }
             ,
             error: function (error) {
@@ -119,6 +135,7 @@ function checkLogin() {
                 clearLoginInputFields();
             }
         });
+
     }
 }
 

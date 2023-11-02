@@ -77,4 +77,9 @@ public class ManagerServiceImpl implements ManagerService {
         }
         managerRepo.existsManagerByUsernameAndPassword(username,password);
     }
+
+    @Override
+    public String findManagerNIC(String username) {
+        return managerRepo.findManagerNIC(username);
+    }
 }

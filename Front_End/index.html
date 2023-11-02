@@ -3095,7 +3095,7 @@
                     </div>
                     <div>
                         <label for="priceExtra" class="form-label" id="priceExtraId">Price Extra KM</label>
-                        <input type="number" class="form-control" id="priceExtra" placeholder="Ex:- 49.50">
+                        <input type="number" class="form-control" id="priceExtra" placeholder="Ex:- 49">
                     </div>
                      <div>
                          <label for="rentPriceDay" class="form-label" id="rentPriceDayId">Rent Price Day</label>
@@ -3107,7 +3107,7 @@
                      </div>
                      <div>
                          <label for="rentPriceMonth" class="form-label" id="rentPriceMonthId">Rent Price Month</label>
-                         <input type="number" class="form-control" id="rentPriceMonth" placeholder="Ex:- 64,350.00">
+                         <input type="number" class="form-control" id="rentPriceMonth" placeholder="Ex:- 64350">
                      </div>
                      <div>
                          <label for="freeKMMonth" class="form-label" id="freeKMMonthId">Free KM Month</label>
@@ -3408,6 +3408,8 @@
 <script src="controller/validation/personalDetailValidation.js"></script>
 <script src="controller/UserController.js"></script>
 <script src="controller/validation/ManagerValidation.js"></script>
+<script src="controller/CarController.js"></script>
+<script src="controller/validation/CarValidation.js"></script>
 <script>
 
     $("#addBook>section>div>div>div>form>aside>input").click(function() {
@@ -3430,79 +3432,6 @@
             }
         });
     });
-
-</script>
-<script>
-
-    let imageArrayCar = [];
-    let inputCar = document.getElementById("carImage");
-    let countCar=0;
-
-
-    inputCar.addEventListener("change", function () {
-        const files = inputCar.files;
-        L3 : for (var i = 0; i < files.length; i++) {
-            if (countCar == 4) {
-                break L3;
-            }
-            imageArrayCar.push(files[i]);
-            console.log(imageArrayCar);//for checking
-            console.log(files.length);//for checking
-            console.log(countCar);//for checking
-            countCar++;
-            console.log(countCar);//for checking
-        }
-        displayImageCar();
-    });
-
-    function displayImageCar() {
-        var imageFront = document.getElementById("frontView");
-        var imageFrontSpan = document.getElementById("frontViewSpan");
-        var imageBack = document.getElementById("backView");
-        var imageBackSpan = document.getElementById("backViewSpan");
-        var imageSide = document.getElementById("sideView");
-        var imageSideSpan = document.getElementById("sideViewSpan");
-        var imageInterior = document.getElementById("interior");
-        var imageInteriorSpan = document.getElementById("interiorSpan");
-
-        if (imageArrayCar.length > 0) {
-            imageFront.src = URL.createObjectURL(imageArrayCar[0]);
-            imageFrontSpan.innerHTML = `<button onclick="deleteImageCar(0)">&times;</button>`;
-        } else {
-            imageFront.src = ""; // Clear the image source if no image is present.
-            imageFrontSpan.innerHTML = "";
-        }
-
-        if (imageArrayCar.length > 1) {
-            imageBack.src = URL.createObjectURL(imageArrayCar[1]);
-            imageBackSpan.innerHTML = `<button onclick="deleteImageCar(1)">&times;</button>`;
-        } else {
-            imageBack.src = ""; // Clear the image source if no image is present.
-            imageBackSpan.innerHTML = "";
-        }
-
-        if (imageArrayCar.length > 2) {
-            imageSide.src = URL.createObjectURL(imageArrayCar[2]);
-            imageSideSpan.innerHTML = `<button onclick="deleteImageCar(2)">&times;</button>`;
-        } else {
-            imageSide.src = ""; // Clear the image source if no image is present.
-            imageSideSpan.innerHTML = "";
-        }
-
-        if (imageArrayCar.length > 3) {
-            imageInterior.src = URL.createObjectURL(imageArrayCar[3]);
-            imageInteriorSpan.innerHTML = `<button onclick="deleteImageCar(3)">&times;</button>`;
-        } else {
-            imageInterior.src = ""; // Clear the image source if no image is present.
-            imageInteriorSpan.innerHTML = "";
-        }
-    }
-
-    function deleteImageCar(index) {
-        imageArrayCar.splice(index, 1);
-        countCar--;
-        displayImageCar();
-    }
 
 </script>
 </body>

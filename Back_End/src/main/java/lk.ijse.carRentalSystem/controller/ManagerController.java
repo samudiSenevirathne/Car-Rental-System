@@ -32,4 +32,9 @@ public class ManagerController {
         return new ResponseUtil("Ok","Success Login","");
     }
 
+    @GetMapping(params = {"username"})
+    public ResponseUtil findManagerNIC(String username){
+        return new ResponseUtil("Ok","Found", service.findManagerNIC(username));
+    }
+
 }

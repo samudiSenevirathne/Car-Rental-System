@@ -15,9 +15,9 @@ public class CarDTO {
     private String type;
     private BigDecimal rent_Price_Day;
     private BigDecimal rent_Price_Month;
-    private BigDecimal Free_KM_Day;
-    private BigDecimal Free_KM_Month;
-    private BigDecimal price_Extra_KM;
+    private BigDecimal free_Km_Day;
+    private BigDecimal free_Km_Month;
+    private BigDecimal price_Extra_Km;
     private String color;
     private String front_View;
     private String back_View;

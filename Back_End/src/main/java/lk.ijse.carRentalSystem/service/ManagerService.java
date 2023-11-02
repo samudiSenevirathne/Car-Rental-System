@@ -8,4 +8,6 @@ public interface ManagerService {
     void updateManager(ManagerDTO m);
 
     void  checkManager(String username,String password);
+
+    String findManagerNIC(String username);
 }

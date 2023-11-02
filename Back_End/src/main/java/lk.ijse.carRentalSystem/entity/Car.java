@@ -25,21 +25,21 @@ public class Car implements Serializable {
     @Column(nullable = false)
     private BigDecimal rent_Price_Month;
     @Column(nullable = false)
-    private BigDecimal Free_KM_Day;
+    private BigDecimal free_Km_Day;
     @Column(nullable = false)
-    private BigDecimal Free_KM_Month;
+    private BigDecimal free_Km_Month;
     @Column(nullable = false)
-    private BigDecimal price_Extra_KM;
+    private BigDecimal price_Extra_Km;
     @Column(nullable = false)
     private String color;
     @Lob
-    private byte[] front_View;
+    private String front_View;
     @Lob
-    private byte[] back_View;
+    private String back_View;
     @Lob
-    private byte[] side_View;
+    private String side_View;
     @Lob
-    private byte[] interior;
+    private String interior;
     @Column(nullable = false)
     private int passenger_Count;
     @Column(nullable = false)
@@ -59,5 +59,4 @@ public class Car implements Serializable {
 
     @OneToMany(mappedBy = "car")
     private List<Book> BookList;
-
 }

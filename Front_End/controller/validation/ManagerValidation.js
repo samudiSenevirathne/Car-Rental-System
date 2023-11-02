@@ -53,14 +53,17 @@ function stopIntervalMng() {
 
 function imageCheckMng() {
     if($('#mngNicImageShowFront').attr("src") !== "") {
-          $('#mngNicImageShowFront').css("border", "1px solid #ced4da");
+        $('#mngNicImageShowFront').css("border", "1px solid #ced4da");
         if ($('#mngNicImageShowBack').attr("src") !== "") {
-               $('#mngNicImageShowBack').css("border", "1px solid #ced4da");
-                    $("#btnAddMng").prop("disabled", false);
-                        stopIntervalMng();
-                }else{
-                    $('#mngNicImageShowBack').css("border", "2px solid red");
-                }
+            $('#mngNicImageShowBack').css("border", "1px solid #ced4da");
+                $("#btnAddMng").prop("disabled", false);
+                stopIntervalMng();
+        } else {
+            $('#mngNicImageShowBack').css("border", "2px solid red");
+            $("#btnAddMng").prop("disabled", true);
+        }
+    }else{
+        $("#btnAddMng").prop("disabled", true);
      }
 }
 
