@@ -43,10 +43,10 @@ $(".type").click(function () {
     });
 });
 
-
+var bookingNumberPlate="";
 function loadDetails() {
     $("#panelAfterBookAside2>aside").on('click', 'h1', function () {
-        let brand = $(this).text();
+            let brand = $(this).text();
             $.ajax({
                 url: "http://localhost:8080/Back_End_war/car?brand=" + brand,
                 method: "get",
@@ -80,7 +80,7 @@ function loadDetails() {
                                 </div>
                                 <div>
                                     <label class="form-check-label">Select</label>
-                                    <input class="form-check-input gridCheck1" onclick="pushBook();" type="checkbox">
+                                    <input class="form-check-input gridCheck1" type="checkbox">
                                 </div>
                             </div>
                             <div>
@@ -92,7 +92,13 @@ function loadDetails() {
                         </div>
                     </div>`
                         $("#AfterBookDetail>section").append(div);
+                        bookingNumberPlate=car.registration_Number;
                     }
+                    bookBtn();
+                    if(checkValue()==true){
+                        $(".gridCheck1").prop('checked', true);
+                    }
+
                 },
                 error: function (error) {
                     alert(error.responseJSON.message);
@@ -103,11 +109,68 @@ function loadDetails() {
         });
 }
 
-function pushBook() {
-    let forBook = [];
-    var x=$('.gridCheck1').is(':checked');
-    if(x==true) {
-        forBook.push(car.registration_Number);
-        $("#btnBooking").prop("disabled", false);
+let bookingDetails = [];
+
+function bookBtn() {
+    $(".gridCheck1").on("change", function () {
+        let isChecked = $(this).is(":checked");
+        if (isChecked) {
+            $("#btnBooking").prop("disabled", false);
+            if(bookingDetails.length==0) {
+                bookingDetails.push(bookingNumberPlate);
+             }else{
+                if(checkValue()!=true){
+                    bookingDetails.push(bookingNumberPlate);
+                }
+            }
+        } else {
+            if(bookingDetails.length>0) {
+                $("#btnBooking").prop("disabled", false);
+            }else{
+                $("#btnBooking").prop("disabled", true);
+            }
+        }
+    });
+}
+
+function checkValue(){
+    for(var i =0;i<bookingDetails.length;i++) {
+        if((bookingDetails[i]) == bookingNumberPlate) {
+            return true;
+        }
     }
+}
+
+
+$("#btnBooking").click(function () {
+    addBookPage();
+    for(var i =0;i<bookingDetails.length;i++) {
+              alert(bookingDetails[i]);
+    }
+});
+
+function addBookPage(){
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1.2)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'block');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}
+
+function clearData(){
+    bookingDetails = [];
+    bookingNumberPlate="";
 }
