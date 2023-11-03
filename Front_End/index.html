@@ -993,7 +993,8 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            width:calc(100% * 1.5);
+           /* width:calc(100% * 1.5);*//*/////////////////11/3/2023//////////////////////*/
+             width:calc(100% * 0.3);/*/////////////////11/3/2023//////////////////////*/
             height: 100%;
             /*border: 1px solid greenyellow;*/
             border-bottom-right-radius: 25px;
@@ -1019,7 +1020,8 @@
         }
 
         #AfterBookDetail>section{
-            height: calc(100% * 1); /*1 car represent = height:50% */
+            /*height: calc(100% * 1);*/ /*1 car represent = height:50% *//*/////////////////11/3/2023//////////////////////*/
+            height:50%;/*/////////////////11/3/2023//////////////////////*/
             width: 100%;
             /*border: 1px solid deeppink;*/
             display: flex;
@@ -1040,12 +1042,14 @@
 
         #AfterBookDetail>section>div>div{
             align-self: center;
-            border: 1px solid white;
+            /*border: 1px solid white;   */ /*////////////////11/3/2023//////////////////////*/
         }
 
-        #AfterBookDetail>section>div>div:nth-child(1){
+        #AfterBookDetail>section>div>img:nth-child(1){  /*////////////////11/3/2023//////////////////////*/
             width: 25%;
             height: 100%;
+            background-size:cover;
+            background-position: center;
         }
 
         #AfterBookDetail>section>div>div:nth-child(2){
@@ -1057,7 +1061,7 @@
 
         #AfterBookDetail>section>div>div:nth-child(2)>div{
             align-self: center;
-            border: 1px solid red;
+            /*border: 1px solid red;  */  /*////////////////11/3/2023//////////////////////*/
             width: 100%;
         }
 
@@ -1068,7 +1072,7 @@
         }
 
         #AfterBookDetail>section>div>div>div:nth-child(1)>div{
-            border: 1px solid orangered;
+            /*border: 1px solid orangered;*/ /*////////////////11/3/2023//////////////////////*/
             color: white;
             height: 100%;
         }
@@ -1105,10 +1109,12 @@
             justify-content: space-around;
         }
 
-        #AfterBookDetail>section>div>div>div:nth-child(2)>div{
-            border: 1px solid white;
+        #AfterBookDetail>section>div>div>div:nth-child(2)>img{  /*////////////////11/3/2023//////////////////////*/
+            /*border: 1px solid white;*/ /*////////////////11/3/2023//////////////////////*/
             width: 20%;
             height: 100%;
+            background-size:cover;
+            background-position: center;
         }
 
         #btnBooking{
@@ -2696,79 +2702,79 @@
 
             <aside id="panelAfterBook">
                 <aside>
-                <h1>General Cars</h1>
-                <h1>Premium Cars</h1>
-                <h1>Luxury Cars </h1>
+                <h1 class="type" id="General">General Cars</h1>
+                <h1 class="type" id="Premium">Premium Cars</h1>
+                <h1 class="type" id="Luxury">Luxury Cars </h1>
                 </aside>
-                <aside>
+                <aside id="panelAfterBookAside2">
                     <aside>
-                        <h1>Suzuki Alto - Premium</h1>
-                        <h1>Suzuki Alto K10</h1>
-                        <h1>Suzuki Celerio</h1>
-                        <h1>Perodua (Daihatsu) Axia</h1>
-                        <h1>Toyota Prius C/ Aqua</h1>
+<!--                        <h1>Suzuki Alto - Premium</h1>-->
+<!--                        <h1>Suzuki Alto K10</h1>-->
+<!--                        <h1>Suzuki Celerio</h1>-->
+<!--                        <h1>Perodua (Daihatsu) Axia</h1>-->
+<!--                        <h1>Toyota Prius C/ Aqua</h1>-->
                     </aside>
                 </aside>
             </aside>
 
             <section id="AfterBookDetail">
                 <section>
-                    <div>
-                       <div></div>
-                        <div>
-                            <div>
-                                <div>
-                                <h1>Brand  :  Suzuki</h1>
-                                <h1>seat   :  04</h1>
-                                <h1>Fuel   :  Petrol</h1>
-                                <h1>Brand  :  Suzuki</h1>
-                                <h1>Brand  :  Suzuki</h1>
-                                <h1>Transmission  :  Manual</h1>
-                                <h1>Fuel   :  Petrol</h1>
-                                <h1>Brand  :  Suzuki</h1>
-                                <h1>Brand  :  Suzuki</h1>
-                                </div>
-                                <div>
-                                    <label class="form-check-label" for="gridCheck1">Select</label>
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                </div>
-                            </div>
-                            <div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div></div>
-                        <div>
-                            <div>
-                                <div>
-                                    <h1>Brand  :  Suzuki</h1>
-                                    <h1>seat   :  04</h1>
-                                    <h1>Fuel   :  Petrol</h1>
-                                    <h1>Brand  :  Suzuki</h1>
-                                    <h1>Brand  :  Suzuki</h1>
-                                    <h1>Transmission  :  Manual</h1>
-                                    <h1>Fuel   :  Petrol</h1>
-                                    <h1>Brand  :  Suzuki</h1>
-                                    <h1>Brand  :  Suzuki</h1>
-                                </div>
-                                <div>
-                                    <label class="form-check-label" for="gridCheck2">Select</label>
-                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                </div>
-                            </div>
-                            <div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div>-->
+<!--                       <div></div>-->
+<!--                        <div>-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                <h1>Brand  :  Suzuki</h1>-->
+<!--                                <h1>seat   :  04</h1>-->
+<!--                                <h1>Fuel   :  Petrol</h1>-->
+<!--                                <h1>Brand  :  Suzuki</h1>-->
+<!--                                <h1>Brand  :  Suzuki</h1>-->
+<!--                                <h1>Transmission  :  Manual</h1>-->
+<!--                                <h1>Fuel   :  Petrol</h1>-->
+<!--                                <h1>Brand  :  Suzuki</h1>-->
+<!--                                <h1>Brand  :  Suzuki</h1>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label class="form-check-label" for="gridCheck1">Select</label>-->
+<!--                                    <input class="form-check-input" type="checkbox" id="gridCheck1">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div></div>-->
+<!--                        <div>-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                    <h1>Brand  :  Suzuki</h1>-->
+<!--                                    <h1>seat   :  04</h1>-->
+<!--                                    <h1>Fuel   :  Petrol</h1>-->
+<!--                                    <h1>Brand  :  Suzuki</h1>-->
+<!--                                    <h1>Brand  :  Suzuki</h1>-->
+<!--                                    <h1>Transmission  :  Manual</h1>-->
+<!--                                    <h1>Fuel   :  Petrol</h1>-->
+<!--                                    <h1>Brand  :  Suzuki</h1>-->
+<!--                                    <h1>Brand  :  Suzuki</h1>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label class="form-check-label" for="gridCheck2">Select</label>-->
+<!--                                    <input class="form-check-input" type="checkbox" id="gridCheck2">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                                <div></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 <!--first we create 2 above div and others should create when we add car-->
                 </section>
             </section>
@@ -3411,6 +3417,7 @@
 <script src="controller/validation/ManagerValidation.js"></script>
 <script src="controller/CarController.js"></script>
 <script src="controller/validation/CarValidation.js"></script>
+<script src="controller/afterBookController.js"></script>
 <script>
 
     $("#addBook>section>div>div>div>form>aside>input").click(function() {

@@ -69,4 +69,21 @@ public class CarServiceImpl implements CarService {
         car.setMng(managerRepo.getReferenceById(c.getNic_No_Manager()));
         carRepo.save(car);
     }
+
+    @Override
+    public List<CarDTO> findType(String type) {
+        if (!carRepo.existsCarByType(type)) {
+            throw new RuntimeException(type+ " Sorry this type Cars are not available yet!");
+        }
+        List<Car> all = carRepo.findByType(type);
+        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public List<CarDTO> findBrand(String brand) {
+        List<Car> all = carRepo.findByBrand(brand);
+        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        }.getType());
+    }
 }

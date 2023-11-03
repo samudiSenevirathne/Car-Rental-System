@@ -16,4 +16,8 @@ public interface CarService {
 
     void updateCar(CarDTO c);
 
+    List<CarDTO> findType(String type);
+
+    List<CarDTO> findBrand(String brand);
+
 }
