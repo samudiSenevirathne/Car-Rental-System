@@ -24,8 +24,7 @@ function clearPersonalDetailInputFieldsCar() {
     $("#frontViewSpan>button,#backViewSpan>button,#sideViewSpan>button,#interiorSpan>button").click();
     $("#frontViewSpan>button,#backViewSpan>button,#sideViewSpan>button,#interiorSpan>button").click();
     $("#frontViewSpan>button,#backViewSpan>button,#sideViewSpan>button,#interiorSpan>button").click();
-    x = false;
-    y=false;
+    $("input[type='radio']").prop("checked", false);
     imageArrayCar = [];
     countCar=0;
     $("#registrationNumber,#brand,#color,#passengerCount,#fuelType,#priceExtra,#rentPriceDay,#freeKMDay,#rentPriceMonth,#freeKMMonth").css("border", "1px solid #ced4da");

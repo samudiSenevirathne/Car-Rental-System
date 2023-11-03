@@ -32,6 +32,7 @@ $("#home").click(function () {
 
 $("#customer").click(function () {
     if ($("#customer>a").text() == "Car") {
+        $("#btnAddCar").prop("disabled", true);
             carPage();
     }else {
         type = "customer";

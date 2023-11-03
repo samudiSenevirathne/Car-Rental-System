@@ -37,11 +37,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void deleteCar(String regisNum) {
-        if (!carRepo.existsById(regisNum)) {
-            throw new RuntimeException(regisNum+ " Car is not available, please check the RegistrationNumber before delete.!");
+    public void deleteCar(String registration_Number) {
+        if (!carRepo.existsById(registration_Number)) {
+            throw new RuntimeException(registration_Number+ " Car is not available, please check the RegistrationNumber before delete.!");
         }
-        carRepo.deleteById(regisNum);
+        carRepo.deleteById(registration_Number);
     }
 
     @Override
@@ -52,11 +52,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public CarDTO findCar(String regisNum) {
-        if (!carRepo.existsById(regisNum)) {
-            throw new RuntimeException(regisNum+ " Car is not available, please check the RegistrationNumber.!");
+    public CarDTO findCar(String registration_Number) {
+        if (!carRepo.existsById(registration_Number)) {
+            throw new RuntimeException(registration_Number+ " Car is not available, please check the RegistrationNumber.!");
         }
-        Car customer = carRepo.findById(regisNum).get();
+        Car customer = carRepo.findById(registration_Number).get();
         return mapper.map(customer,CarDTO.class);
     }
 

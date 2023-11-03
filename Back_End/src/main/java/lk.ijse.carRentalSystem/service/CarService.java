@@ -8,11 +8,11 @@ public interface CarService {
 
     void addCar(CarDTO dto);
 
-    void deleteCar(String regisNum);
+    void deleteCar(String registration_Number);
 
     List<CarDTO> getAllCar();
 
-    CarDTO findCar(String regisNum);
+    CarDTO findCar(String registration_Number);
 
     void updateCar(CarDTO c);
 

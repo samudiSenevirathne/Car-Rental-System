@@ -3043,7 +3043,7 @@
                  <section id="sectionGridCar">
                     <div>
                         <label for="registrationNumber" class="form-label" id="registrationNumberId">Registration Number</label>
-                        <input type="text" class="form-control" id="registrationNumber" placeholder="Ex:- SA-2000">
+                        <input name="registration_Number" type="text" class="form-control" id="registrationNumber" placeholder="Ex:- SA-2000">
                     </div>
                     <div>
                         <label for="brand" class="form-label" id="brandId">Brand</label>
@@ -3095,7 +3095,7 @@
                     </div>
                     <div>
                         <label for="priceExtra" class="form-label" id="priceExtraId">Price Extra KM</label>
-                        <input type="number" class="form-control" id="priceExtra" placeholder="Ex:- 49">
+                        <input type="number" class="form-control" id="priceExtra" placeholder="Ex:- 49.50">
                     </div>
                      <div>
                          <label for="rentPriceDay" class="form-label" id="rentPriceDayId">Rent Price Day</label>
@@ -3107,7 +3107,7 @@
                      </div>
                      <div>
                          <label for="rentPriceMonth" class="form-label" id="rentPriceMonthId">Rent Price Month</label>
-                         <input type="number" class="form-control" id="rentPriceMonth" placeholder="Ex:- 64350">
+                         <input type="number" class="form-control" id="rentPriceMonth" placeholder="Ex:- 64350.00">
                      </div>
                      <div>
                          <label for="freeKMMonth" class="form-label" id="freeKMMonthId">Free KM Month</label>
@@ -3144,11 +3144,11 @@
             </form>
             <form id="addCarTableForm">
                 <div>
-                    <table class="table table-bordered text-black">
+                    <table class="table table-bordered table-hover text-black" style="cursor: pointer">
                         <thead class="bg-white">
                         <tr>
-                            <th>CarNumber</th>
                             <th>RegistrationNumber</th>
+                            <th>Brand</th>
                             <th>RentPriceDay</th>
                             <th>RentPriceMonth</th>
                             <th>PriceExtraKM</th>
@@ -3156,7 +3156,7 @@
                             <th>Action</th> <!--this is for delete and update button-->
                         </tr>
                         </thead>
-                        <tbody class="bg-light text-dark" id="carTable">
+                        <tbody class="text-white" id="carTable">
 
                         </tbody>
                     </table>

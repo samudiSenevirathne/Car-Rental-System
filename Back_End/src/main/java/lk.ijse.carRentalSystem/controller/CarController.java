@@ -20,10 +20,10 @@ public class CarController {
         return new ResponseUtil("Ok","Successfully Added",dto);
     }
 
-    @DeleteMapping(params = {"regisNum"})
-    public ResponseUtil deleteCar(String regisNum){
-        service.deleteCar(regisNum);
-        return new ResponseUtil("Ok","Successfully Deleted",regisNum);
+    @DeleteMapping(params = {"registration_Number"})
+    public ResponseUtil deleteCar(String registration_Number){
+        service.deleteCar(registration_Number);
+        return new ResponseUtil("Ok","Successfully Deleted",registration_Number);
     }
 
     @GetMapping
@@ -31,9 +31,9 @@ public class CarController {
         return new ResponseUtil("Ok","Successfully Loaded",service.getAllCar());
     }
 
-    @GetMapping(params = {"regisNum"})
-    public ResponseUtil findCar(String regisNum){
-        return new ResponseUtil("Ok","Successfull", service.findCar(regisNum));
+    @GetMapping(params = {"registration_Number"})
+    public ResponseUtil findCar(String registration_Number){
+        return new ResponseUtil("Ok","Successful found Car", service.findCar(registration_Number));
     }
 
     @PutMapping
