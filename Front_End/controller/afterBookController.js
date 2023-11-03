@@ -125,6 +125,11 @@ function bookBtn() {
             }
         } else {
             if(bookingDetails.length>0) {
+                for(var i =0;i<bookingDetails.length;i++) {
+                    if((bookingDetails[i]) == bookingNumberPlate) {
+                        bookingDetails.splice(i, 1);
+                    }
+                }
                 $("#btnBooking").prop("disabled", false);
             }else{
                 $("#btnBooking").prop("disabled", true);
