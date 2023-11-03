@@ -1161,7 +1161,8 @@
         #addBook>section>div>div{
             align-self: center;
             /*border: 1px solid red;*/
-            width: calc(100% * 2); /*when add more this should increase*/
+           /* width: calc(100% * 2);*/ /*when add more this should increase*/ /*////////////////11/3/2023//////////////////////*/
+            width: 100%; /*////////////////11/4/2023//////////////////////*/
             height: 100%;
             display: flex;
             flex-direction: row;
@@ -2790,61 +2791,61 @@
          <section>
              <div>
                 <div>
-                    <div>        <!--should create automatically like this-->
-                        <form>
-                            <div>
-                                <h1>Selected Car : Suzuki Alto </h1>
-                                <h1>Number Plate : SA-2000 </h1>
-                            </div>
-                            <div>
-                                <div>
-                                    <label>Start Date :</label>
-                                    <input class="form-control" id="txtDate1" type="date">
-                                </div>
-                                <div>
-                                    <label>End Date :</label>
-                                    <input class="form-control" id="txtDate2" type="date">
-                                </div>
-                            </div>
-                            <div>
-                                <h1>Fare & Fee : Daily Rate (Rs):2500</h1>
-                                <h1> Monthly Rate (Rs):64,350 </h1>
-                            </div>
-                            <div>
-                                <div>
-                                    <label>month Count :</label>
-                                    <input class="form-control" id="monthCount" min="1" type="number">
-                                </div>
-                                <div>
-                                    <label>day Count :</label>
-                                    <input class="form-control" id="dayCount" min="1" type="number">
-                                </div>
-                            </div>
-                            <aside>
-                                        <label class="form-check-label">Driver</label>
-                                        <input class="form-check-input" type="checkbox">
-<!--                                        <h1>(Driver charge Rs 1000 for each day )</h1>-->
-                            </aside>
-                            <div>
-                                <div>
-                                    <label for="startVenue" class="form-label" id="startVenueId">Start Venue :</label>
-                                    <input type="text" class="form-control" id="startVenue" placeholder="Ex:- Galle">
-                                </div>
-                                <div>
-                                    <label for="endVenue" class="form-label" id="endVenueId">End Venue :</label>
-                                    <input type="text" class="form-control" id="endVenue" placeholder="Ex:- NuwaraEliya">
-                                </div>
-                            </div>
-                        </form>
-                        <aside>
-                         <h1>Note: you will be charge with extra Rs 30 for each km the end of the day.</h1>
-                         <h1>Note: you will be charge as loss Damage Waiver Rs 10000 according car type and If the vehicle is unharmed the Loss Damage Waiver will be returned you at the end of the day.</h1>
-                       </aside>
-                    </div>
-                    <div>      <!--as experiment-->
-                         <form></form>
-                         <aside></aside>
-                    </div>
+<!--                    <div>        &lt;!&ndash;should create automatically like this&ndash;&gt;-->
+<!--                        <form>-->
+<!--                            <div>-->
+<!--                                <h1>Selected Car : Suzuki Alto </h1>-->
+<!--                                <h1>Number Plate : SA-2000 </h1>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                    <label>Start Date :</label>-->
+<!--                                    <input class="form-control" id="txtDate1" type="date">-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label>End Date :</label>-->
+<!--                                    <input class="form-control" id="txtDate2" type="date">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <h1>Fare & Fee : Daily Rate (Rs):2500</h1>-->
+<!--                                <h1> Monthly Rate (Rs):64,350 </h1>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                    <label>month Count :</label>-->
+<!--                                    <input class="form-control" id="monthCount" min="1" type="number">-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label>day Count :</label>-->
+<!--                                    <input class="form-control" id="dayCount" min="1" type="number">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <aside>-->
+<!--                                        <label class="form-check-label">Driver</label>-->
+<!--                                        <input class="form-check-input" type="checkbox">-->
+<!--&lt;!&ndash;                                        <h1>(Driver charge Rs 1000 for each day )</h1>&ndash;&gt;-->
+<!--                            </aside>-->
+<!--                            <div>-->
+<!--                                <div>-->
+<!--                                    <label for="startVenue" class="form-label" id="startVenueId">Start Venue :</label>-->
+<!--                                    <input type="text" class="form-control" id="startVenue" placeholder="Ex:- Galle">-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <label for="endVenue" class="form-label" id="endVenueId">End Venue :</label>-->
+<!--                                    <input type="text" class="form-control" id="endVenue" placeholder="Ex:- NuwaraEliya">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                        <aside>-->
+<!--                         <h1>Note: you will be charge with extra Rs 30 for each km the end of the day.</h1>-->
+<!--                         <h1>Note: you will be charge as loss Damage Waiver Rs 10000 according car type and If the vehicle is unharmed the Loss Damage Waiver will be returned you at the end of the day.</h1>-->
+<!--                       </aside>-->
+<!--                    </div>-->
+<!--                    <div>      &lt;!&ndash;as experiment&ndash;&gt;-->
+<!--                         <form></form>-->
+<!--                         <aside></aside>-->
+<!--                    </div>-->
                 </div>
              </div>
              <button type="button" class="btn btn-light" id="btnConfirm">Confirm</button>
@@ -3412,24 +3413,15 @@
 <script src="controller/LoginController.js"></script>
 <script src="controller/PersonalDetailController.js"></script>
 <script src="controller/validation/LoginValidation.js"></script>
-<script src="controller/validation/personalDetailValidation.js"></script>
+<script src="controller/validation/PersonalDetailValidation.js"></script>
 <script src="controller/UserController.js"></script>
 <script src="controller/validation/ManagerValidation.js"></script>
 <script src="controller/CarController.js"></script>
 <script src="controller/validation/CarValidation.js"></script>
-<script src="controller/afterBookController.js"></script>
-<script>
-
-    $("#addBook>section>div>div>div>form>aside>input").click(function() {
-        var x=$(this).is(':checked');
-        if(x==true)
-            $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "visible");
-        else{
-            $("#addBook>section>div>div>div>form>div:nth-child(6)").css("visibility", "hidden");
-        }
-    });
-
-</script>
+<script src="controller/AfterBookController.js"></script>
+<script src="controller/AddBookController.js"></script>
+<script src="controller/validation/AddBookValidation.js"></script>
+<script src="controller/validation/LocationValidation.js"></script>
 <script>
 
     $(document).ready(function() {
