@@ -65,7 +65,8 @@ public class CarServiceImpl implements CarService {
         if (!carRepo.existsById(c.getRegistration_Number())) {
             throw new RuntimeException(c.getRegistration_Number()+ " Car is not available, please check the RegistrationNumber before update.!");
         }
-        Car map = mapper.map(c, Car.class);
-        carRepo.save(map);
+        Car car = mapper.map(c, Car.class);
+        car.setMng(managerRepo.getReferenceById(c.getNic_No_Manager()));
+        carRepo.save(car);
     }
 }
