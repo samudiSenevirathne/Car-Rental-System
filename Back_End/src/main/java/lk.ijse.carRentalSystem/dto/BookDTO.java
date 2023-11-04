@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Data
 public class BookDTO {
-    private String book_Id;
+    private String bookId;
     private LocalDate booking_Date;
     private LocalTime booking_Time;
     private LocalDate start_Date;

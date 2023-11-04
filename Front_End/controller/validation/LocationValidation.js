@@ -15,7 +15,7 @@ function locationValidation() {
     $(".startVenue,.endVenue").on("keydown keyup", function (e) {
 
         //get the index number of data input fields indexNo
-        let indexNo = arrayPlace.indexOf(arrayPlace.find((c) => c.field.attr("id") == e.target.id));
+        let indexNo = arrayPlace.findIndex((c) => c.field.is($(e.target)));
 
         //Disable tab key
         if (e.key == "Tab") {
@@ -23,7 +23,7 @@ function locationValidation() {
         }
 
         //check validations
-        checkValidations(arrayPlace[indexNo]);
+        checkValidationNew(arrayPlace[indexNo]);
         setBtnPlace();
 
     });
@@ -38,7 +38,7 @@ function locationValidation() {
 
     function checkAllPlace() {
         for (let i = 0; i < arrayPlace.length; i++) {
-            if (!checkValidations(arrayPlace[i])) return false;
+            if (!checkValidationNew(arrayPlace[i])) return false;
         }
         return true;
     }

@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @Data
 public class Book implements Serializable {
     @Column(unique=true)
-    private String book_Id;
+    private String bookId;
     @EmbeddedId
     private CarCustomerPK carCustomerPK;
     private LocalDate booking_Date;
@@ -39,7 +39,7 @@ public class Book implements Serializable {
     private Driver drive;
 
     @ManyToOne
-    @JoinColumn(name = "registration_No",referencedColumnName = "registration_Number",insertable = false,updatable = false)
+    @JoinColumn(name = "registrationNo",referencedColumnName = "registration_Number",insertable = false,updatable = false)
     private Car car;
 
     @ManyToOne
