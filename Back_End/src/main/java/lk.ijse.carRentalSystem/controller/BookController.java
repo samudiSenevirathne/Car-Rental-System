@@ -17,7 +17,7 @@ public class BookController {
     @PostMapping
     public ResponseUtil addBook(@RequestBody BookDTO dto) {
         service.addBook(dto);
-        return new ResponseUtil("Ok", "Successfully Added", dto);
+        return new ResponseUtil("Ok", "Successfully Booked", dto);
     }
 
     @DeleteMapping(params = {"bookId"})

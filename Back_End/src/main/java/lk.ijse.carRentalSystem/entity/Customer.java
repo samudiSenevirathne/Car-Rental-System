@@ -43,6 +43,21 @@ public class Customer implements Serializable {
     private Register register;
 
     @OneToMany(mappedBy = "cus")
-    private List<Book> BookList;
+    private List<Book> bookList;
 
+    public Customer(String username, String password, String nic_No, String nic_Image_One, String nic_Image_Two, String license, String license_Image_One, String license_Image_Two, String verify_State, String name, String contact, String email, String address) {
+        this.username = username;
+        this.password = password;
+        this.nic_No = nic_No;
+        this.nic_Image_One = nic_Image_One;
+        this.nic_Image_Two = nic_Image_Two;
+        this.license = license;
+        this.license_Image_One = license_Image_One;
+        this.license_Image_Two = license_Image_Two;
+        this.verify_State = verify_State;
+        this.name = name;
+        this.contact = contact;
+        this.email = email;
+        this.address = address;
+    }
 }

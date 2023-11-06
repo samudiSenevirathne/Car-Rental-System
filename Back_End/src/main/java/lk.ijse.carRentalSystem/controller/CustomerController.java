@@ -42,4 +42,9 @@ public class CustomerController {
          return new ResponseUtil("Ok","Success Login","");
     }
 
+    @GetMapping(params = {"username"})
+    public ResponseUtil findCustomerNIC(String username){
+        return new ResponseUtil("Ok","Found", service.findCustomerNIC(username));
+    }
+
 }

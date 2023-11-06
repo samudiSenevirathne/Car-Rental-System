@@ -67,6 +67,7 @@ $('#btnLogin').click(function () {
 });
 
 var mngNicForCar;
+var cusNicForBook;
 
 function checkLogin() {
     let username=$("#exampleInputUsername1").val();
@@ -79,7 +80,23 @@ function checkLogin() {
                 alert(resp.message);
                 clearLoginInputFields();
                 console.log(resp);
-                // customerAfterLogin();
+                customerAfterLogin();
+
+                $.ajax({
+                    url: "http://localhost:8080/Back_End_war/customer?username=" + username,
+                    method: "get",
+                    success: function (resp) {
+                        alert(resp.message);//for test however this alert not want
+                        cusNicForBook=resp.data;
+
+                    }
+                    ,
+                    error: function (error) {
+                        alert(error.responseJSON.message);
+                        clearLoginInputFields();
+                    }
+                });
+
             }
             ,
             error: function (error) {
@@ -96,7 +113,7 @@ function checkLogin() {
                 alert(resp.message);
                 clearLoginInputFields();
                 console.log(resp);
-                 // driverAfterLogin();
+                 driverAfterLogin();
             }
             ,
             error: function (error) {
@@ -110,7 +127,7 @@ function checkLogin() {
             url: "http://localhost:8080/Back_End_war/manager?username=" + username + "&password=" + password,
             method: "get",
             success: function (resp) {
-                alert(resp.message);
+                // alert(resp.message);
                 clearLoginInputFields();
                 console.log(resp);
                 managerAfterLogin();
@@ -147,13 +164,19 @@ function managerAfterLogin(){
     $("#driver>a").text('Logout');
 }
 
-// function customerAfterLogin(){
-//
-// }
-//
-// function driverAfterLogin(){
-//
-// }
+function customerAfterLogin(){
+    home();
+    $("#customer>a").text('Booking');
+    $("#employee>a").text('MyBook');
+    $("#driver>a").text('Logout');
+}
+
+function driverAfterLogin(){
+    home();
+    $("#customer>a").text('Schedule');
+    $("#employee>a").text('Logout');
+    $("#driver>a").text('F&Q');
+}
 
 function managerAfterLoginBasic() {
     $("#header").css('display', 'block');
@@ -219,5 +242,95 @@ function viewManagerPath() {
 }
 
 
+function bookMy() {
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'block');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}
 
+function viewSchedule(){
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'block');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}
 
+function maintenaceGo() {
+    $("#managerPathSection>div:nth-child(1)").click(function () {
+        viewMaintenance();
+    });
+    $("#managerPathSection>div:nth-child(2)").click(function () {
+        viewDamageService();
+    });
+}
+
+function viewMaintenance(){
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'block');
+    $("#addDamageService").css('display', 'none');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}
+
+function viewDamageService(){
+    $("#header").css('display', 'block');
+    $("#homeContent").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("body").css('height', 'calc(100vh * 1)');
+    $("#addCus").css('display', 'none');
+    $("#afterLoggingBook").css('display', 'none');
+    $("#addBook").css('display', 'none');
+    $("#addPayment").css('display', 'none');
+    $("#invoice").css('display', 'none');
+    $("#bookingTableCustomer").css('display', 'none');
+    $("#workScheduleDriver").css('display', 'none');
+    $("#managerDashBoard").css('display', 'none');
+    $("#addCar").css('display', 'none');
+    $("#addMaintenance").css('display', 'none');
+    $("#addDamageService").css('display', 'block');
+    $("#addMng").css('display', 'none');
+    $("#managerPath").css('display', 'none');
+    $("#footer").css('display', 'block');
+}

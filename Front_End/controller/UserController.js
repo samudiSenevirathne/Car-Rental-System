@@ -8,7 +8,7 @@ $('#btnAddMng').click(function () {
     saveMng();
 });
 
-let registerId;
+var registerId="";
 
 function generateRegisterId(){
     var rid="";
@@ -25,11 +25,6 @@ function generateRegisterId(){
     });
 }
 
-let registerDetailCus=[];
-let registerDetailDri=[];
-
-let registerDetailMng=[];
-
 
 function saveCustomer() {
     let username=$("#exampleInputUsername2").val();
@@ -45,11 +40,6 @@ function saveCustomer() {
     let address=$("#customerAddress").val();
     let email=$("#customerEmail").val();
     if(type=="customer") {
-    registerDetailCus.push({
-        r_Id:registerId,
-        type:type,
-        nic_No_Customer:nic
-    });
     customerAll={
         "username":username,
         "password":password,
@@ -63,7 +53,8 @@ function saveCustomer() {
         "contact":contact,
         "address":address,
         "email":email,
-        "registerDetail":registerDetailCus
+        "r_Id":registerId,
+        "type":type
     }
         $.ajax({
             url: "http://localhost:8080/Back_End_war/customer",
@@ -73,6 +64,7 @@ function saveCustomer() {
             success: function (resp) {
                 alert(resp.message);
                 clearPersonalDetailInputFields();
+                generateRegisterId();
                 console.log(resp);
             }
             ,
@@ -83,11 +75,6 @@ function saveCustomer() {
         });
     }
         if(type=="driver") {
-            registerDetailDri.push({
-                r_Id: registerId,
-                type: type,
-                nic_No_Driver: nic
-            });
             driverAll = {
                 "username": username,
                 "password": password,
@@ -101,7 +88,8 @@ function saveCustomer() {
                 "contact": contact,
                 "address": address,
                 "email": email,
-                "registerDetail": registerDetailDri
+                "r_Id":registerId,
+                "type": type
             }
             $.ajax({
                 url: "http://localhost:8080/Back_End_war/driver",
@@ -111,6 +99,7 @@ function saveCustomer() {
                 success: function (resp) {
                     alert(resp.message);
                     clearPersonalDetailInputFields();
+                    generateRegisterId();
                     console.log(resp);
                 }
                 ,
@@ -132,11 +121,6 @@ function saveMng() {
     let contactMng=$("#mngContact").val();
     let addressMng=$("#mngAddress").val();
     let emailMng=$("#mngEmail").val();
-        registerDetailMng.push({
-            r_Id:registerId,
-            type:type,
-            nic_No_Manager:nicMng
-        });
         managerAll={
             "username":usernameMng,
             "password":passwordMng,
@@ -147,7 +131,8 @@ function saveMng() {
             "contact":contactMng,
             "address":addressMng,
             "email":emailMng,
-            "registerDetail":registerDetailMng
+            "r_Id":registerId,
+            "type": type
         }
         $.ajax({
             url: "http://localhost:8080/Back_End_war/manager",
@@ -157,6 +142,7 @@ function saveMng() {
             success: function (resp) {
                 alert(resp.message);
                 clearPersonalDetailInputFieldsMng();
+                generateRegisterId();
                 console.log(resp);
             }
             ,

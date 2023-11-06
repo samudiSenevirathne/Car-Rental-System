@@ -2,6 +2,7 @@ package lk.ijse.carRentalSystem.service.impl;
 
 import lk.ijse.carRentalSystem.dto.ManagerDTO;
 import lk.ijse.carRentalSystem.dto.RegisterDTO;
+import lk.ijse.carRentalSystem.entity.Driver;
 import lk.ijse.carRentalSystem.entity.Manager;
 import lk.ijse.carRentalSystem.entity.Register;
 import lk.ijse.carRentalSystem.repo.CustomerRepo;
@@ -50,12 +51,10 @@ public class ManagerServiceImpl implements ManagerService {
         if (managerRepo.existsManagerByEmail(dto.getEmail())) {
             throw new RuntimeException(dto.getEmail() + " is already available, please again check your Email");
         }
-        Manager map = mapper.map(dto, Manager.class);
-        managerRepo.save(map);
-        for(RegisterDTO dtoR:dto.getRegisterDetail()){
-            Register register = new Register(dtoR.getR_Id(), LocalDate.now(), LocalTime.now(),dtoR.getType(),managerRepo.getReferenceById(dtoR.getNic_No_Manager()));
-            registerRepo.save(register);
-        }
+        Manager manager=new Manager(dto.getUsername(),dto.getPassword(),dto.getNic_No(),dto.getNic_Image_One(),dto.getNic_Image_Two(),dto.getVerify_State(),dto.getName(),dto.getContact(),dto.getEmail(),dto.getAddress());
+        managerRepo.save(manager);
+        Register register = new Register(dto.getR_Id(), LocalDate.now(), LocalTime.now(),dto.getType(),managerRepo.getReferenceById(dto.getNic_No()));
+        registerRepo.save(register);
     }
 
     @Override

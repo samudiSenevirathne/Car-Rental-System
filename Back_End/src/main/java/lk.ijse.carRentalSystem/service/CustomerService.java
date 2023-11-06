@@ -15,4 +15,6 @@ public interface CustomerService {
 
     void  checkCustomer(String username,String password);
 
+    String findCustomerNIC(String username);
+
 }

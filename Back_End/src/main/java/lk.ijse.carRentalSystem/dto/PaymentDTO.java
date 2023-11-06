@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 public class PaymentDTO {
     private String pay_Id;
-    private byte[] bank_Slip_Image;
+    private String bank_Slip_Image;
     private BigDecimal loss_Damage_Waiver;
     private BigDecimal rental_Fee;
     private String additional_payment_Description;
@@ -21,4 +21,5 @@ public class PaymentDTO {
     private String additional_charge_Description;
     private BigDecimal additional_charge_Cost;
     private LocalDate additional_charge_Date;
+    private String bookId;
 }

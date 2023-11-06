@@ -28,8 +28,7 @@ function driverCheckBoxSet() {
      });
 }
 
-var total_KM=[];
-var maintain_Status=[];
+// var total_KM=[];
 var free_Km_Day=[];
 var free_Km_Month=[];
 var rent_Price_Day=[];
@@ -138,6 +137,7 @@ function setBookDetails() {
 }
 
 var arra = [];
+var arratemp = [];
 var startDate="";
 var endDate="";
 var dayCount="";
@@ -145,9 +145,12 @@ var monthCount="";
 var startVenue="";
 var endVenue="";
 var checkedDriver="";
+var  bookIdd="";
+var  payIdd="";
 
 var  checkedDriverRandom="";
 function addArraay() {
+    var count=0;
     for (var i = 0; i < bookingDetails.length; i++) {
         var divValues = $("#addBook>section>div>div>div").eq(i);
         startDate = divValues.find('.txtDate1').val();
@@ -178,7 +181,7 @@ function addArraay() {
                loss_Damage_Waiver = 20000;
            }
 
-            getTotalKm();
+            // getTotalKm();
            let totalDay=free_Km_Day[i] * dayCount;
            let totalMonth=free_Km_Month[i] * monthCount;
               kmAll=total_KM [i] + totalDay + totalMonth;
@@ -188,39 +191,58 @@ function addArraay() {
                  mainStateNow="no";
              }
 
+        if(count==0) {
+              bookIdd= bookIddd;
+         }else{
+            let split = bookIddd.split('-');
+            let num = (+split[1]) + 1;
+            bookIdd = ('BID-' + (String(num).padStart(3, '0')));
+        }
+
+        if(count==0) {
+            payIdd= payIddd;
+        }else{
+            let split = bookIddd.split('-');
+            let num = (+split[1]) + 1;
+            payIdd = ('PID-' + (String(num).padStart(3, '0')));
+        }
+
         arra.push({
-            carNumber: bookingDetails[i],
-            startDate: startDate,
-            endDate: endDate,
-            dayCount: dayCount,
-            monthCount: monthCount,
-            randomDriver: checkedDriverRandom,
+            registration_No: bookingDetails[i],
+            start_Date: startDate,
+            end_Date: endDate,
+            nic_No_Driver: checkedDriverRandom,
             startVenue: startVenue,
             endVenue: endVenue,
-            rentalFee:rental_Fee,
-            lossDamageWaiver:loss_Damage_Waiver,
-            // payIdd:payIdd,
-            // bookIdd:bookIdd,
-            payIdd:"PID-001",
-            bookIdd:"BID-001",
-            totalKM:kmAll,
-            mainStateNow:mainStateNow
+            rental_Fee:rental_Fee,
+            loss_Damage_Waiver:loss_Damage_Waiver,
+            pay_Id:payIdd,
+            bookId:bookIdd,
+            total_KM:kmAll,
+            maintain_Status:mainStateNow,
+            nic_No_Cus:cusNicForBook
         });
+             arratemp.push({
+                 dayCount: dayCount,
+                 monthCount: monthCount,
+                 })
 
-        alert(arra[i].carNumber); //as checking
-        alert(arra[i].startDate); //as checking
-        alert(arra[i].endDate); //as checking
-        alert(arra[i].dayCount); //as checking
-        alert(arra[i].monthCount); //as checking
-        alert(arra[i].randomDriver); //as checking
+        alert(arra[i].registration_No); //as checking
+        alert(arra[i].start_Date); //as checking
+        alert(arra[i].end_Date); //as checking
+        alert(arratemp[i].dayCount); //as checking
+        alert(arratemp[i].monthCount); //as checking
+        alert(arra[i].nic_No_Driver); //as checking
         alert(arra[i].startVenue); //as checking
         alert(arra[i].endVenue); //as checking
-        alert(arra[i].rentalFee); //as checking
-        alert(arra[i].lossDamageWaiver); //as checking
-        alert(arra[i].payIdd); //as checking
-        alert(arra[i].bookIdd); //as checking
-        alert(arra[i].totalKM); //as checking
-        alert(arra[i].mainStateNow); //as checking
+        alert(arra[i].rental_Fee); //as checking
+        alert(arra[i].loss_Damage_Waiver); //as checking
+        alert(arra[i].pay_Id); //as checking
+        alert(arra[i].bookId); //as checking
+        alert(arra[i].total_KM); //as checking
+        alert(arra[i].maintain_Status); //as checking
+        alert(arra[i].nic_No_Cus); //as checking
+        count++;
     }
 }
 
@@ -251,7 +273,7 @@ function getAllDrivers() {
     $.ajax({
         url:"http://localhost:8080/Back_End_war/driver",
         success: function (resp) {
-            console.log(resp.message);
+            // console.log(resp.message);
             for(let driver of resp.data){
                   drivers.push(driver.nic_No);
                   console.log(driver.nic_No);
@@ -271,33 +293,34 @@ function selectRandomDrive() {
     console.log("Selected Driver: " + randomDriver);
 }
 
-// generateBookId();
-let bookIdd;
+generateBookId();
+generatePayId();
+
+var bookIddd;
 function generateBookId(){
     var bid="";
     $.ajax({
         url: "http://localhost:8080/Back_End_war/book",
         success: function (resp) {
+            // for (let b of resp.data) {
+            //     for (var i = 0; i < bookingDetails.length; i++) {
+            //         if (bookingDetails[i] == b.registration_No) {
+            //
+            //         }
+            //     }
+            // }
             for (let b of resp.data) {
-                for (var i = 0; i < bookingDetails.length; i++) {
-                    if (bookingDetails[i] == b.registration_No) {
-
-                    }
-                }
-            }
-
-            for (let b of resp.data) {
-                bid=b.book_Id;
+                bid=b.bookId;
             }
             let split =  bid.split('-');
             let num =(+split[1])+1;
-            bookIdd=('BID-' + (String(num).padStart(3,'0')));
+            bookIddd=('BID-' + (String(num).padStart(3,'0')));
+            // alert(bookIdd);
         }
     });
 }
 
-// generatePayId();
-let payIdd;
+var payIddd;
 function generatePayId(){
     var pid="";
     $.ajax({
@@ -308,34 +331,57 @@ function generatePayId(){
             }
             let split =  pid.split('-');
             let num =(+split[1])+1;
-            payIdd=('PID-' + (String(num).padStart(3,'0')));
+            payIddd=('PID-' + (String(num).padStart(3,'0')));
+            // alert(payIdd);
         }
     });
 }
 
 
-function getTotalKm() {
-    for (var i = 0; i < bookingDetails.length; i++) {
-        let registrationNo = bookingDetails[i];
-        $.ajax({
-            url: "http://localhost:8080/Back_End_war/book?registrationNo=" + registrationNo,
-            method: "get",
-            success: function (resp) {
-                alert(resp.message);//for check
-                for (let book of resp.data) {
-                    total_KM.push(book.total_KM);
-                    maintain_Status.push(book.maintain_Status);
-                }
-            }
-            ,
-            error: function (error) {
-                alert(error.responseJSON.message);
-                clearLoginInputFields();
-            }
-        });
-    }
-}
+// function getTotalKm() {
+//     for (var i = 0; i < bookingDetails.length; i++) {
+//         let registrationNo = bookingDetails[i];
+//         $.ajax({
+//             url: "http://localhost:8080/Back_End_war/book?registrationNo=" + registrationNo,
+//             method: "get",
+//             success: function (resp) {
+//                 alert(resp.message);//for check
+//                     total_KM.push(resp.data);
+//             }
+//             ,
+//             error: function (error) {
+//                 alert(error.responseJSON.message);
+//                 clearLoginInputFields();
+//             }
+//         });
+//     }
+// }
 
 function clearDataAddBook(){
-
+    total_KM=[];
+    maintain_Status=[];
+    free_Km_Day=[];
+    free_Km_Month=[];
+    rent_Price_Day=[];
+     rent_Price_Month=[];
+    typppe=[];
+    loss_Damage_Waiver="";
+    rental_Fee="";
+    kmAll="";
+    mainStateNow="";
+    arra = [];
+    startDate="";
+    endDate="";
+    dayCount="";
+    monthCount="";
+    startVenue="";
+    endVenue="";
+    checkedDriver="";
+    checkedDriverRandom="";
+    drivers = [];
+    randomDriver="";
+    bookIdd="";
+    payIdd="";
+    arratemp = [];
 }
+

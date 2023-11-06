@@ -2,6 +2,7 @@ package lk.ijse.carRentalSystem.service;
 
 import lk.ijse.carRentalSystem.dto.BookDTO;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface BookService {
@@ -15,5 +16,5 @@ public interface BookService {
 
     void updateBook(BookDTO b);
 
-    List<BookDTO>findTotalKm(String registrationNo);
+    BigDecimal findTotalKm(String registrationNo);
 }

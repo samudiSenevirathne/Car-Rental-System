@@ -17,7 +17,7 @@ public class Payment implements Serializable {
     @Id
     private String pay_Id;
     @Lob
-    private byte[] bank_Slip_Image;
+    private String bank_Slip_Image;
     @Column(nullable = false)
     private BigDecimal loss_Damage_Waiver;
     @Column(nullable = false)
@@ -29,7 +29,15 @@ public class Payment implements Serializable {
     private BigDecimal additional_charge_Cost;
     private LocalDate additional_charge_Date;
 
-    @OneToOne(mappedBy = "pay")
-    private Book Book;
 
+    @OneToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "bookId",referencedColumnName = "bookId")
+    private Book book;
+
+    public Payment(String pay_Id, BigDecimal loss_Damage_Waiver, BigDecimal rental_Fee, Book book) {
+        this.pay_Id = pay_Id;
+        this.loss_Damage_Waiver = loss_Damage_Waiver;
+        this.rental_Fee = rental_Fee;
+        this.book = book;
+    }
 }

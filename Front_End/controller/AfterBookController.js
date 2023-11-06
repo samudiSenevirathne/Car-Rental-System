@@ -146,12 +146,27 @@ function checkValue(){
     }
 }
 
+var total_KM=[];
 
 $("#btnBooking").click(function () {
     addBookPage();
     setBookDetails(); //add book create part
     for(var i =0;i<bookingDetails.length;i++) {
               alert(bookingDetails[i]); //as checking
+        let registrationNo = bookingDetails[i];
+        $.ajax({
+            url: "http://localhost:8080/Back_End_war/book?registrationNo=" + registrationNo,
+            method: "get",
+            success: function (resp) {
+                alert(resp.message);//for check
+                total_KM.push(resp.data);
+            }
+            ,
+            error: function (error) {
+                alert(error.responseJSON.message);
+                clearLoginInputFields();
+            }
+        });
     }
 });
 

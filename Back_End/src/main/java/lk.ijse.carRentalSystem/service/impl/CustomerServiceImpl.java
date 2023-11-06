@@ -55,12 +55,10 @@ public class CustomerServiceImpl implements CustomerService {
         if (customerRepo.existsCustomerByEmail(dto.getEmail())) {
             throw new RuntimeException(dto.getEmail() + " is already available, please again check your Email");
         }
-          Customer map = mapper.map(dto, Customer.class);
-          customerRepo.save(map);
-          for(RegisterDTO dtoR:dto.getRegisterDetail()){
-             Register register = new Register(dtoR.getR_Id(), LocalDate.now(), LocalTime.now(),dtoR.getType(),customerRepo.getReferenceById(dtoR.getNic_No_Customer()));
-             registerRepo.save(register);
-          }
+          Customer customer=new Customer(dto.getUsername(),dto.getPassword(),dto.getNic_No(),dto.getNic_Image_One(),dto.getNic_Image_Two(),dto.getLicense(),dto.getLicense_Image_One(),dto.getLicense_Image_Two(),dto.getVerify_State(),dto.getName(),dto.getContact(),dto.getEmail(),dto.getAddress());
+          customerRepo.save(customer);
+          Register register = new Register(dto.getR_Id(), LocalDate.now(), LocalTime.now(),dto.getType(),customerRepo.getReferenceById(dto.getNic_No()));
+          registerRepo.save(register);
     }
 
     @Override
@@ -98,4 +96,10 @@ public class CustomerServiceImpl implements CustomerService {
         }
         customerRepo.existsCustomerByUsernameAndPassword(username,password);
     }
+
+    @Override
+    public String findCustomerNIC(String username) {
+        return customerRepo.findCustomerNIC(username);
+    }
+
 }

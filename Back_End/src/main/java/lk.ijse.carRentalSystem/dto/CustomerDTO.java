@@ -23,5 +23,6 @@ public class CustomerDTO {
     private String contact;
     private String email;
     private String address;
-    private List<RegisterDTO> registerDetail;
+    private String r_Id;
+    private String type;
 }

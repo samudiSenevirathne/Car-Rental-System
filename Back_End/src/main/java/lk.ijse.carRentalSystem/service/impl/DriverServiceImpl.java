@@ -2,6 +2,7 @@ package lk.ijse.carRentalSystem.service.impl;
 
 import lk.ijse.carRentalSystem.dto.DriverDTO;
 import lk.ijse.carRentalSystem.dto.RegisterDTO;
+import lk.ijse.carRentalSystem.entity.Customer;
 import lk.ijse.carRentalSystem.entity.Driver;
 import lk.ijse.carRentalSystem.entity.Register;
 import lk.ijse.carRentalSystem.repo.CustomerRepo;
@@ -55,12 +56,10 @@ public class DriverServiceImpl implements DriverService {
         if (driverRepo.existsDriverByEmail(dto.getEmail())) {
             throw new RuntimeException(dto.getEmail() + " is already available, please again check your Email");
         }
-        Driver map = mapper.map(dto, Driver.class);
-        driverRepo.save(map);
-        for(RegisterDTO dtoR:dto.getRegisterDetail()){
-            Register register = new Register(dtoR.getR_Id(), LocalDate.now(), LocalTime.now(),dtoR.getType(),driverRepo.getReferenceById(dtoR.getNic_No_Driver()));
-            registerRepo.save(register);
-        }
+        Driver driver=new Driver(dto.getUsername(),dto.getPassword(),dto.getNic_No(),dto.getNic_Image_One(),dto.getNic_Image_Two(),dto.getLicense(),dto.getLicense_Image_One(),dto.getLicense_Image_Two(),dto.getVerify_State(),dto.getName(),dto.getContact(),dto.getEmail(),dto.getAddress());
+        driverRepo.save(driver);
+        Register register = new Register(dto.getR_Id(), LocalDate.now(), LocalTime.now(),dto.getType(),driverRepo.getReferenceById(dto.getNic_No()));
+        registerRepo.save(register);
     }
 
     @Override

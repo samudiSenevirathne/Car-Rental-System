@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,4 +29,7 @@ public class BookDTO {
     private String registration_No;
     private String nic_No_Cus;
     private String pay_Id;
+    private BigDecimal loss_Damage_Waiver;
+    private BigDecimal rental_Fee;
+    private List<BookDTO> bookDetails;
 }

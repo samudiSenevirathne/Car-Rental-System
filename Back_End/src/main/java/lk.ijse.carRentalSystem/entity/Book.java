@@ -15,9 +15,8 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Data
 public class Book implements Serializable {
-    @Column(unique=true)
+    @Id
     private String bookId;
-    @EmbeddedId
     private CarCustomerPK carCustomerPK;
     private LocalDate booking_Date;
     private LocalTime booking_Time;
@@ -30,12 +29,11 @@ public class Book implements Serializable {
     private BigDecimal total_KM;
     private String maintain_Status;
 
-    @OneToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "pay_Id",referencedColumnName = "pay_Id",nullable = false)
+    @OneToOne(mappedBy = "book")
     private Payment pay;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "nic_No_Driver",referencedColumnName = "nic_No",nullable = false)
+    @JoinColumn(name = "nic_No_Driver",referencedColumnName = "nic_No")
     private Driver drive;
 
     @ManyToOne
@@ -46,4 +44,19 @@ public class Book implements Serializable {
     @JoinColumn(name = "nic_No_Cus",referencedColumnName = "nic_No",insertable = false,updatable = false)
     private Customer cus;
 
+    public Book(String bookId, CarCustomerPK carCustomerPK, LocalDate booking_Date, LocalTime booking_Time, LocalDate start_Date, LocalDate end_Date, String startVenue, String endVenue, BigDecimal total_KM, String maintain_Status, Driver drive, Car car, Customer cus) {
+        this.bookId = bookId;
+        this.carCustomerPK = carCustomerPK;
+        this.booking_Date = booking_Date;
+        this.booking_Time = booking_Time;
+        this.start_Date = start_Date;
+        this.end_Date = end_Date;
+        this.startVenue = startVenue;
+        this.endVenue = endVenue;
+        this.total_KM = total_KM;
+        this.maintain_Status = maintain_Status;
+        this.drive = drive;
+        this.car = car;
+        this.cus = cus;
+    }
 }

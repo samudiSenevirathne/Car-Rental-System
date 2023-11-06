@@ -58,5 +58,5 @@ public class Car implements Serializable {
     List<Damage_Service_Detail>damageServiceDetailList;
 
     @OneToMany(mappedBy = "car")
-    private List<Book> BookList;
+    private List<Book> bookList;
 }

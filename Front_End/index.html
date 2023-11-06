@@ -491,6 +491,44 @@
             }
         }
 
+        main>main>section:nth-child(3)>section>section>div:nth-child(1)>div:nth-child(1) {
+            background: url("assets/images/Toyota Corolla Axio/Toyota Corolla Axio(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>main>section:nth-child(3)>section>section>div:nth-child(2)>div:nth-child(1) {
+            background: url("assets/images/Perodua (Daihatsu) Axia/Perodua (Daihatsu) Axia(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+        main>main>section:nth-child(3)>section>section>div:nth-child(3)>div:nth-child(1) {
+            background: url("assets/images/Toyota Prius C Aqua/Toyota Prius C Aqua(Front view).png");
+            background-size:cover;
+            background-position: center;
+        }
+        main>main>section:nth-child(3)>section>section>div:nth-child(4)>div:nth-child(1) {
+            background: url("assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>main>section:nth-child(4)>section>section>div:nth-child(1)>div:nth-child(1) {
+            background: url("assets/images/Suzuki Alto K10/Suzuki Alto K10((Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+
+        main>main>section:nth-child(4)>section>section>div:nth-child(2)>div:nth-child(1) {
+            background: url("assets/images/Suzuki Celerio/Suzuki Celerio(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
+        main>main>section:nth-child(4)>section>section>div:nth-child(3)>div:nth-child(1) {
+            background: url("assets/images/BMW i8/BMW i8(Front View).png");
+            background-size:cover;
+            background-position: center;
+        }
 
         main>main>section>aside{
             position: absolute;
@@ -1572,7 +1610,8 @@
         }
 
         #panelInvoiceForm>section{
-            width:calc(100% * 2);
+            /*width:calc(100% * 2); !**!*/
+            width:100%;
             height: 100%;
             /*border: 1px solid red;*/
             background: rgba(0, 0, 0, 0.32);
@@ -2956,25 +2995,25 @@
             </aside>
             <form id="panelInvoiceForm">
                 <section>
-                    <div>
-                    <div>
-                        <h1>Invoice</h1>
-                    </div>
-                    <div>
-                        <div>
-                        <h1>Your Booking Number :  1234567</h1>
-                        <h1>vehicle Name  :  suki-alto</h1>
-                        <h1>vehicle Number : 124215</h1>
-                        <h1>Booking Date : 2023/10/27</h1>
-                        <h1>Booking Start Date : 2023/10/28</h1>
-                        <h1>Booking End Date : 2023/10/31</h1>
-                        </div>
-                        <div>
-                        <div></div>
-                        </div>
-                    </div>
-                    </div> <!--should create like that automatically-->
-                    <div></div>  <!--as practice-->
+<!--                    <div>-->
+<!--                    <div>-->
+<!--                        <h1>Invoice</h1>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div>-->
+<!--                        <h1>Your Booking Number :  1234567</h1>-->
+<!--                        <h1>vehicle Name  :  suki-alto</h1>-->
+<!--                        <h1>vehicle Number : 124215</h1>-->
+<!--                        <h1>Booking Date : 2023/10/27</h1>-->
+<!--                        <h1>Booking Start Date : 2023/10/28</h1>-->
+<!--                        <h1>Booking End Date : 2023/10/31</h1>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                        <div></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    </div> &lt;!&ndash;should create like that automatically&ndash;&gt;-->
+<!--                    <div></div>  &lt;!&ndash;as practice&ndash;&gt;-->
                 </section>
             </form>
         </section>
@@ -3471,5 +3510,6 @@
 <script src="controller/validation/AddBookValidation.js"></script>
 <script src="controller/validation/LocationValidation.js"></script>
 <script src="controller/PaymentController.js"></script>
+<script src="controller/InvoiceController.js"></script>
 </body>
 </html>
